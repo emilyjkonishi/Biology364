@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  28 DEC 2018 11:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  28 DEC 2018 11:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -757,7 +757,7 @@ Here is how much of TeX's memory you used:
  14258 multiletter control sequences out of 15000+600000
  11879 words of font info for 42 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 44i,11n,43p,680b,350s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,11n,43p,667b,350s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
@@ -766,7 +766,7 @@ r/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
 local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/l
 ocal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
 cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Biology364.2019.syllabus.pdf (5 pages, 124659 bytes).
+Output written on Biology364.2019.syllabus.pdf (5 pages, 124641 bytes).
 PDF statistics:
  148 PDF objects out of 1000 (max. 8388607)
  131 compressed objects within 2 object streams
