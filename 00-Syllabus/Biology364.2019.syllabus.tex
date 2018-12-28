@@ -15,7 +15,7 @@
 %%% PAGE DIMENSIONS
 \usepackage{geometry} % to change the page dimensions
 	\geometry{letterpaper} % or letterpaper (US) or a5paper or....
-	\geometry{margin=1in} % for example, change the margins to 2 inches all round
+	\geometry{margin=0.75in} % for example, change the margins to 2 inches all round
 	% \geometry{landscape} % set up the page for landscape
 	%   read geometry.pdf for detailed page layout information
 
@@ -43,7 +43,7 @@
 \usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
 \pagestyle{fancy} % options: empty , plain , fancy
 \renewcommand{\headrulewidth}{0pt} % customise the layout...
-\lhead{}\chead{DSCI 351-351M-451 Syllabus: Exploratory Data Science}\rhead{}
+\lhead{}\chead{BIOL 364/664 Syllabus}\rhead{}
 %\lfoot{}\cfoot{\thepage}\rfoot{}
 \lfoot{\today}\cfoot{}\rfoot{\thepage}
 
@@ -125,7 +125,7 @@ experience required.
     
     
 %-------------------------------------------------------
-\section{Course Objectives}\label{course-objectives}}
+\section{Course Objectives}\label{course-objectives}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -145,74 +145,47 @@ experience required.
 
 \section{Grading}
 
-  {\bf BIOL 364/664 is graded on 500 points basis}
   \begin{align*}
     Ten \, Homeworks, \, worth \, 10 \, points \, each = 100 pts.\\
     Four \, Data \, Projects, \, worth \, 25 \, points \, each = 100 pts.\\
     Takehome \, Midterm \, Exam = 100 pts.\\
-    Final \, Project = 100 pts.
-    Takehome \, Final \, Exam = 100 pts. \\
+    Final \, Project = 100 pts.\\
+    Takehome \, Final \, Exam = 100 pts.\\
     {\bf Total = 500 pts.}
   \end{align*}
 
-  The Data Projects and Final Project will be graded using 
+  The Data Projects and Final Project will be graded using labor-based contract grading as described by \href{http://www.translingualwriting.com/resources/Inoue\%20Contract.pdf}{Asao Inoue}. These assignments will utilize a goal-oriented grading system as you develop your skills as a data scientist.  When you or your group completes all of the goals associated with each project, you will earn 43/50 or 85/100 pts (85\%). Failure to do so will result in a lower grade.
+
+To earn more than 85\%, you must do the following:
+\begin{itemize}
+  \item Propose and perform additional analysis and visualization comparisons (discuss available options with me).
+  \item Routinely assist in the learning and proficiency of your peers.
+\end{itemize}
+
 
 \section{Textbooks and Readings}
 
-  Required Texts and their Abbreviation, which is used in the syllabus:
+  Required Texts and their Abbreviation, which is used in the class:
+  \begin{itemize}
+ 
+    \item A Primer in Biological Data Analysis and Visualization Using R, by Gregg Hartvigsen, ISBN: 9780231166997 (Hart)
   
-  Peng R Programming (PRP) and Peng Exploratory Data Analysis (EDA) are introductory books to R and Data Science and Analysis. 
+    \item \href{https://leanpub.com/rprogramming}{R Programming for Data Science}, by Roger D. Peng (PRP)
+  
+    \item \href{https://leanpub.com/exdata}{Exploratory Data Analysis}, by Roger D. Peng (EDA) 
+  
   These are  Leanpub books, available from LeanPub for a ”pay what you want” price. 
   
-  R for Data Science (R4DS) is a new book teaching R for Tidy Data Science, and is available as a bookdown book on the web \href{http://r4ds.had.co.nz/}{R for Data Science}, you can buy an ebook for \$18 from \href{https://play.google.com/store/books/details/Hadley_Wickham_R_for_Data_Science?id=I6y3DQAAQBAJ}{Google Play Store page for this book}. 
+    \item R for Data Science (R4DS) is a book teaching R for Tidy Data Science, and is available as a bookdown book on the web \href{http://r4ds.had.co.nz/}{R for Data Science}, you can buy an ebook for \$18 from \href{https://play.google.com/store/books/details/Hadley_Wickham_R_for_Data_Science?id=I6y3DQAAQBAJ}{Google Play Store page for this book}. 
   
-  Open Intro Statistics version 3 (OIS) is an open source text book on Inferential Statistics, published under a Creative Commons license, \href{https://drive.google.com/file/d/0B-DHaDEbiOGkc1RycUtIcUtIelE/view}{for free distribution as a pdf}. 
-  In addition a copy can be purchased from Amazon for \$9. 
+    \item Open Intro Statistics version 3 (OIS) is an open source text book on Inferential Statistics, published under a Creative Commons license, \href{https://drive.google.com/file/d/0B-DHaDEbiOGkc1RycUtIcUtIelE/view}{for free distribution as a pdf}. In addition a copy can be purchased from Amazon for \$9. 
   
-  Introduction to Statistical Learning with R (ISLR) is a \href{"http://www.springer.com/us/book/9781461471370"}{Springer} book which is also available for  \href{http://www-bcf.usc.edu/~gareth/ISL/ISLR\%20Seventh\%20Printing.pdf}{free as a pdf}. ISLR is the text book used extensively in DSCI353/453 on Statistical Learning. 
-  
-  %\FloatBarrier
-  
-  \begin{SCfigure}
-  	\centering
-  	\caption{{\bf PRP}: Roger Peng, {\bf \textsc{R Programming for Data Science}}. 2014 \cite{peng_r_2014}}
-  	\includegraphics[width=0.2\textwidth]%
-  	{figs/Peng-R-Programming.png}% picture filename
-  \end{SCfigure}
-  
-  \begin{SCfigure}
-  	\centering
-  	\caption{{\bf EDA}: Roger Peng, {\bf Exploratory Data Analysis With R}. 2015 \cite{peng_exploratory_2015}}
-  	\includegraphics[width=0.2\textwidth]%
-  	{figs/Peng-EDAwithR.png} % picture filename
-  \end{SCfigure}
-  
-  \begin{SCfigure}
-  	\centering
-  	\caption{{\bf OIS}: David M. Diez, Christopher D. Barr, and Mine Cetinkaya-Rundel, \href{"https://www.openintro.org/stat/textbook.php"}{ {\bf OpenIntro Statistics 3rd Ed.} } 2015 \cite{david_m._diez_openintro_2015} }
-  	\includegraphics[width=0.2\textwidth]%
-  	{figs/OISv3.jpg} % picture filename
-  \end{SCfigure}
-  
-  \begin{SCfigure}
-      \centering
-      \caption{{\bf R4DS}: Garrett Grolemund, Hadley Wickham {\bf R for Data Science}. 2017 \cite{wickham_r_2017}}
-      \includegraphics[width=0.2\textwidth]%
-      {figs/R4DScover.png}% picture filename
-  \end{SCfigure}
-  
-  \begin{SCfigure}
-  	\centering
-  	\caption{ {\bf ISLR}: Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani {\bf An Introduction to Statistical Learning: with Applications in R}, 2013  \cite{james_introduction_2013} }
-  	\includegraphics[width=0.2\textwidth]%
-  	{figs/ISLR.jpg} % picture filename
-  \end{SCfigure}
-  
-  Additional reading assignments will be distributed via the course git repository in the readings subdirectory. 
+    \item Additional reading assignments will be distributed via the course git repository in the readings subdirectory. 
+  \end{itemize}
 
 %-------------------------------------------------------
 \FloatBarrier
-\section{DSCI351-451 Syllabus: Weekly Topics}
+\section{BIOL 364 Syllabus: Weekly Topics}
 \begin{table}[h] 
 	\centering % used for centering table 
 	\begin{tabular}{| c | p{3.4cm} | p{3.4cm} | c | c |} % centered columns (5 columns) 
@@ -308,118 +281,13 @@ experience required.
 \FloatBarrier
 
 %-------------------------------------------------------
-\section{Course Mechanics}
 
-  \subsection{Lectures}
-  
-    Fall 2017 	Tuesday, Thursday 11:30 am to 12:45 pm		Olin 303
-  
-  \subsection{Consultations}
-  
-    After class or as needed. Contact Prof. French and Alan Curran, email or in person. 
-  
-  \subsection{Homework Assignments}
-  
-    All homeworks assignments are submitted electronically through blackboard, uploading to the HW assignment page. 
-  
-    Filenames should contain DSCI351, -HW\#, -YourLastName... e.g. DSCI351-HW2-French.R or DSCI351-HW2-French.R and DSCI351-HW2-French.pdf. 
-  
-    Homeworks need to be legible, organized and explain your thinking, process and results. 
-    Credit all resources you drew upon, including texts, papers, peers. 
-  
-    Homeworks are due by 11 am Tuesday, prior to the beginning of class. 
-    Homeworks will be graded on blackboard and reviewed in class. 
 
-%-------------------------------------------------------
-
-\section{Coding and Data Science Tools and Resources}
-
-  {\bf Open Data Science (ODS) VDIs} \\
-  
-    You will not need to install software on your personal computers. 
-    
-    Instead you can install the Citrix Reciever \cite{citrix_citrix_2014} and then login to the CWRU CSE Portal. \cite{cse_portal_cwru_2014} 
-    
-    The CSE Portal is located at \href{"https://cseportal.cwru.edu/vpn/index.html"}{https://cseportal.cwru.edu/vpn/index.html}    \\
-    
-    {\bf Scripting, Coding and Writing} \\
-    And more resources for open science coding and scripting, including tools for code editing, code version control and languages. 
-    
-    {\bf R Statistics} \\
-    We will be using R in this class for homeworks and projects. 
-    Its generally useful language for statistical analysis and data science. 
-  
-      \begin{itemize}
-        \item \href{"http://www.r-project.org/index.html"}{The R Project for Statistical Computing}  \cite{r_r_2014} main website
-        \item \href{"http://en.wikipedia.org/wiki/R_(programming_language)"}{R programming language}  R is a free software programming language and software environment for statistical computing and graphics.\cite{r_project_r_2014} 
-        \item \href{"http://www.rstudio.com/"}{ RStudio} provides popular open source and enterprise-ready professional software for the R statistical computing environment. \cite{rstudio_rstudio_2014}
-        \item \href{"https://google-styleguide.googlecode.com/svn/trunk/Rguide.xml"}{ Google's R Style Guide}
-      \end{itemize}
-    
-    {\bf Rmarkdown} as a path to open access and reproducible science
-    
-      \begin{itemize}
-        \item \href{"http://rmarkdown.rstudio.com/"}{ R Markdown — Dynamic Documents for R.} We will be doing all our work using Rmarkdown this semester. 
-        Class presentations, homeworks, projects, all done in Rmd, as reproducible science projects, including data, code, and final output. 
-        \item \href{"http://shiny.rstudio.com/articles/rmarkdown.html"}{ Introduction to R Markdown.}
-        \item \href{"http://www.rstudio.com/resources/cheatsheets/"}{ R Markdown Cheat Sheets.}
-        \item \href{"http://rpubs.com/mansun_kuo/24330"}{ An Rmarkdown Introduction slidedeck done from Rmarkdown and shared publicly on RPubs.}
-      \end{itemize}
-    
-    {\bf R Statistics, more resources} \\
-              We will be using R in this class for homeworks and projects. Its generally useful language for statistical analysis and data science. 
-      \begin{itemize}
-        \item \href{"http://www.r-project.org/index.html"}{The R Project for Statistical Computing}  \cite{r_r_2014} main website
-        \item \href{"https://www.youtube.com/user/rdpeng/playlists"}{Roger Peng's Computing for Data Analysis introduction to R Statistics}. 
-        These are from a \href{"https://www.coursera.org/course/compdata"} {Coursera course} he does, with the same name. \cite{peng_computing_2014}\item \href{"http://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf"}{A (very) short introduction to R}  \cite{torfs_very_2014}
-        \item \href{"https://google-styleguide.googlecode.com/svn/trunk/Rguide.xml"}{ Google's R Style Guide}
-        \item \href{"http://stat405.had.co.nz/r-style.html"}{ Hadley Wickham's R Style Guide}  
-        \item \href{"http://www.rstudio.com/resources/cheatsheets/"}{ RStudio's R Cheatsheets for Rmarkdown and Data Wrangling}
-        \item \href{"http://www.theresearchkitchen.com/blog"}{An Rmd slideshow Intro to R}
-      \end{itemize}
-    
-    {\bf Open Source software and tools} \\
-    
-      \begin{itemize}
-        \item \href{"http://en.wikipedia.org/wiki/Portal:Free_software"}{FOSS (Free and Open Source Software)} is a copyleft approach to software which is hat is distributed in a manner that allows its users to run the software for any purpose, to redistribute copies of, and to examine, study, and modify, the source code. \cite{_portal:free_2014}
-        \item \href{"http://www.vim.org/"}{vim (or Gvim the gui version)} is a powerful text and code editor, that is universally available on all linux and mac computers.\cite{_gvim_2014}   \href{"http://neovim.org/"}{NeoVim} is a new Gvim fork.\cite{_neovim_2014} It can be installed on windows computers, its available on the ODS VDIs.. \cite{_gvim_2014}
-        \item \href{"http://en.wikipedia.org/wiki/Git_(software)"}{Git (Wikipedia)} is a distributed content versioning system that is very popular. It enables collaborative code development and LaTeX writing projects.\cite{_git_2014-2} 
-        \item \href{"http://git-scm.com/"}{Git server software} is installed on each computer.\cite{_git_2014}  
-        \item  \href{"https://github.com/"}{GitHub} is a Git server website used for collaborative code development.\cite{_github_2014}
-        \item  \href{"https://bitbucket.org/"}{BitBucket} is a Git server website used for collaborative code development. If you join with your case.edu email address, you get unlimited private repositories.\cite{_bitbucket:_2014} 
-        \item \href{"http://stackexchange.com/tour"}{Stack Exchange}  \cite{stack_exchange_stack_2014} Code Question and Answer Websites: covering R, Python, Mathematica, {LaTeX} and many other things, such as English or Spanish etc.
-      \end{itemize}
-      
-    {\bf Python (is also used for Data Science in many cases. But here we will focus on R first. } 
-
-      \begin{itemize}
-        \item \href{"https://en.wikipedia.org/wiki/Python_(programming_language)"}{Wikipedia: Python is a widely used general-purpose, high-level programming language.}  \cite{python_python_2014}
-        \item \href{"https://www.python.org/"}{The Python main website.} \cite{python_python.org_2013}
-        \item \href{"https://docs.python.org/2/tutorial/"}{The Python Tutorial — Python v2.7.8 documentation}  \cite{python_python_2014}
-        \item \href{"http://docs.python-guide.org/en/latest/"}{The Hitchhikers Guide to Python}. This is an open access book being hosted on developed on \href{"https://github.com/"}{GitHub} and is located here \href{"https://github.com/vuvlab/python-guide"}{https://github.com/vuvlab/python-guide}. \cite{_hitchhikers_2014} \cite{_kennethreitz/python-guide_2014}
-        \item \href{"http://www.numpy.org"}{NumPy is the fundamental package} \cite{numpy_numpy_2014} for scientific computing with Python.
-        \item \href{"http://www.ctcms.nist.gov/fipy/"}{FiPy: Partial Differential Equations with Python} \cite{guyer_fipy:_2009}
-        \item \href{"http://www.scipy.org/"}{SciPy is a python-based ecosystem}  \cite{scipy_scipy.org_2014} of open-source software for mathematics, science, and engineering. 
-        \item \href{"https://code.google.com/p/pythonxy/"}{PythonXY - Scientific-oriented Python Distribution} based on Qt and Spyder that runs on Windows. \cite{pythonxy_pythonxy_2014}
-        \item \href{"http://ipython.org/index.html"}{IPython Shell and Notebook}  \cite{ipython_ipython_2014}
-        \item \href{"https://code.google.com/p/spyderlib/"}{Spyder is the Scientific PYthon Development Environment}  \cite{spyder_spyder_2014}
-      \end{itemize}
-    
-    {\bf LaTeX is used for publication quality writing. Its also the backend for Rmarkdown's pdf generation. It lets you write professional looking papers, theses and books, along with presentations. } 
-      \begin{itemize}
-        \item \href{"http://www.tug.org/"}{LaTeX} is a program for writing documents, paper, journal articles, presentations and theses. \cite{_tex_2014}
-        \item \href{"http://en.wikibooks.org/wiki/LaTeX"}{LaTeX - Wikibooks}, open books for an open world. \cite{latex_latex_2014}
-        \item \href{"https://www.zotero.org/"}{Zotero Reference-Citation Manager, BibTeX Client}  \cite{zotero_zotero_2014}
-      \end{itemize}
-
-%-------------------------------------------------------
 \section{Policies}
 
   \subsection{Attendance}
   
-    You attendance is expected. 
-    Some information is covered that is not in the text. 
-    Student participation is an important part of the class. 
+    Your attendance at all classes and lab is expected, but not a graded part of the course. If you will need to miss lab for any reason, contact Prof. Field before class to make arrangements.
   
   \subsection{Readings}
   
@@ -428,49 +296,42 @@ experience required.
   
   \subsection{Homework Assignments}
   
-    Homeworks are due before noon on Monday after the week they are assigned.
-    Homework assignments will be submitted on GitHub after week 1.
-    A 50\% deduction will be assessed for submissions not received by noon on Monday. 
+    Homeworks are due before noon on Friday on the week they are assigned.
+    Homework assignments will be submitted on GitHub after week 1 (more instructions to follow).
+    A 25\% deduction will be assessed for submissions not received by noon on Friday. Assignments will not be accepated after noon on Monday.
   
   \subsection{Collaboration and Citation}
   
     For all projects and homework assignments working together is acceptable and encouraged. 
-    Working together and discussion is not allowed on takehome exams.
     It is not ethical to do someone else's work or to have someone do your work. 
     You must cite \textbf{all} resources used to work on your homework and projects. 
     Citations should be done at the end of the document. 
     These references can be to books, Wikipedia and other web resources, and discussions with other students. 
+    Working together and discussion is not allowed on takehome exams.
   
   \subsection{Academic Integrity Policy}
   
-    All students in this course are expected to adhere to University standards of academic integrity. Cheating, plagiarism, misrepresentation, and other forms of academic dishonesty will not be tolerated. 
-    This includes, but is not limited to, consulting with another person during an exam, turning in written work that was prepared by someone other than you, making minor modifications to the work of someone else and turning it in as your own, or engaging in misrepresentation in seeking a postponement or extension. 
-    Ignorance will not be accepted as an excuse. 
-    If you are not sure whether something you plan to submit would be considered either cheating or plagiarism, it is your responsibility to ask for clarification.  
-    
-    For complete information, please go to \href{"https://students.case.edu/community/conduct/aiboard/policy.html"}{https://students.case.edu/community/conduct/aiboard/policy.html}. 
+    Read \href{"http://www.bucknell.edu/AcademicResponsibility.xml"}{Academic Responsibility at Bucknell} for policies regarding academic integrity. Any questions concerning academic responsibility or misconduct will be referred to the Board of Review for Academic Responsibility without hesitation. Always cite the source of any information from outside sources, including online sources and classmates. Assignments may be screened using software designed to detect plaigarism. Unless explicitly directed otherwise, all takehome exams are expected to represent individual, not collaborative, work.
   
-  \subsection{Disability Resources}
-  
-    ESS Disability Resources is committed to assisting all CWRU students with disabilities by creating opportunities to take full advantage of the University's educational, academic, and residential programs.  
-    
-    For further information, please go to \href{"https://students.case.edu/academic/disability/''}{https://students.case.edu/academic/disability/}. 
+  \subsection{Bucknell University Honor Code}
+  \begin{enumerate}
+  \item I will not lie, cheat, or steal in my academic endeavors.
+  \item I will forthrightly oppose each and every instance of academic dishonesty.
+  \item I will let my conscience guide my decision to communicate directly with any person or persons I believe to have been dishonest in academic work.
+  \item I will let my conscience guide my decision on reporting breaches of academic integrity to the appropriate faculty or deans.
+\end{enumerate}
 
+  \subsection{Accommodations}
+  
+  Any student who needs an accommodation based on the impact of a disability should contact Heather Fowler, Director of the \href{https://www.bucknell.edu/about-bucknell/accessibility-resources/services-and-resources-for-students/academic-accommodations}{Office of Accessibility Resources} at hf007@bucknell.edu, 570-577-1188 or in room 212 Carnegie Building who will coordinate reasonable accommodations for students with documented disabilities. The college will make reasonable accommodations for persons with disabilities. 
 
 %-------------------------------------------------------
-\section{Copyleft, References, Citations  \& Rubrics}
 
-  \subsection{CopyLeft}
+\section{License}
   
-    Creative Commons plays an important role in openness and open science, open data, open source efforts. 
-    
-    This class is covered by a \href{"http://creativecommons.org/licenses/"}{Creative Commons} license. 
-    
-    The license we'll use for class materials, code and presentations is covered by  the "Attribution-ShareAlike 4.0 International" license, which is commonly called the CC BY-SA 4.0 license. \cite{_creative_2015}
+    Creative Commons plays an important role in open science, open data, open source efforts. This class is covered by a \href{"http://creativecommons.org/licenses/"}{Creative Commons} license. The license we'll use for class materials, code and presentations is covered by  the "Attribution-ShareAlike 4.0 International" license, which is commonly called the CC BY-SA 4.0 license. Some of the materials for this course, including portions of the Syllabus, are derived from work by Roger H. French \href{"https://twitter.com/frenchrh"}{@frenchrh} Kyocera Professor, Materials Science, Case Western Reserve University.
 
 %-----------------------------------------
 
-\bibliographystyle{ieeetr}
-\bibliography{dsci351-451}
 
 \end{document}
