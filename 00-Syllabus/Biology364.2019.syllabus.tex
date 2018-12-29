@@ -65,9 +65,6 @@
 
 \usepackage{enumitem}  %%%%allows you to begin enumerate at 0
 
-%%%Allows you to have \textsubscript as a command
-\usepackage{fixltx2e}   
-
 %%% ToC (table of contents) APPEARANCE
 \usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
 \usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
@@ -146,15 +143,15 @@ experience required.
 \section{Grading}
 
   \begin{align*}
-    Ten \, Homeworks, \, worth \, 10 \, points \, each = 100 pts.\\
+    Eight \, Homeworks, \, worth \, 12.5 \, points \, each = 100 pts.\\
     Four \, Data \, Projects, \, worth \, 25 \, points \, each = 100 pts.\\
     Takehome \, Midterm \, Exam = 100 pts.\\
-    Final \, Project = 100 pts.\\
+    Final \, Project = 200 pts.\\
     Takehome \, Final \, Exam = 100 pts.\\
-    {\bf Total = 500 pts.}
+    {\bf Total = 600 pts.}
   \end{align*}
 
-  The Data Projects and Final Project will be graded using labor-based contract grading as described by \href{http://www.translingualwriting.com/resources/Inoue\%20Contract.pdf}{Asao Inoue}. These assignments will utilize a goal-oriented grading system as you develop your skills as a data scientist.  When you or your group completes all of the goals associated with each project, you will earn 43/50 or 85/100 pts (85\%). Failure to do so will result in a lower grade.
+  The Data Projects and Final Project will be graded using labor-based contract grading as described by \href{http://www.translingualwriting.com/resources/Inoue\%20Contract.pdf}{Asao Inoue}. These assignments will utilize a goal-oriented grading system as you develop your skills as a data scientist.  When you or your group completes all of the goals associated with each project, you will earn 21/25 or 170/200 pts (85\%). Failure to do so will result in a lower grade.
 
 To earn more than 85\%, you must do the following:
 \begin{itemize}
@@ -165,7 +162,7 @@ To earn more than 85\%, you must do the following:
 
 \section{Textbooks and Readings}
 
-  Required Texts and their Abbreviation, which is used in the class:
+  Required Texts and their Abbreviations, which are used on the syllabus:
   \begin{itemize}
  
     \item A Primer in Biological Data Analysis and Visualization Using R, by Gregg Hartvigsen, ISBN: 9780231166997 (Hart)
@@ -180,101 +177,58 @@ To earn more than 85\%, you must do the following:
   
     \item Open Intro Statistics version 3 (OIS) is an open source text book on Inferential Statistics, published under a Creative Commons license, \href{https://drive.google.com/file/d/0B-DHaDEbiOGkc1RycUtIcUtIelE/view}{for free distribution as a pdf}. In addition a copy can be purchased from Amazon for \$9. 
   
-    \item Additional reading assignments will be distributed via the course git repository in the readings subdirectory. 
+    \item Additional reading assignments will be distributed via the course git repository in the Readings subdirectory. 
   \end{itemize}
 
 %-------------------------------------------------------
 \FloatBarrier
 \section{BIOL 364 Syllabus: Weekly Topics}
-\begin{table}[h] 
+\begin{table}[ht] 
 	\centering % used for centering table 
-	\begin{tabular}{| c | p{3.4cm} | p{3.4cm} | c | c |} % centered columns (5 columns) 
+	\begin{tabular}{| c | p{5cm} | p{3cm} | p{5.5cm} |} % centered columns (5 columns) 
 	\hline %inserts horizontal line
-	Day:Date & Foundation & Practicum  & Reading & Due  \\ % inserts table heading 
+	Week:Date & Topic & Reading & Due  \\ % inserts table heading 
 	\hline 
 	\hline % inserts double horizontal line 
 %	 w1\addtolength{}{•}
-  w1a:Tu:8/28/18 & ODS Tool Chain & R, Rstudio, Git & & \\ % inserting body of the table 
-	\hline %inserts single line 
-	w1b:Th:8/30/18 & Setup ODS Tool Chain & Bash, Git, Twitter & PRP4-33 & HW1 \\ 
-	\hline  
+  w1:15Jan2019 & Using R, Rstudio, Git & HART1,2,3, PRP4,5 & Making Graphs in R \\ % inserting body of the table 
 	\hline
-	w2a:Tu:9/4/18 & What is Data Science & OIS:Intro2R  & PRP35-64 & {\bf HW1 Due} \\ 
+	w2:22Jan2019 & Simple Data Exploration & HART4 PRP6,7,8,9,10 EDA4,5,6,7 & Data Exploration in R \\ 
 	\hline
-	w2b:Th:9/6/18 &  Data Analytic Style, Git & 451SempProj, Git & PRP65-93, OI1-1.9 & HW2 \\
+	w3:29Jan2019 & Data Visualization & HART5,11 EDA15,16 OIS4,5,6 & {\bf R Tutorial for 205 Project}\\ 
 	\hline 
-	\hline
-	w3a:Tu:9/11/18* & Struct. of Data Analysis & ISLR:Intro2R, Loops & PRP94-116, OIS3 & {\bf HW2 Due}\\ 
-	\hline
-	w3b:Th:9/13/18* & OIS3 Intro to Data & GapMinder, Dplyr, Magrittr &  &  \\
-	\hline
+	w4:5Feb2019 & Advanded Hypothesis Testing & HART6,7,8 OIS7,8 & Experimental Design  \\ 
 	\hline 
-	w4a:Tu:9/18/18 & OIS3, Intro2Data part 2, Data & EDA: PET Degr. & EDA1-31 & Proj1  \\ 
-	\hline
-	w4b:Th:9/20/18 & Hypothesis Testing & GGPlot2 Tutorial & EDA32-58 & HW3 \\
-	\hline
+	w5:12Feb2019 & Questionable Data Practices & Fraser.pdf \newline Frostmeier.pdf & Multiple Testing \\ 
 	\hline 
-	w5a:Tu:9/25/18 & Distributions & SemProj RepOut1  & R4DS1-3 &  {\bf HW3 Due} \\ 
-	\hline
-	w5b:Th:9/27/18 & Wickham DSCI in Tidyverse & SemProj RepOut1 & R4DS4-6  & {\bf SemProj1}, \\
-	\hline
+	w6:19Feb2019 & Questionable Data Practices  & Frostmeier.pdf & {\bf QRP Case Studies Project} \\ 
 	\hline 
-	w6a:Tu:10/2/18 & OIS Found. of Inference & Inference  & R4DS7-8 & {\bf Proj1 Due} \\ 
-	\hline
-	w6b:Th:10/4/18 &  & Midterm Review & R4DS9-16 Wrangle & \\
-	\hline
+	w7:26Feb2019 & Transcriptomics &  & QC \& Mapping Statistics\\ 
 	\hline 
-	w7a:Tu:10/9/18* & Summ. Stats \& Vis.  & Data Wrangling &  & \\ 
-	\hline
-	w7b:Th:10/11/18* & {\bf MIDTERM EXAM} &  &  & HW4 \\
-	\hline
+	w8:5Mar2019 & Transcriptomics  &  & {\bf Transcriptomics Pipeline Project}\\ 
 	\hline 
-	w8a:Tu:10/16/18 & Numerical Inference &  Tidy Check Explore  & OIS4 & {\bf HW4 Due}\\ 
+	12Mar2019 & {\bf SPRING BREAK} &  &  \\ 
 	\hline
-	w8b:Th:10/18/18 & Algorithms, Models & Pairwise Corr. Plots  & OIS5.1-4 & Proj 2, HW5 \\
+	w9:19Mar2019 & Interactive Data & EDA5 \newline minitufte.pdf & Data Archives \newline {\bf TAKEHOME MIDTERM} \\ 
 	\hline
+	w10:26Mar2019 & Final Project & &  {\bf Data Visualization Project} \\
+	\hline
+	w11:2Apr2019 & Final Project & EDA12,13,14 & Data Wrangling  \\
+	\hline
+	w12:9Apr2019 & Final Project &  & Preregistration  \\
+	\hline
+	w13:16Apr2019 & Final Project &  & {\bf Final Project Presentations} \\
 	\hline 
-	Tu:10/23 & {\bf CWRU FALL BREAK} &  & R4DS17-21 Program \\ 
-	\hline
-	w9b:Th:10/25/18 & Categorical Infer  & Predictive Analytics & OIS6.1,2 & \\ 
-	\hline 
-	\hline
-	w10a:Tu:10/30/18 & SemProj & SemProj & OIS7   &  {\bf SemProj2}  {\bf HW5 Due}  \\
-	\hline
-	w10b:Th:11/1/18 & Lin. Regr. & Lin. Regr. &  OIS8 &  {\bf Proj.2 due} \\	
-	\hline
-	\hline
-	w11a:Tu:11/6/18 & Inf. for Regression  & Curse of Dim. & OIS8 & Proj 3  \\
-	\hline 
-	w11b:Th:11/8/18 & Model Accuracy & Training Testing & ISLR3 & HW6  \\ 
-	\hline
-	\hline
-	w12a:Tu:11/13/18 & Multiple Regr. & Mul. Regr. \& Pred. & ISLR4 & {\bf HW6 due}  \\
-	\hline 
-	w12b:Th:11/15/18 & Classification &  & ISLR6  &   \\ 
-	\hline
-	\hline
-	w13a:Tu:11/20/18 & Classification & Clustering & ISLR5 & {\bf } {\bf Proj 3 due} \\
-	\hline 
-	Th:11/22/18 & {\bf THANKSGIVING} &  &   &  Proj 4 \\ 
-	\hline
-	\hline 
-	w14a:Tu:11/27/18 & Big Data & Hadoop & &  \\ 
-	\hline
-	w14b:Th:11/29/18 & InfoSec & VerisDB &  & {\bf SemProj3} \\
-	\hline
-	w15a:Tu:12/4/18 & SemProj ReportOut3  &  & {\bf } \\ 
-	\hline
-	w15b:Th:12/6/18 & SemProj ReportOut3 &  & & {\bf Proj4} \\
+	w14:23Apr2019 & Final Project & & {\bf Final Project Presentations}  \\ 
 	\hline
 	\hline
 	\hline
-		  & {\bf FINAL EXAM} & {\bf Monday12/17, 12:00-3:00pm}  & Olin 313 & {\bf SemProj4 due} \\
+	{\bf TBA}	  & {\bf TAKEHOME FINAL} &   &  \\
 	\hline
 	\hline
 \end{tabular}
  
-\caption{DSCI351-451 Weekly Syllabus. Peng R Programming (PRPx.y), Peng Exploratory Data Analysis (EDAx.y), R for Data Science (R4DSx.y), Open Intro Statistics (OISx.y) and Introduction to Statistical Learning with R (ISLRx.y) refers to chapters and sections assigned as reading. }
+\caption{BIOL356/664 Weekly Syllabus. Peng R Programming for Data Science (PRPx), Peng Exploratory Data Analysis (EDAx), Open Intro Statistics (OISx) and A Primer in Biological Data Analysis and Visualization Using R (HARTx) refers to chapters assigned as reading. }
 \label{table:Syllabus} % is used to refer this table in the text 
 \end{table} 
 
@@ -291,13 +245,12 @@ To earn more than 85\%, you must do the following:
   
   \subsection{Readings}
   
-    Readings must be done, BEFORE the class, where they are assigned. 
-    The reading assignment, is for the class with which it is listed. 
+    Readings must be done BEFORE the class where they are assigned. For dates with multiple reading assignments, browse each to determine the sections that are most useful to you. There will be overlap between the various textbooks and you should choose the book that is best for you and your individual background.
   
   \subsection{Homework Assignments}
   
     Homeworks are due before noon on Friday on the week they are assigned.
-    Homework assignments will be submitted on GitHub after week 1 (more instructions to follow).
+    Homework assignments will be submitted on GitHub (more instructions to follow).
     A 25\% deduction will be assessed for submissions not received by noon on Friday. Assignments will not be accepated after noon on Monday.
   
   \subsection{Collaboration and Citation}

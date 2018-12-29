@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  28 DEC 2018 11:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  29 DEC 2018 11:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -321,17 +321,7 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@inbox=\box34
 \enitdp@description=\count129
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/base/fixltx2e.sty
-Package: fixltx2e 2016/12/29 v2.1a fixes to LaTeX (obsolete)
-Applying: [2015/01/01] Old fixltx2e package on input line 46.
-
-
-Package fixltx2e Warning: fixltx2e is not required with releases after 2015
-(fixltx2e)                All fixes are now in the LaTeX kernel.
-(fixltx2e)                See the latexrelease package for details.
-
-Already applied: [0000/00/00] Old fixltx2e package on input line 53.
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
 Package tocbibind Info: The document has section divisions on input line 50.
 
@@ -490,25 +480,25 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip108
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 81.
+Package hyperref Info: Option `colorlinks' set `true' on input line 78.
 
 (./Biology364.2019.syllabus.aux)
 \openout1 = `Biology364.2019.syllabus.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -615,7 +605,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
-Package hyperref Info: Link coloring ON on input line 93.
+Package hyperref Info: Link coloring ON on input line 90.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -625,89 +615,63 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count147
 )
-LaTeX Info: Redefining \ref on input line 93.
-LaTeX Info: Redefining \pageref on input line 93.
-LaTeX Info: Redefining \nameref on input line 93.
+LaTeX Info: Redefining \ref on input line 90.
+LaTeX Info: Redefining \pageref on input line 90.
+LaTeX Info: Redefining \nameref on input line 90.
 
 (./Biology364.2019.syllabus.out) (./Biology364.2019.syllabus.out)
 \@outlinefile=\write3
 \openout3 = `Biology364.2019.syllabus.out'.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 109.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 106.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 109.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 106.
  [1
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 199--199
-[]|\OT1/cmr/m/n/10.95 Setup ODS Tool
+Underfull \hbox (badness 10000) in paragraph at lines 194--194
+[]|\OT1/cmr/m/n/10.95 HART1,2,3,
  []
 
 
-Underfull \hbox (badness 3098) in paragraph at lines 207--207
-[]|\OT1/cmr/m/n/10.95 Struct. of Data
+Underfull \hbox (badness 10000) in paragraph at lines 196--196
+[]|\OT1/cmr/m/n/10.95 HART4
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 207--207
-[]|\OT1/cmr/m/n/10.95 ISLR:Intro2R,
+Underfull \hbox (badness 10000) in paragraph at lines 196--196
+\OT1/cmr/m/n/10.95 PRP6,7,8,9,10
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--212
-[]|\OT1/cmr/m/n/10.95 OIS3, In-tro2Data
+Underfull \hbox (badness 10000) in paragraph at lines 198--198
+[]|\OT1/cmr/m/n/10.95 HART5,11
  []
 
 
-Underfull \hbox (badness 1342) in paragraph at lines 219--219
-[]|\OT1/cmr/m/n/10.95 Wickham DSCI in
+Underfull \hbox (badness 10000) in paragraph at lines 198--198
+\OT1/cmr/m/n/10.95 EDA15,16
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 229--229
-[]|\OT1/cmr/bx/n/10.95 MIDTERM
+Underfull \hbox (badness 10000) in paragraph at lines 200--200
+[]|\OT1/cmr/m/n/10.95 HART6,7,8
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--237
-[]|\OT1/cmr/bx/n/10.95 CWRU FALL
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
+[]|\OT1/cmr/bx/n/10.95 Transcriptomics Pipeline
  []
 
 
-Overfull \hbox (6.84418pt too wide) in paragraph at lines 259--259
-[]|\OT1/cmr/bx/n/10.95 THANKSGIVING| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 266--266
-[]|\OT1/cmr/m/n/10.95 SemProj Re-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 268--268
-[]|\OT1/cmr/m/n/10.95 SemProj Re-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 272--272
-[]|\OT1/cmr/bx/n/10.95 Monday12/17,
- []
-
-
-Overfull \hbox (51.20407pt too wide) in paragraph at lines 191--276
+Overfull \hbox (2.7735pt too wide) in paragraph at lines 188--230
  [][] 
  []
-
-
-LaTeX Warning: Float too large for page by 30.2345pt on input line 279.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -723,16 +687,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[4
-
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 337.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 290.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -740,21 +695,21 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 337.
+[4]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 290.
  (./Biology364.2019.syllabus.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 337.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 337.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 290.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 290.
 Package rerunfilecheck Info: File `Biology364.2019.syllabus.out' has not change
 d.
 (rerunfilecheck)             Checksum: B16005E7B736FB710A20F2A384620BD4;892.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 337.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 290.
  ) 
 Here is how much of TeX's memory you used:
- 10548 strings out of 492649
- 160135 string characters out of 6129622
- 282615 words of memory out of 5000000
- 14258 multiletter control sequences out of 15000+600000
+ 10541 strings out of 492649
+ 159951 string characters out of 6129622
+ 277528 words of memory out of 5000000
+ 14255 multiletter control sequences out of 15000+600000
  11879 words of font info for 42 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  44i,11n,43p,667b,350s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -766,10 +721,10 @@ r/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
 local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/l
 ocal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
 cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Biology364.2019.syllabus.pdf (5 pages, 124641 bytes).
+Output written on Biology364.2019.syllabus.pdf (4 pages, 122229 bytes).
 PDF statistics:
- 148 PDF objects out of 1000 (max. 8388607)
- 131 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
+ 144 PDF objects out of 1000 (max. 8388607)
+ 128 compressed objects within 2 object streams
+ 29 named destinations out of 1000 (max. 500000)
  121 words of extra memory for PDF output out of 10000 (max. 10000000)
 
