@@ -1,0 +1,193 @@
+---
+title: "Sleep Dataset"
+output: html_notebook
+---
+
+Adapted from:
+http://www.ucd.ie/ecomodel/Resources/Sheet3_visualisation_WebVersion.html
+Dr Jon Yearsley (School of Biology and Environmental Science, UCD)
+
+
+```{r Load packages, message=FALSE, warning=FALSE}
+install.packages("ggplot2", repos='http://cran.us.r-project.org')
+library(ggplot2)
+install.packages("cowplot", repos='http://cran.us.r-project.org')
+library(cowplot)
+install.packages("UsingR", repos='http://cran.us.r-project.org')
+library(UsingR)
+```
+
+This is an updated and expanded version of the mammals sleep dataset. Updated sleep times and weights were taken from V. M. Savage and G. B. West. A quantitative, theoretical framework for understanding mammalian sleep. Proceedings of the National Academy of Sciences, 104 (3):1051-1056, 2007.
+http://www.pnas.org/content/104/3/1051.abstract
+
+```{r Load and summarize dataset}
+data(msleep)
+summary(msleep)
+```
+
+The msleep dataset has 11 variables:
+name	= species common name
+genus	= genus name
+vore	= feeding type (carnivore/herbivore/omnivore/insectivore)
+order	= name of the order
+conservation	= the IUCN conservation status of the species (lc/nt/en/domesticated vu/cd)
+sleep_total	= total sleep time (hours)
+sleep_rem	= REM sleep time (hours)
+sleep_cycle	= length of sleep cycle (hours)
+awake	= time spent awake (hours)
+brainwt	= brain weight (kg)
+bodywt	= body weight (kg)
+
+```{r View}
+View(msleep)
+```
+
+Begin exploring the data by looking at how many species are included for each feeding type
+```{r Contingency table}
+table(msleep$vore)
+```
+
+This could also be viewed in a barplot. Note that this shows more information because it includes "NA" values.
+
+```{r Barplot}
+ggplot(msleep) +
+  aes(x = vore) +
+  geom_bar() +
+  theme_cowplot()
+```
+
+We can look at two different categorical variables at once
+
+```{r}
+table(msleep$order, msleep$vore)
+```
+
+Now lets look at some of the quantitative variables.
+A histogram can summarize the distribution of the variables.
+
+```{r}
+ggplot(msleep, aes(x=sleep_total)) + 
+  geom_histogram(color="black", fill="white", bins = 30)
+```
+
+Mmmmmm. 20 hours of sleep!
+
+An important factor to consider when exploring data is whether it is normally distributed (or matches some other expected distribution). This is most easily visualized using a quantile-quantile (Q-Q plot) to determine the difference between each data point and the normal distribution (the residuals).
+```{r}
+qqnorm(msleep$sleep_total, main='Normal Q-Q Plot for sleep_total')
+qqline(msleep$sleep_total)
+```
+
+The normal distribution (qnorm) isn't bad for this data. To see an example where the fit is not good, take a look at the distribution of residuals in REM sleep.
+
+```{r}
+qqnorm(msleep$sleep_rem, main='Normal Q-Q Plot for sleep_rem')
+qqline(msleep$sleep_rem)
+```
+
+To look more carefully at each of the quantitative variables, we can use the function 'simple.eda()' from the UsingR package.
+
+```{r}
+simple.eda(msleep$sleep_total)
+simple.eda(msleep$sleep_rem)
+simple.eda(msleep$sleep_cycle)
+simple.eda(msleep$awake)
+simple.eda(msleep$brainwt)
+simple.eda(msleep$bodywt)
+```
+
+After comparing those QQ plots it should be clear that some of the data is not Normally distributed.
+We can test that using the Shapiro-Wilk test 'shapiro.test()'. If the p-value is < 0.05 then we have evidence to reject the hypothesis of a normal distribution.
+
+```{r}
+shapiro.test(msleep$sleep_total)
+shapiro.test(msleep$sleep_rem)
+shapiro.test(msleep$sleep_cycle)
+shapiro.test(msleep$awake)
+shapiro.test(msleep$brainwt)
+shapiro.test(msleep$bodywt)
+```
+
+For most of the parameters, will either have to transform the data so that it meets the assumption of a normal distribution or we will have to use non-parametric statistical tests.
+
+Now let's see how the total sleep compares to REM sleep.
+
+```{r Total sleep vs REM sleep}
+ggplot(msleep) +
+  aes(x = sleep_total, y = sleep_rem) +
+  geom_point() +
+  theme_cowplot()
+```
+
+Note that some species do not have a value for sleep_rem so a warning is triggered. We can suppress that for future plots. We will also add better axis labels and legends.
+Now lets see how these values compare for the different feeding types.
+
+```{r Total sleep vs REM sleep pretty, warning=FALSE}
+ggplot(msleep) +
+  aes(x = sleep_total, y = sleep_rem) +
+  geom_point(aes(color = factor(vore))) +
+  theme_cowplot() +
+  theme(legend.position = c(0.05, 0.8)) +
+  labs(color="Feeding Style") + 
+  xlab("Total sleep (hr/day)") + 
+  ylab("REM sleep (hr/day)")
+```
+
+We can also bring in body weight by using a bubble plot. Because body weights cover such a broad range, we use the log10 function. We also set alpha = 0.2 for the points, so that the bubbles are somewhat transparent. 
+
+```{r Bubble plot, warning=FALSE}
+ggplot(msleep) +
+  aes(x = sleep_total, y = sleep_rem, size = log10(bodywt)) +
+  geom_point(aes(color = factor(vore), alpha=0.2)) +
+  theme_cowplot() +
+  labs(color="Feeding Style", size ="Log Body Wt") + 
+  guides(alpha=FALSE) +
+  xlab("Total sleep (hr/day)") + 
+  ylab("REM sleep (hr/day)")
+```
+
+We are now approaching the maximum density of information that we can provide in one plot. The shapes of the points could also be altered, but that would interfere with the perception of the sizes. Alpha can also be set to vary based on a variable, but that would be problematic for overlapping points.
+
+Now lets focus more on the body weight.
+
+```{r body weight vs Total sleep, warning=FALSE}
+ggplot(msleep) +
+  aes(x = bodywt, y = sleep_total) +
+  geom_point(aes(color = factor(vore))) +
+  theme_cowplot() +
+  labs(color="Feeding Style") +
+  xlab("Body weight (kg)") + 
+  ylab("Total sleep (hr/day)")
+```
+
+You can see why it is necessary to use a log10 scale for Body weight!
+
+```{r Log10 body weight vs Total sleep, warning=FALSE}
+ggplot(msleep) +
+  aes(x = log10(bodywt), y = sleep_total) +
+  geom_point(aes(color = factor(vore))) +
+  theme_cowplot() +
+  labs(color="Feeding Style") +
+  xlab("Log body weight (kg)") + 
+  ylab("Total sleep (hr/day)")
+```
+
+We can fit the data using a linear model - this will provide 95% confidence intervals for the fit as well.
+
+```{r Linear Model, warning=FALSE}
+ggplot(msleep) +
+  aes(x = log10(bodywt), y = sleep_total) +
+  geom_point(aes(color = factor(vore))) +
+  geom_smooth(method=lm , color="black", se=TRUE) +
+  theme_cowplot() +
+  labs(color="Feeding Style") +
+  xlab("Log body weight (kg)") + 
+  ylab("Total sleep (hr/day)")
+```
+
+And to see the linear regression results:
+
+```{r Statistics on linear regression}
+sleepfit = lm(sleep_total~log10(bodywt), data=msleep)
+summary(sleepfit)
+```
