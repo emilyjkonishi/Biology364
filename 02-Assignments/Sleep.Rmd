@@ -55,8 +55,15 @@ ggplot(msleep) +
   geom_bar() +
   theme_cowplot()
 ```
+We could also look at this in a pie chart. (By why would we?)
 
-We can look at two different categorical variables at once
+
+```{r}
+pie(table(msleep$vore))
+```
+
+
+We can look at two different categorical variables at once in a contingency table
 
 ```{r}
 table(msleep$order, msleep$vore)
