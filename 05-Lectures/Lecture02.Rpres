@@ -77,6 +77,6 @@ boxplot(serotoninLevel ~ treatmentTime, data = locustData, ylab = "Serotonin (pm
 ```
 
 
-Plot and Data Types
+Plot and Data Types from Whitlock & Schluter
 ========================================================
 ![from Whitlock & Schluter](KylaJacksonPlotTypes.png)

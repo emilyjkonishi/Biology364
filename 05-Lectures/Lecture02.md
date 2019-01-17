@@ -81,6 +81,6 @@ Default: range=1.5
 ![plot of chunk unnamed-chunk-6](Lecture02-figure/unnamed-chunk-6-1.png)
 
 
-Plot and Data Types
+Plot and Data Types from Whitlock & Schluter
 ========================================================
 ![from Whitlock & Schluter](KylaJacksonPlotTypes.png)
