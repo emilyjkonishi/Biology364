@@ -1,0 +1,119 @@
+---
+title: "Homework 02"
+output: github_document
+author: "Biol 364 Student"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## GitHub Documents
+
+This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
+
+## Including Code
+
+You can include R code in the document as follows:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## The NCHA-II Dataset
+Follow this link to see copies of the Web surveys completed by Bucknell students in 2014 and 2016.
+Note that there are some differences in the surveys in the two years.
+https://www.acha.org/NCHA/About_ACHA_NCHA/Survey/NCHA/About/Survey.aspx
+
+```{r Importing Data}
+library(haven)
+NCHA <- read_sav("NCHA-II_WEB_SPRING_2014_and_2016_for_Ken_Field_class_project.SAV")
+View(NCHA)
+```
+
+Each of the columns has a name that refers to the question number on the web-based form. It also has a label that gives a short version of the question.
+However, R doesn't know how to handle this data type very well, so you will often want to tell R to convert the column into a factor or a numeric type.
+We also want to convert the GPA question into a format that makes more sense. We will make a new column "GPA" that converts the survey results into a 4 point scale.
+
+63) What is your approximate cumulative grade average?
+ A
+ B
+ C
+ D/F
+ N/A
+
+```{r GPA}
+library(UsingR)
+summary(NCHA$NQ63)
+#simple.eda(NCHA$NQ63) ### This will give an error because of the data type
+simple.eda(as.numeric(NCHA$NQ63))
+NCHA$GPA <- 5 - as.numeric(NCHA$NQ63)
+```
+
+
+
+```{r Data Exploration}
+dim(NCHA)
+summary(NCHA)
+summary(NCHA$NQ43)
+simple.eda(as.numeric(NCHA$NQ43))
+```
+
+After exploring the dataset, formulate some tentative hypotheses that you wish to test.
+
+```{r Data Visualization}
+library(ggplot2)
+library(cowplot)
+ggplot(NCHA) +
+  aes(x = NQ43) +
+  geom_bar() +
+  theme_cowplot()
+
+mosaicplot(~ GPA + NQ43, data = NCHA, color = TRUE)
+
+ggplot(NCHA) +
+  aes(x = as.numeric(NQ43), y = GPA) +
+  geom_jitter(aes(color = factor(NQ51)), na.rm=TRUE) +
+  theme_cowplot() +
+  theme(legend.position = "right") +
+  labs(color="Class Year") + 
+  xlab("Problem with sleepiness (last 7 days)") + 
+  ylab("Approximate GPA")
+```
+
+43) People sometimes feel sleepy during the daytime. In the past 7 days, how much of a
+problem have you had with sleepiness (feeling sleepy, struggling to stay awake) during your
+daytime activities?
+ No problem at all
+ A little problem
+ More than a little problem
+ A big problem
+ A very big problem
+
+51) What is your year in school?
+ 1st year undergraduate
+ 2nd year undergraduate
+ 3rd year undergraduate
+ 4th year undergraduate
+ 5th year or more undergraduate
+ Graduate or professional
+ Not seeking a degree
+ Other
+
+```{r Statistical Tests}
+
+```
+
+Acknowledgements
+=========================
+
