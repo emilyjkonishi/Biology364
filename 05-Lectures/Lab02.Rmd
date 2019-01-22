@@ -1,0 +1,23 @@
+---
+title: "Lab 02 Biology 364/664 Bucknell"
+output: pdf_document
+author: "Prof. Ken Field"
+date: "22 Jan 2019"
+---
+
+# Github
+
+1. Log into github and accept any invitations that I have sent you to join groups, etc.
+2. Click on Repositories and then your name to view the main repo for this course. This is where you will find new homework assignments and upload completed assignments.
+3. Within this repo you will (possibly) find "Issues", which are notes from me, your classmates, or yourself about your repo. If you have any open issues you should click on them and resolve them. You can edit files directly in Github if you need to make a minor change.
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
