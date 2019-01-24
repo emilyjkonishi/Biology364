@@ -40,6 +40,12 @@ b) Provide a "Commit message" that summarizes what you are doing at the moment. 
 4. Give your issue a name and then add some comments below. This will be sent to the owner of the repo (Prof. Field) and any Github "collaborators". If you want to tag additional classmates, use @githubusername to tag them, or @Bucknell-Biol364/2019students to tag everyone. To tag me (to ask a question about the code or to turn in an assignment) use @KField-Bucknell. 
 5. Resolving Issues. When you have been tagged in an issue, or when one has been raised on your own repo, you will see it in the Issues menu within each repo or on the main Github Issues menu in the black bar. Issues are the main way that we will communicate about questions about code - stop e-mailing me Rmd files or screenshots! Issues can be commented on and then, if they are completely resolved, they should be **Closed**.
 
+## Document Types
+
+1. For most homework assignments, you will find a template .Rmd file in your repository by Tuesday of the week it is due. (Homeworks are due Friday at noon, unless changed.)
+2. Projects and other work in R should usually be analyzed using an Rmd or R Notebook file. When you make an Rmd file in R Studio, you should change the output type to `output: github_document`. This format will allow you to use the Knit function to generate a Github-friendly .md file. This file can be viewed directly in Github and is the easiest way for classmates (and me) to view the output.
+3. If your goal is to share your work outside this class or publicly, then you will want to use `output: html_document` in the header of the .Rmd file. This will generate an html file that, after it is downloaded from Github, can be viewed by any web browswer. There also might be occasions when you want to use `output: pdf_document` instead.
+
 # The Biology 364/664 Team
 ```{r}
 Biol364_664roster <- read.csv("../Biol364_664roster.csv", stringsAsFactors=FALSE)
