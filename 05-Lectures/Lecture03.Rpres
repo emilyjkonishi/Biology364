@@ -97,6 +97,6 @@ For nearly normally distributed data,
 
 It is possible for observations to fall 4, 5, or more standard deviations away from the mean, but these occurrences are very rare if the data are nearly normal.
 
-![65-95-99.7](65-95-99.7.png) 
+![65-95-99.7](./65-95-99.7.png) 
 
 
