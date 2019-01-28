@@ -1,0 +1,82 @@
+Lecture02 Biology 364/664 Bucknell
+========================================================
+author: Ken Field
+date: 1/17/2019
+autosize: true
+
+Rules of Graphing
+========================================================
+
+The Analysis of Biological Data
+Whitlock & Schluter
+
+- Show the data.
+- Make patterns in the data easy to see.
+- Represent magnitudes honestly.
+- Draw graphical elements clearly.
+
+Locust serotonin
+========================================================
+
+```{r}
+locustData <- read.csv(url("http://whitlockschluter.zoology.ubc.ca/wp-content/data/chapter02/chap02f1_2locustSerotonin.csv"))
+summary(locustData)
+dim(locustData)
+```
+
+Plain Stripchart
+========================================================
+
+```{r, echo=TRUE}
+stripchart(serotoninLevel ~ treatmentTime, data = locustData, method = "jitter", 
+	vertical = TRUE)
+```
+
+Stripchart & Boxplot
+========================================================
+
+```{r, echo=FALSE}
+par(bty = "l") # plot x and y axes only, not a complete box
+stripchart(serotoninLevel ~ treatmentTime, data = locustData, vertical = TRUE, 
+	method = "jitter", pch = 16, col = "firebrick", cex = 1.5, las = 1,
+	ylab = "Serotonin (pmoles)", xlab = "Treatment time (hours)",
+	ylim = c(0, max(locustData$serotoninLevel)))
+# The following command calculates the means in each treatment group (time)
+meanSerotonin = tapply(locustData$serotoninLevel, locustData$treatmentTime, mean)
+# "segments" draws draws lines to indicate the means
+segments(x0 = c(1,2,3) - 0.1, y0 = meanSerotonin, x1 = c(1,2,3) + 0.1, 
+	y1 = meanSerotonin, lwd = 2)
+```
+***
+```{r, echo=FALSE}
+boxplot(serotoninLevel ~ treatmentTime, data = locustData)
+```
+
+
+Label your axes!
+========================================================
+
+![from https://xkcd.com/833/ ](labelaxes.png)
+
+
+from https://xkcd.com/833/ 
+
+***
+```{r, echo=FALSE}
+boxplot(serotoninLevel ~ treatmentTime, data = locustData, ylab = "Serotonin (pmoles)", xlab = "Treatment time (hours)")
+```
+
+Boxplot Range
+========================================================
+This determines how far the plot whiskers extend out from the box. If range is positive, the whiskers extend to the most extreme data point which is no more than range times the interquartile range from the box. A value of zero causes the whiskers to extend to the data extremes.
+
+Default: range=1.5
+***
+```{r, echo=FALSE}
+boxplot(serotoninLevel ~ treatmentTime, data = locustData, ylab = "Serotonin (pmoles)", xlab = "Treatment time (hours)")
+```
+
+
+Plot and Data Types from Whitlock & Schluter
+========================================================
+![from Whitlock & Schluter](KylaJacksonPlotTypes.png)
