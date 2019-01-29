@@ -52,3 +52,9 @@ Biol364_664roster <- read.csv("../Biol364_664roster.csv", stringsAsFactors=FALSE
 print(Biol364_664roster)
 ```
 
+## Rmd code for loading a library
+```{r}
+if (!require("ggplot2")) install.packages("ggplot2"); library(ggplot2)
+```
+
+
