@@ -1,5 +1,5 @@
 ---
-title: "Lab 04B"
+title: "Homework 03"
 author: "Biology Student"
 date: "2/3/2019"
 output: github_document
@@ -19,22 +19,35 @@ We will load the entire tidyverse library, which includes *dplyr*, *ggplot2*, *r
 if (!require("tidyverse")) install.packages("tidyverse"); library(tidyverse)
 ```
 
-## Loading data
+# Exploratory Data Analysis Checklist
 
-For this exercise we will be using data from Prof. Reeder's fieldwork in Uganda. Epauletted fruit bats were collected at two different
-times of the year for this study and a variety of health metrics were measured.
+Follow Chapter 5 from Exploratory Data Analysis with R by Roger D. Peng
+Explore the Uganda Bat Dataset, formulating a question and exploring that question.
 
-Note that this data should not be shared outside this class without permission.
+## Formulate your question
 
-```{r}
-BatData <- read_csv("UgandaBatsFilteredMetrics.csv", 
-    col_types = cols(`Collection date` = col_date(format = "%m/%d/%y")))
-# The col_date format was used to make sure that the Collection date was interpretted properly.
-# See ?as.Date for more information and examples.
+## Read in your data
 
-# Below is a very handy way to eliminate those annoying spaces in the column names!
-names(BatData) <- make.names(names(BatData))
+## Check the packaging
 
-```
+## Run str()
 
+## Look at the top and the bottom of your data
 
+## Check your “n”s
+
+## Validate with at least one external data source
+
+## Try the easy solution first
+
+## Challenge your solution
+
+## Follow up
+
+# Analytic Graphics
+
+Follow Section 6.1 and 6.2 to visualize the comparisons that were essential to answering the question.
+
+## Show comparisons
+
+## Show causality, mechanism, explanation, systematic structure
