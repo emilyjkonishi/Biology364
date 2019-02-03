@@ -1,104 +1,104 @@
-Field number,Dissection date,Season,Sex,Class,elevation,HABITAT description,Total Length,Hind Foot,Ear,FA length,mass,A1C_1,ketone,Na,K,Cl,TCO2,BUN,Glu,Hct,pH,PCO2,HCO3,Beecf,AnGap,Hb
-DMR976,3/11/17,DRY,Female,FEMALE NONPREGNANT ADULT,1027,"mixed rural agricultural/grasslands area, multiple tukals",130,18,20,76.28,58,5.3,2.1,162,6.4,132,21,107,<20,63,7.157,50.6,17.9,-11,18,21.4
-DMR957,3/10/17,DRY,Female,FEMALE NONPREGNANT ADULT,971,"mixed rural agricultural/grasslands area, multiple tukals",133,19,20,72.18,58.54,4.8,1.3,154,7.4,133,18,57,89,51,7.216,41.5,16.8,-11,12,17.3
-DMR910,3/5/17,DRY,Female,FEMALE NONPREGNANT ADULT,1030,mixed rural agricultural/grasslands area,125,16,22,74.65,59.1,4.9,1.8,162,>9,>140,17,90,26,59,7.04,55.5,15,-16,NA,20.1
-DMR955,3/10/17,DRY,Female,FEMALE NONPREGNANT ADULT,971,"mixed rural agricultural/grasslands area, multiple tukals",133,18,20,75.66,62.08,4.8,1,154,5.9,130,21,65,30,50,7.191,49.8,19.1,-9,10,17
-DMR966,3/11/17,DRY,Female,FEMALE NONPREGNANT ADULT,1027,"mixed rural agricultural/grasslands area, multiple tukals",128,18,21,76.01,61.45,4.8,1.3,153,5.9,126,20,76,27,56,7.157,52,18.4,-10,14,19
-DMR959,3/10/17,DRY,Female,FEMALE NONPREGNANT ADULT,971,"mixed rural agricultural/grasslands area, multiple tukals",124,20,21,76.1,63.29,4.9,1.5,151,5.9,127,21,67,24,54,7.105,61.8,19.4,-10,10,18.4
-DMR923,3/7/17,DRY,Female,FEMALE PREGNANT ADULT,1027,"mixed rural agricultural/grasslands area, some tukals",134,17,19,71.86,68.2,4.6,1.6,155,6.9,132,17,61,39,5.8,7.58,43.4,15.4,-13,14,19.7
-DMR968,3/11/17,DRY,Female,FEMALE PREGNANT ADULT,1027,"mixed rural agricultural/grasslands area, multiple tukals",125,18,23,71.9,70.93,4.5,2.3,149,>9,124,18,59,26,53,7.103,51.9,16.2,-13,NA,18
-DMR927,3/7/17,DRY,Female,FEMALE PREGNANT ADULT,1027,"mixed rural agricultural/grasslands area, some tukals",NA,NA,NA,72.21,69.52,5.8,1.2,147,>9,135,18,63,123,51,6.967,70.2,16.1,-16,NA,17.3
-DMR926,3/7/17,DRY,Female,FEMALE PREGNANT ADULT,1027,"mixed rural agricultural/grasslands area, some tukals",136,20,19,72.68,71.71,5,1.6,159,>9,136,16,76,31,65,7.011,56.9,14.4,-17,NA,22.1
-DMR942,3/9/17,DRY,Female,FEMALE PREGNANT ADULT,1023,"mixed rural agricultural/grasslands area, multiple tukals",128,18,22,73.04,75,4.9,1.5,151,5.8,115,18,41,38,56,7.078,56.1,16.5,-13,25,19
-DMR954,3/10/17,DRY,Female,FEMALE PREGNANT ADULT,971,"mixed rural agricultural/grasslands area, multiple tukals",136,16,17.5,73.16,72.55,5.4,1.4,142,8,122,21,51,29,58,7.062,68.1,19.4,-11,9,19.7
-DMR956,3/10/17,DRY,Female,FEMALE PREGNANT ADULT,971,"mixed rural agricultural/grasslands area, multiple tukals",133,20,18.5,74.17,68.3,4.7,1.6,148,8.1,126,21,66,25,60,7.038,71.7,19.3,-11,11,20.4
-DMR965,3/11/17,DRY,Female,FEMALE PREGNANT ADULT,1027,"mixed rural agricultural/grasslands area, multiple tukals",140,20,21,77.29,76.96,5.3,1.4,141,8.2,119,20,61,50,56,7.086,61.2,18.4,-11,12,19
-DMR962,3/10/17,DRY,Female,FEMALE PREGNANT ADULT,971,"mixed rural agricultural/grasslands area, multiple tukals",133,19,21,77.89,83.36,5.1,1.2,151,8.4,125,23,64,55,56,7.085,73.6,20.8,-10,13,19
-DMR915,3/6/17,DRY,Female,FEMALE PREGNANT ADULT,971,"mixed rural agricultural/grasslands area, some tukals",NA,NA,NA,NA,75.31,5.1,1.7,160,8.3,132,18,59,<20,66,6.978,66.8,15.7,-16,21,22.4
-DMR973,3/11/17,DRY,Female,FEMALE SUBADULT,1027,"mixed rural agricultural/grasslands area, multiple tukals",114,18,21,65.76,38.72,4.4,1.7,173,>9,130,20,125,<20,60,7.113,5.9,17.9,-12,NA,20.4
-DMR929,3/7/17,DRY,Female,FEMALE SUBADULT,1027,"mixed rural agricultural/grasslands area, some tukals",110,18,15,68.15,45.07,4.5,1.3,165,5.6,139,21,68,42,54,7.146,55.3,19,-10,13,18.4
-DMR972,3/11/17,DRY,Female,FEMALE SUBADULT,1027,"mixed rural agricultural/grasslands area, multiple tukals",114,18,21,68.27,40.44,5.1,1.5,158,>9,139,20,81,<20,59,7.129,55.2,18.3,-11,NA,20.1
-DMR937,3/8/17,DRY,Female,FEMALE SUBADULT,1030,mixed rural agricultural/grasslands area,114,19,21,68.46,43.56,4.3,1.4,156,>9,>140,18,98,26,56,7.153,48.5,17,-12,NA,19
-DMR975,3/11/17,DRY,Female,FEMALE SUBADULT,1027,"mixed rural agricultural/grasslands area, multiple tukals",112,19,20,68.62,43.64,4.8,2.6,157,>9,139,17,92,24,54,7.121,48.7,15.9,-13,NA,18.4
-DMR922,3/7/17,DRY,Female,FEMALE SUBADULT,1027,"mixed rural agricultural/grasslands area, some tukals",114,18,19,69.36,42.93,5.2,1.1,162,7.6,139,21,79,<20,56,7.116,58.6,18.9,-11,12,19
-DMR916,3/6/17,DRY,Female,FEMALE SUBADULT,971,"mixed rural agricultural/grasslands area, some tukals",120,18,22,69.51,46.45,4.7,1.3,169,7.9,135,23,89,25,53,7.098,67.7,20.9,-9,13,18
-DMR970,3/11/17,DRY,Female,FEMALE SUBADULT,1027,"mixed rural agricultural/grasslands area, multiple tukals",115,19,21,70.88,47.45,4.8,1.4,155,7.6,128,22,86,25,59,7.025,75.2,19.6,-11,14,20.1
-DMR928,3/7/17,DRY,Female,FEMALE SUBADULT,1027,"mixed rural agricultural/grasslands area, some tukals",NA,NA,NA,70.96,49.39,4.7,1.1,163,>9,139,23,87,<20,5.6,7.122,65.5,21.4,-8,NA,19
-DMR953,3/9/17,DRY,Female,FEMALE SUBADULT,1023,"mixed rural agricultural/grasslands area, multiple tukals",121,18,22,72.25,48.7,4.7,2,154,6.2,126,22,89,62,50,7.13,60.5,20.1,-9,14,17
-DMR964,3/10/17,DRY,Female,FEMALE SUBADULT,971,"mixed rural agricultural/grasslands area, multiple tukals",127,18,19,74.15,55.79,5.1,1.6,164,7.5,138,19,116,25,61,7.03,63.3,16.7,-14,16,20.7
-DMR995,7/16/17,RAINY,Female,FEMALE PREGNANT ADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",127,20,22,73.28,66.73,4.5,1.3,140,6.7,118,17,99,55,50,7.204,41,16.2,-12,13,17
-DMR997,7/16/17,RAINY,Female,FEMALE PREGNANT ADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",134,18,21,78.53,67.77,4.6,1.2,138,7.1,NA,25,NA,NA,NA,7.149,66,23,-6,NA,NA
-DMR1026,7/19/17,RAINY,Female,FEMALE PREGNANT ADULT,1030,"Rural area, multiple tukals, agricultural plots, rolling hills",132,19,2,73.54,65,5.1,0.8,146,4.3,117,16,72,63,55,7.179,39.2,14.6,-14,18,18.7
-DMR999,7/16/17,RAINY,Female,FEMALE PREGNANT ADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",130,21,21,75.18,66.68,5.4,1.3,147,5.2,118,22,76,47,57,7.12,62.4,20.3,-9,14,19.4
-DMR1020,7/19/17,RAINY,Female,FEMALE PREGNANT ADULT,1030,"Rural area, multiple tukals, agricultural plots, rolling hills",130,18,19,75.2,66.18,4.8,1.4,142,4.6,110,NA,87,<20,51,NA,NA,NA,NA,NA,17.3
-DMR1023,7/19/17,RAINY,Female,FEMALE PREGNANT ADULT,1030,"Rural area, multiple tukals, agricultural plots, rolling hills",128,19,23,71.9,66.25,4.6,1.2,152,4,120,18,64,23,47,7.212,40.7,16.3,-12,19,16
-DMR1008,7/17/17,RAINY,Female,FEMALE PREGNANT ADULT,1053,"Rural area with multiple tukals, agricultural plots, rolling hills; nets set between mango trees and tukuls; teak",124,20,20,73.9,64.4,5.1,1.3,114,5.3,116,16,66,54,54,7.206,37.9,15,-13,18,18.4
-DMR1010,7/17/17,RAINY,Female,FEMALE PREGNANT ADULT,1053,"Rural area with multiple tukals, agricultural plots, rolling hills; nets set between mango trees and tukuls; teak",130,17,21,74.26,67.04,NA,0.7,143,3.5,118,16,70,55,52,7.136,44.4,15,-14,14,17.7
-DMR1011,7/17/17,RAINY,Female,FEMALE PREGNANT ADULT,1053,"Rural area with multiple tukals, agricultural plots, rolling hills; nets set between mango trees and tukuls; teak",123,18,20,71.13,56.79,5,1.1,148,4.8,112,18,48,54,51,7.15,47.3,16.5,-12,24,17.3
-DMR1016,7/18/17,RAINY,Female,FEMALE PREGNANT ADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",120,19,21,72.54,61.36,5,1,149,3.9,116,19,53,24,4.9,7.098,57.1,17.7,-12,19,16.7
-DMR1014,7/18/17,RAINY,Female,FEMALE PREGNANT ADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",125,20,19,76.38,65,4.9,1.7,152,5.6,121,17,63,38,59,7.056,56.2,15.8,-15,21,20.1
-DMR990,7/15/17,RAINY,Female,FEMALE PREGNANT ADULT,974,Epomophorus sighted in mohagany tree in rural trading center surrounded by agricultural plots,135,21,22,77.5,72.93,5.2,2.2,154,6.1,122,17,117,58,60,7.028,59.6,15.7,-15,22,20.4
-DMR978,7/14/17,RAINY,Female,FEMALE SUBADULT,1030,"Epomophorus sighted in teak trees next to house; rural, tukals, rolling hills",114,18,19,69.14,43.92,4.6,1,142,5.4,110,22,44,<20,52,7.125,61.1,20.1,-9,18,17.7
-DMR1030,7/20/17,RAINY,Female,FEMALE SUBADULT,1053,"Rural area; nets sighted amongst tukals and mango tree, agricultral fields",119,18,22,65,45.52,NA,1.4,145,4.5,113,20,65,71,44,7.22,46.6,19.1,-9,18,15
-DMR1015,7/18/17,RAINY,Female,FEMALE SUBADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",110,17,20,65.05,39.3,4.7,0.9,141,5.1,112,24,63,20,53,7.151,63.3,22.1,-7,12,18
-DMR1012,7/17/17,RAINY,Female,FEMALE SUBADULT,1053,"Rural area with multiple tukals, agricultural plots, rolling hills; nets set between mango trees and tukuls; teak",107,19,19,65.3,43.28,5,1.5,139,6.5,116,18,49,<20,45,7.04,60.3,16.3,-14,14,15.3
-DMR1031,7/20/17,RAINY,Female,FEMALE SUBADULT,1053,"Rural area; nets sighted amongst tukals and mango tree, agricultral fields",115,17,19.5,67,45.13,NA,0.9,143,7.2,114,25,49,46,43,7.137,66.6,22.5,-7,14,14.6
-DMR1032,7/20/17,RAINY,Female,FEMALE SUBADULT,1053,"Rural area; nets sighted amongst tukals and mango tree, agricultral fields",120,19,23,67,39.12,NA,0.7,142,4.4,109,23,61,<20,42,7.195,54.2,21,-7,17,14.3
-DMR1025,7/19/17,RAINY,Female,FEMALE SUBADULT,1030,"Rural area, multiple tukals, agricultural plots, rolling hills",116,20,20,68,45.56,5.3,0.8,145,5.6,113,25,55,40,43,7.196,59.9,23.2,-5,15,14.6
-DMR1018,7/18/17,RAINY,Female,FEMALE SUBADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",110,20,21,69.62,44.42,5.2,0.9,144,5.6,115,21,53,92,46,7.231,45.8,19.2,-8,16,15.6
-DMR1028,7/19/17,RAINY,Female,FEMALE SUBADULT,1030,"Rural area, multiple tukals, agricultural plots, rolling hills",110,18,17,69.85,44.78,4.9,1.1,153,4.7,121,20,94,26,52,7.128,54.4,18,-11,18,17.7
-DMR1017,7/18/17,RAINY,Female,FEMALE SUBADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",105,20,19,71.74,47.45,4.8,1.2,144,5.4,113,22,54,79,46,7.141,60.5,20.6,-8,16,15.6
-DMR931,3/8/17,DRY,Male,MALE SCROTAL ADULT,1030,mixed rural agricultural/grasslands area,150,17,21,74.45,73.64,5.1,1.4,163,6.1,135,19,77,<20,59,7.072,58.8,17.1,-13,7,20.1
-DMR940,3/8/17,DRY,Male,MALE SCROTAL ADULT,1030,mixed rural agricultural/grasslands area,140,18,21,74.52,75.87,4.8,0.2,163,0.6,>140,13,77,32,60,7.05,43.8,12.1,-18,NA,20.4
-DMR958,3/10/17,DRY,Male,MALE SCROTAL ADULT,971,"mixed rural agricultural/grasslands area, multiple tukals",145,19,20,74.92,74.88,5.6,1.5,159,7.8,138,20,79,<20,59,7.051,66.3,18.4,-12,10,20.1
-DMR921,3/6/17,DRY,Male,MALE SCROTAL ADULT,971,"mixed rural agricultural/grasslands area, some tukals",140,17,23,75.12,79.6,5.2,1.8,159,8.3,130,20,93,<20,57,7.116,55.9,18,-11,20,19.4
-DMR946,3/9/17,DRY,Male,MALE SCROTAL ADULT,1023,"mixed rural agricultural/grasslands area, multiple tukals",143,18,21,75.5,74.92,4.8,1.6,151,5.5,123,19,63,73,48,7.187,46.8,17.7,-11,16,16.3
-DMR936,3/8/17,DRY,Male,MALE SCROTAL ADULT,1030,mixed rural agricultural/grasslands area,136,19,22,75.9,69.66,5,0.4,166,>9,>140,19,74,<20,62,7.06,55.8,16.9,-13,NA,21.1
-DMR944,3/9/17,DRY,Male,MALE SCROTAL ADULT,1023,"mixed rural agricultural/grasslands area, multiple tukals",135,19,23,76.12,72.59,5.2,1.4,153,5.8,126,20,47,<20,51,7.082,60.5,18,-12,15,17.3
-DMR963,3/10/17,DRY,Male,MALE SCROTAL ADULT,971,"mixed rural agricultural/grasslands area, multiple tukals",144,22,24,77,74.02,4.9,1.6,163,7.2,134,19,82,25,59,7.065,61.5,17.6,-13,18,20.1
-DMR945,3/9/17,DRY,Male,MALE SCROTAL ADULT,1023,"mixed rural agricultural/grasslands area, multiple tukals",141,19,22,77.04,73.38,5.3,1.6,147,>9,124,18,85,31,59,7.039,59.3,16,-15,NA,20.1
-DMR960,3/10/17,DRY,Male,MALE SCROTAL ADULT,971,"mixed rural agricultural/grasslands area, multiple tukals",148,20,23,77.7,79.34,4.7,1.8,160,6.2,137,21,68,<20,53,7.041,70.8,19.2,-11,10,18
-DMR951,3/9/17,DRY,Male,MALE JUVENILE,1023,"mixed rural agricultural/grasslands area, multiple tukals",118,18,20,67.44,46.37,4.9,1.6,147,79,128,22,72,22,54,7.162,56.6,20.3,-8,NA,18.4
-DMR919,3/6/17,DRY,Male,MALE JUVENILE,971,"mixed rural agricultural/grasslands area, some tukals",118,17.5,21,68.23,50.26,4.3,1.8,164,6.9,>140,19,88,26,54,7.171,49.2,18,-11,NA,18.4
-DMR918,3/6/17,DRY,Male,MALE JUVENILE,971,"mixed rural agricultural/grasslands area, some tukals",122,18,20,68.35,49.59,4.5,1.7,166,7.4,NA,21,>140,22,56,7.084,63.3,18.9,-11,NA,19
-DMR952,3/9/17,DRY,Male,MALE JUVENILE,1023,"mixed rural agricultural/grasslands area, multiple tukals",115,20,20,68.91,51.63,4.7,1.9,149,6.3,119,24,87,59,49,7.207,56.5,22.4,-5,13,15.7
-DMR950,3/9/17,DRY,Male,MALE JUVENILE,1023,"mixed rural agricultural/grasslands area, multiple tukals",118,18,19,69.03,48.75,4.8,0.7,163,8.7,137,23,4,<20,56,7.093,67.4,20.6,-9,14,19
-DMR920,3/6/17,DRY,Male,MALE JUVENILE,971,"mixed rural agricultural/grasslands area, some tukals",114,17,21,69.98,48.18,4.8,1.4,166,6.7,137,23,114,<20,55,7.137,63.5,21.5,-8,14,18.7
-DMR934,3/8/17,DRY,Male,MALE JUVENILE,1030,mixed rural agricultural/grasslands area,124,16,20,70.62,49.18,4.7,1.5,163,8.6,139,19,77,<20,59,7.112,55.9,17.8,-12,16,20.1
-DMR961,3/10/17,DRY,Male,MALE JUVENILE,971,"mixed rural agricultural/grasslands area, multiple tukals",118,18,22,70.63,47.18,4.5,1.4,458,>9,135,25,96,28,59,7.115,70.2,22.6,-7,NA,20.1
-DMR941,3/9/17,DRY,Male,MALE JUVENILE,1023,"mixed rural agricultural/grasslands area, multiple tukals",123,19,20,70.98,52.51,4.5,1.2,152,5.6,122,25,70,43,51,7.099,75,23.2,-6,12,17.3
-DMR939,3/8/17,DRY,Male,MALE JUVENILE,1030,mixed rural agricultural/grasslands area,122,18,23,71.85,49.37,4.9,1.7,166,8.8,>140,22,82,33,57,7.153,57.8,20.2,-9,NA,19.4
-DMR932,3/8/17,DRY,Male,MALE SUBADULT,1030,mixed rural agricultural/grasslands area,130,19,22,73.6,62.56,5.3,1.4,161,6.2,136,20,53,71,51,7.142,53.6,18.3,-11,13,17.3
-DMR971,3/11/17,DRY,Male,MALE SUBADULT,1027,"mixed rural agricultural/grasslands area, multiple tukals",130,19,22,73.92,58.83,NA,1.4,153,>9,131,23,83,<20,53,7.108,67.2,21.5,-8,NA,18
-DMR974,3/11/17,DRY,Male,MALE SUBADULT,1027,"mixed rural agricultural/grasslands area, multiple tukals",134,19,21,74.59,67.89,NA,1.9,147,`7.7,121,24,43,66,51,7.17,60.1,21.9,-7,12,17.3
-DMR935,3/8/17,DRY,Male,MALE SUBADULT,1030,mixed rural agricultural/grasslands area,136,19,22,75.9,65.5,4.9,1.5,114,6,>140,38,73,43,43,7.431,54.6,36.3,-12,NA,14.6
-DMR949,3/9/17,DRY,Male,MALE SUBADULT,1023,"mixed rural agricultural/grasslands area, multiple tukals",124,20,22,76.3,76.99,5.1,1.3,152,6.6,128,21,81,31,52,7.101,62.8,19.6,-10,11,17.7
-DMR969,3/11/17,DRY,Male,MALE SUBADULT,1027,"mixed rural agricultural/grasslands area, multiple tukals",135,19,22,76.65,62.8,NA,1.4,162,5.7,136,22,71,26,57,7.102,63.3,19.8,-10,12,19.4
-DMR948,3/9/17,DRY,Male,MALE SUBADULT,1023,"mixed rural agricultural/grasslands area, multiple tukals",136,18,22,76.66,69.01,5,1.6,145,7,119,22,82,36,48,7.227,50.4,20.9,-7,11,16.3
-DMR930,3/8/17,DRY,Male,MALE SUBADULT,1030,mixed rural agricultural/grasslands area,135,22,24,76.95,68.34,5.2,0.8,159,6.3,132,23,64,<20,58,7.092,67.4,2.6,-9,12,19.7
-DMR938,3/8/17,DRY,Male,MALE SUBADULT,1030,mixed rural agricultural/grasslands area,127,18,21,77.08,50.4,5,1.8,163,6.6,140,21,65,27,53,7.158,54.6,19.4,-9,11,18
-DMR947,3/9/17,DRY,Male,MALE SUBADULT,1023,"mixed rural agricultural/grasslands area, multiple tukals",135,19,22,77.59,69.08,4.5,1.4,151,6.7,126,19,77,21,52,7.124,53.8,17.6,-12,14,17.7
-DMR1019,7/19/17,RAINY,Male,MALE SCROTAL ADULT,1030,"Rural area, multiple tukals, agricultural plots, rolling hills",142,20,23,74.66,73.16,5.7,1.2,156,4.8,116,22,66,22,55,7.178,54.3,20.2,-8,24,18.6
-DMR1029,7/20/17,RAINY,Male,MALE SCROTAL ADULT,1053,"Rural area; nets sighted amongst tukals and mango tree, agricultral fields",150.5,19,20.2,75,77.87,NA,0.9,139,6.2,110,26,33,<20,49,7.227,57.5,23.9,-4,11,16.7
-DMR1013,7/17/17,RAINY,Male,MALE SCROTAL ADULT,1053,"Rural area with multiple tukals, agricultural plots, rolling hills; nets set between mango trees and tukuls; teak",140,19,23,75.27,75.66,NA,1.6,151,4.3,122,18,67,58,56,7.126,50.1,16.5,-13,16,19
-DMR991,7/16/17,RAINY,Male,MALE SCROTAL ADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",141,18,22,75.91,75.85,5.7,1.4,149,4.3,119,16,78,48,52,7.065,52,14.9,-15,20,17.7
-DMR1022,7/19/17,RAINY,Male,MALE SCROTAL ADULT,1030,"Rural area, multiple tukals, agricultural plots, rolling hills",142,22,23,75.91,75.23,5.2,0.8,156,4.4,121,20,74,<20,56,7.141,53.9,18.4,-11,21,19
-DMR993,7/16/17,RAINY,Male,MALE SCROTAL ADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",146,19,22,76.33,78.69,5.7,1,148,5.2,115,19,90,79,49,7.135,50.9,17.1,-12,21,16.7
-DMR979,7/14/17,RAINY,Male,MALE SCROTAL ADULT,1030,"Epomophorus sighted in teak trees next to house; rural, tukals, rolling hills",142,21,21,76.5,76.24,4.8,1.3,143,8.8,117,19,76,103,56,7.056,60.8,17.1,-13,17,19
-DMR1021,7/19/17,RAINY,Male,MALE SCROTAL ADULT,1030,"Rural area, multiple tukals, agricultural plots, rolling hills",140,21,24,77.04,72.13,4.9,1.6,151,4.4,120,19,83,40,51,7.158,50.1,17.8,-11,18,17.3
-DMR1005,7/17/17,RAINY,Male,MALE JUVENILE,1053,"Rural area with multiple tukals, agricultural plots, rolling hills; nets set between mango trees and tukuls; teak",117,18,21,65.66,43.58,NA,0.9,147,7,125,20,58,<20,55,7.07,61.8,17.9,-12,11,18.7
-DMR1009,7/17/17,RAINY,Male,MALE JUVENILE,1053,"Rural area with multiple tukals, agricultural plots, rolling hills; nets set between mango trees and tukuls; teak",113,18,19,66.71,44.91,NA,1.2,145,5.6,112,23,64,22,46,7.148,62.1,21.5,-7,18,15.6
-DMR989,7/15/17,RAINY,Male,MALE JUVENILE,974,Epomophorus sighted in mohagany tree in rural trading center surrounded by agricultural plots,117,21,20,67.5,44,5.5,1.8,143,8.4,122,27,80,<20,47,7.19,64.9,24.8,-3,5,16
-DMR1024,7/19/17,RAINY,Male,MALE JUVENILE,1030,"Rural area, multiple tukals, agricultural plots, rolling hills",121,17,21,68,47.7,5.4,0.9,148,4.5,117,23,86,29,46,7.119,63.6,20.6,-9,14,15.6
-DMR982,7/14/17,RAINY,Male,MALE JUVENILE,1030,"Epomophorus sighted in teak trees next to house; rural, tukals, rolling hills",112,19,22,69.9,41.85,5.1,1.6,146,4.9,120,20,62,<20,48,7.118,56.4,18.3,-11,12,16.3
-DMR1004,7/17/17,RAINY,Male,MALE JUVENILE,1053,"Rural area with multiple tukals, agricultural plots, rolling hills; nets set between mango trees and tukuls; teak",109,21,20.5,67.44,40.85,NA,0.6,142,5.6,116,21,63,21,46,7.166,54.5,19.7,-9,12,15.6
-DMR1007,7/17/17,RAINY,Male,MALE JUVENILE,1053,"Rural area with multiple tukals, agricultural plots, rolling hills; nets set between mango trees and tukuls; teak",114,18.5,20,68.7,42.18,NA,0.8,145,5.2,110,27,51,26,54,7.156,71.6,25.2,-4,15,18.4
-DMR980,7/14/17,RAINY,Male,MALE JUVENILE,1030,"Epomophorus sighted in teak trees next to house; rural, tukals, rolling hills",122,18,21,70.5,53.71,5,1.4,138,7.6,114,19,68,29,52,7.068,58.4,16.9,-13,15,17.7
-DMR998,7/16/17,RAINY,Male,MALE SUBADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",128,18,22,71.2,62.7,4.9,1.2,145,4.8,116,19,56,51,53,7.188,46.4,17.6,-11,16,18
-DMR1006,7/17/17,RAINY,Male,MALE JUVENILE,1053,"Rural area with multiple tukals, agricultural plots, rolling hills; nets set between mango trees and tukuls; teak",118,18,21,71.24,52.09,NA,1,148,4.1,117,22,54,27,47,7.131,60.5,20.2,-9,15,16
-DMR981,7/14/17,RAINY,Male,MALE SUBADULT,1030,"Epomophorus sighted in teak trees next to house; rural, tukals, rolling hills",135,19,22,73,66.18,5.2,1.6,149,6.3,124,17,86,56,51,7.106,50.1,15.8,<14,16,17.3
-DMR992,7/16/17,RAINY,Male,MALE SUBADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",134,20,21,74.51,65.82,5.8,0.8,149,5.2,119,19,73,26,57,7.201,44.3,17.4,-11,18,19.4
-DMR994,7/16/17,RAINY,Male,MALE SUBADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",133,19,21,74.86,65.97,4.9,0.9,147,4.3,115,20,59,73,49,7.235,43.8,18.6,-9,18,16.7
-DMR1000,7/16/17,RAINY,Male,MALE SUBADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",135,18,22,76.68,70.9,5.1,1.1,140,5.8,115,20,70,70,54,7.121,56.3,18.3,-11,13,18.4
-DMR1001,7/16/17,RAINY,Male,MALE SUBADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",135,19,20,76.84,66.66,5.3,1.1,153,4.4,122,NA,93,48,56,NA,NA,NA,NA,NA,19
-DMR1002,7/16/17,RAINY,Male,MALE JUVENILE,957,"Rural area with multiple tukals, agricultural plots, rolling hills",116,19,22,68.63,48.14,4.8,1,142,6.1,118,23,52,22,45,7.185,55.9,21.1,-7,10,15.3
+Field number,Collection date,Season,Sex,Class,Elevation,Habitat description,Total Length,Hind Foot,Ear,FA length,Mass
+DMR976,3/11/17,DRY,Female,FEMALE NONPREGNANT ADULT,1027,"mixed rural agricultural/grasslands area, multiple tukals",130,18,20,76.28,58
+DMR957,3/10/17,DRY,Female,FEMALE NONPREGNANT ADULT,971,"mixed rural agricultural/grasslands area, multiple tukals",133,19,20,72.18,58.54
+DMR910,3/5/17,DRY,Female,FEMALE NONPREGNANT ADULT,1030,mixed rural agricultural/grasslands area,125,16,22,74.65,59.1
+DMR955,3/10/17,DRY,Female,FEMALE NONPREGNANT ADULT,971,"mixed rural agricultural/grasslands area, multiple tukals",133,18,20,75.66,62.08
+DMR966,3/11/17,DRY,Female,FEMALE NONPREGNANT ADULT,1027,"mixed rural agricultural/grasslands area, multiple tukals",128,18,21,76.01,61.45
+DMR959,3/10/17,DRY,Female,FEMALE NONPREGNANT ADULT,971,"mixed rural agricultural/grasslands area, multiple tukals",124,20,21,76.1,63.29
+DMR923,3/7/17,DRY,Female,FEMALE PREGNANT ADULT,1027,"mixed rural agricultural/grasslands area, some tukals",134,17,19,71.86,68.2
+DMR968,3/11/17,DRY,Female,FEMALE PREGNANT ADULT,1027,"mixed rural agricultural/grasslands area, multiple tukals",125,18,23,71.9,70.93
+DMR927,3/7/17,DRY,Female,FEMALE PREGNANT ADULT,1027,"mixed rural agricultural/grasslands area, some tukals",NA,NA,NA,72.21,69.52
+DMR926,3/7/17,DRY,Female,FEMALE PREGNANT ADULT,1027,"mixed rural agricultural/grasslands area, some tukals",136,20,19,72.68,71.71
+DMR942,3/9/17,DRY,Female,FEMALE PREGNANT ADULT,1023,"mixed rural agricultural/grasslands area, multiple tukals",128,18,22,73.04,75
+DMR954,3/10/17,DRY,Female,FEMALE PREGNANT ADULT,971,"mixed rural agricultural/grasslands area, multiple tukals",136,16,17.5,73.16,72.55
+DMR956,3/10/17,DRY,Female,FEMALE PREGNANT ADULT,971,"mixed rural agricultural/grasslands area, multiple tukals",133,20,18.5,74.17,68.3
+DMR965,3/11/17,DRY,Female,FEMALE PREGNANT ADULT,1027,"mixed rural agricultural/grasslands area, multiple tukals",140,20,21,77.29,76.96
+DMR962,3/10/17,DRY,Female,FEMALE PREGNANT ADULT,971,"mixed rural agricultural/grasslands area, multiple tukals",133,19,21,77.89,83.36
+DMR915,3/6/17,DRY,Female,FEMALE PREGNANT ADULT,971,"mixed rural agricultural/grasslands area, some tukals",NA,NA,NA,NA,75.31
+DMR973,3/11/17,DRY,Female,FEMALE SUBADULT,1027,"mixed rural agricultural/grasslands area, multiple tukals",114,18,21,65.76,38.72
+DMR929,3/7/17,DRY,Female,FEMALE SUBADULT,1027,"mixed rural agricultural/grasslands area, some tukals",110,18,15,68.15,45.07
+DMR972,3/11/17,DRY,Female,FEMALE SUBADULT,1027,"mixed rural agricultural/grasslands area, multiple tukals",114,18,21,68.27,40.44
+DMR937,3/8/17,DRY,Female,FEMALE SUBADULT,1030,mixed rural agricultural/grasslands area,114,19,21,68.46,43.56
+DMR975,3/11/17,DRY,Female,FEMALE SUBADULT,1027,"mixed rural agricultural/grasslands area, multiple tukals",112,19,20,68.62,43.64
+DMR922,3/7/17,DRY,Female,FEMALE SUBADULT,1027,"mixed rural agricultural/grasslands area, some tukals",114,18,19,69.36,42.93
+DMR916,3/6/17,DRY,Female,FEMALE SUBADULT,971,"mixed rural agricultural/grasslands area, some tukals",120,18,22,69.51,46.45
+DMR970,3/11/17,DRY,Female,FEMALE SUBADULT,1027,"mixed rural agricultural/grasslands area, multiple tukals",115,19,21,70.88,47.45
+DMR928,3/7/17,DRY,Female,FEMALE SUBADULT,1027,"mixed rural agricultural/grasslands area, some tukals",NA,NA,NA,70.96,49.39
+DMR953,3/9/17,DRY,Female,FEMALE SUBADULT,1023,"mixed rural agricultural/grasslands area, multiple tukals",121,18,22,72.25,48.7
+DMR964,3/10/17,DRY,Female,FEMALE SUBADULT,971,"mixed rural agricultural/grasslands area, multiple tukals",127,18,19,74.15,55.79
+DMR995,7/16/17,RAINY,Female,FEMALE PREGNANT ADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",127,20,22,73.28,66.73
+DMR997,7/16/17,RAINY,Female,FEMALE PREGNANT ADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",134,18,21,78.53,67.77
+DMR1026,7/19/17,RAINY,Female,FEMALE PREGNANT ADULT,1030,"Rural area, multiple tukals, agricultural plots, rolling hills",132,19,2,73.54,65
+DMR999,7/16/17,RAINY,Female,FEMALE PREGNANT ADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",130,21,21,75.18,66.68
+DMR1020,7/19/17,RAINY,Female,FEMALE PREGNANT ADULT,1030,"Rural area, multiple tukals, agricultural plots, rolling hills",130,18,19,75.2,66.18
+DMR1023,7/19/17,RAINY,Female,FEMALE PREGNANT ADULT,1030,"Rural area, multiple tukals, agricultural plots, rolling hills",128,19,23,71.9,66.25
+DMR1008,7/17/17,RAINY,Female,FEMALE PREGNANT ADULT,1053,"Rural area with multiple tukals, agricultural plots, rolling hills; nets set between mango trees and tukuls; teak",124,20,20,73.9,64.4
+DMR1010,7/17/17,RAINY,Female,FEMALE PREGNANT ADULT,1053,"Rural area with multiple tukals, agricultural plots, rolling hills; nets set between mango trees and tukuls; teak",130,17,21,74.26,67.04
+DMR1011,7/17/17,RAINY,Female,FEMALE PREGNANT ADULT,1053,"Rural area with multiple tukals, agricultural plots, rolling hills; nets set between mango trees and tukuls; teak",123,18,20,71.13,56.79
+DMR1016,7/18/17,RAINY,Female,FEMALE PREGNANT ADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",120,19,21,72.54,61.36
+DMR1014,7/18/17,RAINY,Female,FEMALE PREGNANT ADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",125,20,19,76.38,65
+DMR990,7/15/17,RAINY,Female,FEMALE PREGNANT ADULT,974,Epomophorus sighted in mohagany tree in rural trading center surrounded by agricultural plots,135,21,22,77.5,72.93
+DMR978,7/14/17,RAINY,Female,FEMALE SUBADULT,1030,"Epomophorus sighted in teak trees next to house; rural, tukals, rolling hills",114,18,19,69.14,43.92
+DMR1030,7/20/17,RAINY,Female,FEMALE SUBADULT,1053,"Rural area; nets sighted amongst tukals and mango tree, agricultral fields",119,18,22,65,45.52
+DMR1015,7/18/17,RAINY,Female,FEMALE SUBADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",110,17,20,65.05,39.3
+DMR1012,7/17/17,RAINY,Female,FEMALE SUBADULT,1053,"Rural area with multiple tukals, agricultural plots, rolling hills; nets set between mango trees and tukuls; teak",107,19,19,65.3,43.28
+DMR1031,7/20/17,RAINY,Female,FEMALE SUBADULT,1053,"Rural area; nets sighted amongst tukals and mango tree, agricultral fields",115,17,19.5,67,45.13
+DMR1032,7/20/17,RAINY,Female,FEMALE SUBADULT,1053,"Rural area; nets sighted amongst tukals and mango tree, agricultral fields",120,19,23,67,39.12
+DMR1025,7/19/17,RAINY,Female,FEMALE SUBADULT,1030,"Rural area, multiple tukals, agricultural plots, rolling hills",116,20,20,68,45.56
+DMR1018,7/18/17,RAINY,Female,FEMALE SUBADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",110,20,21,69.62,44.42
+DMR1028,7/19/17,RAINY,Female,FEMALE SUBADULT,1030,"Rural area, multiple tukals, agricultural plots, rolling hills",110,18,17,69.85,44.78
+DMR1017,7/18/17,RAINY,Female,FEMALE SUBADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",105,20,19,71.74,47.45
+DMR931,3/8/17,DRY,Male,MALE SCROTAL ADULT,1030,mixed rural agricultural/grasslands area,150,17,21,74.45,73.64
+DMR940,3/8/17,DRY,Male,MALE SCROTAL ADULT,1030,mixed rural agricultural/grasslands area,140,18,21,74.52,75.87
+DMR958,3/10/17,DRY,Male,MALE SCROTAL ADULT,971,"mixed rural agricultural/grasslands area, multiple tukals",145,19,20,74.92,74.88
+DMR921,3/6/17,DRY,Male,MALE SCROTAL ADULT,971,"mixed rural agricultural/grasslands area, some tukals",140,17,23,75.12,79.6
+DMR946,3/9/17,DRY,Male,MALE SCROTAL ADULT,1023,"mixed rural agricultural/grasslands area, multiple tukals",143,18,21,75.5,74.92
+DMR936,3/8/17,DRY,Male,MALE SCROTAL ADULT,1030,mixed rural agricultural/grasslands area,136,19,22,75.9,69.66
+DMR944,3/9/17,DRY,Male,MALE SCROTAL ADULT,1023,"mixed rural agricultural/grasslands area, multiple tukals",135,19,23,76.12,72.59
+DMR963,3/10/17,DRY,Male,MALE SCROTAL ADULT,971,"mixed rural agricultural/grasslands area, multiple tukals",144,22,24,77,74.02
+DMR945,3/9/17,DRY,Male,MALE SCROTAL ADULT,1023,"mixed rural agricultural/grasslands area, multiple tukals",141,19,22,77.04,73.38
+DMR960,3/10/17,DRY,Male,MALE SCROTAL ADULT,971,"mixed rural agricultural/grasslands area, multiple tukals",148,20,23,77.7,79.34
+DMR951,3/9/17,DRY,Male,MALE JUVENILE,1023,"mixed rural agricultural/grasslands area, multiple tukals",118,18,20,67.44,46.37
+DMR919,3/6/17,DRY,Male,MALE JUVENILE,971,"mixed rural agricultural/grasslands area, some tukals",118,17.5,21,68.23,50.26
+DMR918,3/6/17,DRY,Male,MALE JUVENILE,971,"mixed rural agricultural/grasslands area, some tukals",122,18,20,68.35,49.59
+DMR952,3/9/17,DRY,Male,MALE JUVENILE,1023,"mixed rural agricultural/grasslands area, multiple tukals",115,20,20,68.91,51.63
+DMR950,3/9/17,DRY,Male,MALE JUVENILE,1023,"mixed rural agricultural/grasslands area, multiple tukals",118,18,19,69.03,48.75
+DMR920,3/6/17,DRY,Male,MALE JUVENILE,971,"mixed rural agricultural/grasslands area, some tukals",114,17,21,69.98,48.18
+DMR934,3/8/17,DRY,Male,MALE JUVENILE,1030,mixed rural agricultural/grasslands area,124,16,20,70.62,49.18
+DMR961,3/10/17,DRY,Male,MALE JUVENILE,971,"mixed rural agricultural/grasslands area, multiple tukals",118,18,22,70.63,47.18
+DMR941,3/9/17,DRY,Male,MALE JUVENILE,1023,"mixed rural agricultural/grasslands area, multiple tukals",123,19,20,70.98,52.51
+DMR939,3/8/17,DRY,Male,MALE JUVENILE,1030,mixed rural agricultural/grasslands area,122,18,23,71.85,49.37
+DMR932,3/8/17,DRY,Male,MALE SUBADULT,1030,mixed rural agricultural/grasslands area,130,19,22,73.6,62.56
+DMR971,3/11/17,DRY,Male,MALE SUBADULT,1027,"mixed rural agricultural/grasslands area, multiple tukals",130,19,22,73.92,58.83
+DMR974,3/11/17,DRY,Male,MALE SUBADULT,1027,"mixed rural agricultural/grasslands area, multiple tukals",134,19,21,74.59,67.89
+DMR935,3/8/17,DRY,Male,MALE SUBADULT,1030,mixed rural agricultural/grasslands area,136,19,22,75.9,65.5
+DMR949,3/9/17,DRY,Male,MALE SUBADULT,1023,"mixed rural agricultural/grasslands area, multiple tukals",124,20,22,76.3,76.99
+DMR969,3/11/17,DRY,Male,MALE SUBADULT,1027,"mixed rural agricultural/grasslands area, multiple tukals",135,19,22,76.65,62.8
+DMR948,3/9/17,DRY,Male,MALE SUBADULT,1023,"mixed rural agricultural/grasslands area, multiple tukals",136,18,22,76.66,69.01
+DMR930,3/8/17,DRY,Male,MALE SUBADULT,1030,mixed rural agricultural/grasslands area,135,22,24,76.95,68.34
+DMR938,3/8/17,DRY,Male,MALE SUBADULT,1030,mixed rural agricultural/grasslands area,127,18,21,77.08,50.4
+DMR947,3/9/17,DRY,Male,MALE SUBADULT,1023,"mixed rural agricultural/grasslands area, multiple tukals",135,19,22,77.59,69.08
+DMR1019,7/19/17,RAINY,Male,MALE SCROTAL ADULT,1030,"Rural area, multiple tukals, agricultural plots, rolling hills",142,20,23,74.66,73.16
+DMR1029,7/20/17,RAINY,Male,MALE SCROTAL ADULT,1053,"Rural area; nets sighted amongst tukals and mango tree, agricultral fields",150.5,19,20.2,75,77.87
+DMR1013,7/17/17,RAINY,Male,MALE SCROTAL ADULT,1053,"Rural area with multiple tukals, agricultural plots, rolling hills; nets set between mango trees and tukuls; teak",140,19,23,75.27,75.66
+DMR991,7/16/17,RAINY,Male,MALE SCROTAL ADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",141,18,22,75.91,75.85
+DMR1022,7/19/17,RAINY,Male,MALE SCROTAL ADULT,1030,"Rural area, multiple tukals, agricultural plots, rolling hills",142,22,23,75.91,75.23
+DMR993,7/16/17,RAINY,Male,MALE SCROTAL ADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",146,19,22,76.33,78.69
+DMR979,7/14/17,RAINY,Male,MALE SCROTAL ADULT,1030,"Epomophorus sighted in teak trees next to house; rural, tukals, rolling hills",142,21,21,76.5,76.24
+DMR1021,7/19/17,RAINY,Male,MALE SCROTAL ADULT,1030,"Rural area, multiple tukals, agricultural plots, rolling hills",140,21,24,77.04,72.13
+DMR1005,7/17/17,RAINY,Male,MALE JUVENILE,1053,"Rural area with multiple tukals, agricultural plots, rolling hills; nets set between mango trees and tukuls; teak",117,18,21,65.66,43.58
+DMR1009,7/17/17,RAINY,Male,MALE JUVENILE,1053,"Rural area with multiple tukals, agricultural plots, rolling hills; nets set between mango trees and tukuls; teak",113,18,19,66.71,44.91
+DMR989,7/15/17,RAINY,Male,MALE JUVENILE,974,Epomophorus sighted in mohagany tree in rural trading center surrounded by agricultural plots,117,21,20,67.5,44
+DMR1024,7/19/17,RAINY,Male,MALE JUVENILE,1030,"Rural area, multiple tukals, agricultural plots, rolling hills",121,17,21,68,47.7
+DMR982,7/14/17,RAINY,Male,MALE JUVENILE,1030,"Epomophorus sighted in teak trees next to house; rural, tukals, rolling hills",112,19,22,69.9,41.85
+DMR1004,7/17/17,RAINY,Male,MALE JUVENILE,1053,"Rural area with multiple tukals, agricultural plots, rolling hills; nets set between mango trees and tukuls; teak",109,21,20.5,67.44,40.85
+DMR1007,7/17/17,RAINY,Male,MALE JUVENILE,1053,"Rural area with multiple tukals, agricultural plots, rolling hills; nets set between mango trees and tukuls; teak",114,18.5,20,68.7,42.18
+DMR980,7/14/17,RAINY,Male,MALE JUVENILE,1030,"Epomophorus sighted in teak trees next to house; rural, tukals, rolling hills",122,18,21,70.5,53.71
+DMR998,7/16/17,RAINY,Male,MALE SUBADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",128,18,22,71.2,62.7
+DMR1006,7/17/17,RAINY,Male,MALE JUVENILE,1053,"Rural area with multiple tukals, agricultural plots, rolling hills; nets set between mango trees and tukuls; teak",118,18,21,71.24,52.09
+DMR981,7/14/17,RAINY,Male,MALE SUBADULT,1030,"Epomophorus sighted in teak trees next to house; rural, tukals, rolling hills",135,19,22,73,66.18
+DMR992,7/16/17,RAINY,Male,MALE SUBADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",134,20,21,74.51,65.82
+DMR994,7/16/17,RAINY,Male,MALE SUBADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",133,19,21,74.86,65.97
+DMR1000,7/16/17,RAINY,Male,MALE SUBADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",135,18,22,76.68,70.9
+DMR1001,7/16/17,RAINY,Male,MALE SUBADULT,957,"Rural area with multiple tukals, agricultural plots, rolling hills",135,19,20,76.84,66.66
+DMR1002,7/16/17,RAINY,Male,MALE JUVENILE,957,"Rural area with multiple tukals, agricultural plots, rolling hills",116,19,22,68.63,48.14
