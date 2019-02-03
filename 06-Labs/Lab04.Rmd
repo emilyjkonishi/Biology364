@@ -1,5 +1,5 @@
 ---
-title: "Lab 04A"
+title: "Lab 04"
 author: "Biology Student"
 date: "2/2/2019"
 output: github_document
