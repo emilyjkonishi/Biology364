@@ -211,7 +211,7 @@ This way we don’t have to create a set of temporary variables along the way or
 Notice in the above code that I pass the BatData data frame to the first call to group_by(), but then afterwards I do not have to pass the first argument to summarize(). 
 Once you travel down the pipeline with %>%, the first argument is taken to be the output of the previous element in the pipeline.
 
-Use a pipeline to compare Mass and BCI of each of the Classes of bat in each Season. (Hint: consider using group_by twice)
+Use a pipeline to compare Mass and BCI of each of the Classes of bat in each Season. (Hint: group_by can accept more than one Name)
 
 ```{r}
 
