@@ -9,12 +9,9 @@ Dr Jon Yearsley (School of Biology and Environmental Science, UCD)
 
 
 ```{r Load packages, message=FALSE, warning=FALSE}
-install.packages("ggplot2", repos='http://cran.us.r-project.org')
-library(ggplot2)
-install.packages("cowplot", repos='http://cran.us.r-project.org')
-library(cowplot)
-install.packages("UsingR", repos='http://cran.us.r-project.org')
-library(UsingR)
+if (!require("ggplot2")) install.packages("ggplot2"); library(ggplot2)
+if (!require("cowplot")) install.packages("cowplot"); library(cowplot)
+if (!require("UsingR")) install.packages("UsingR"); library(UsingR)
 ```
 
 This is an updated and expanded version of the mammals sleep dataset. Updated sleep times and weights were taken from V. M. Savage and G. B. West. A quantitative, theoretical framework for understanding mammalian sleep. Proceedings of the National Academy of Sciences, 104 (3):1051-1056, 2007.
@@ -39,7 +36,7 @@ brainwt	= brain weight (kg)
 bodywt	= body weight (kg)
 
 ```{r View}
-View(msleep)
+print(msleep)
 ```
 
 Begin exploring the data by looking at how many species are included for each feeding type

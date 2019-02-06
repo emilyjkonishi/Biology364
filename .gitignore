@@ -3,3 +3,5 @@
 .RData
 .Ruserdata
 citiCompletionReport600042.pdf
+.DS_Store
+.Rproj
