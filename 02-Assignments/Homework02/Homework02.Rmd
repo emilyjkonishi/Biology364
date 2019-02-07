@@ -36,9 +36,9 @@ Note that there are some differences in the surveys in the two years.
 https://www.acha.org/NCHA/About_ACHA_NCHA/Survey/NCHA/About/Survey.aspx
 
 ```{r Importing Data}
-library(haven)
+if (!require("haven")) install.packages("haven"); library(haven)
 NCHA <- read_sav("NCHA-II_WEB_SPRING_2014_and_2016_for_Ken_Field_class_project.SAV")
-View(NCHA)
+print(NCHA)
 ```
 
 Each of the columns has a name that refers to the question number on the web-based form. It also has a label that gives a short version of the question.
@@ -53,14 +53,14 @@ We also want to convert the GPA question into a format that makes more sense. We
  N/A
 
 ```{r GPA}
-library(UsingR)
+if (!require("UsingR")) install.packages("UsingR"); library(UsingR)
 summary(NCHA$NQ63)
 #simple.eda(NCHA$NQ63) ### This will give an error because of the data type
 simple.eda(as.numeric(NCHA$NQ63))
 NCHA$GPA <- 5 - as.numeric(NCHA$NQ63)
 ```
 
-
+You can see a problem when using these categorical data types in simple.eda: the data get stacked up at each value on the boxplot and QQ plot. For this reason, it is best to simply use the histogram function for categorical data.
 
 ```{r Data Exploration}
 dim(NCHA)
@@ -72,14 +72,12 @@ simple.eda(as.numeric(NCHA$NQ43))
 After exploring the dataset, formulate some tentative hypotheses that you wish to test.
 
 ```{r Data Visualization}
-library(ggplot2)
-library(cowplot)
+if (!require("ggplot2")) install.packages("ggplot2"); library(ggplot2)
+if (!require("cowplot")) install.packages("cowplot"); library(cowplot)
 ggplot(NCHA) +
   aes(x = NQ43) +
   geom_bar() +
   theme_cowplot()
-
-mosaicplot(~ GPA + NQ43, data = NCHA, color = TRUE)
 
 ggplot(NCHA) +
   aes(x = as.numeric(NQ43), y = GPA) +
@@ -89,7 +87,11 @@ ggplot(NCHA) +
   labs(color="Class Year") + 
   xlab("Problem with sleepiness (last 7 days)") + 
   ylab("Approximate GPA")
+
+mosaicplot(~ GPA + NQ43, data = NCHA, color = TRUE)
 ```
+
+Again, you can see a problem with plotting categorical data in the second plot. Although using "jitter" we can allow the points to be visible, they are not accurately representing categorical variables.
 
 43) People sometimes feel sleepy during the daytime. In the past 7 days, how much of a
 problem have you had with sleepiness (feeling sleepy, struggling to stay awake) during your
