@@ -33,9 +33,10 @@ Heldstab SA, Isler K, van Schaik CP (2018) Data from: Hibernation constrains bra
 
 Download the xls data from that page or from the class github repository and make sure that it is in the same folder as this Rmd file.
 
+The first line of code in this code chunk checks to see if the "readxl" package is already installed, installs it if it isn't, and then loads the package.
+
 ```{r Import Data}
-#install.packages("readxl")
-library(readxl)
+if (!require("readxl")) install.packages("readxl"); library(readxl)
 Supplementary_material <- read_excel("Supplementary material.xlsx")
 ```
 
