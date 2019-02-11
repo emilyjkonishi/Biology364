@@ -112,7 +112,7 @@ shapiro.test(msleep$brainwt)
 shapiro.test(msleep$bodywt)
 ```
 
-For most of the parameters, will either have to transform the data so that it meets the assumption of a normal distribution or we will have to use non-parametric statistical tests.
+For most of the parameters, we will either have to transform the data so that it meets the assumption of a normal distribution or we will have to use non-parametric statistical tests.
 
 Now let's see how the total sleep compares to REM sleep.
 

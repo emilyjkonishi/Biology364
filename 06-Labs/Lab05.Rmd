@@ -126,83 +126,61 @@ The Bonferroni correction and Benjamini-Hochberg procedure assume that the indiv
 The goal of multiple comparisons corrections is to reduce the number of false positives, because false positives can be embarrassing, confusing, and cause you and other people to waste your time. An unfortunate byproduct of correcting for multiple comparisons is that you may increase the number of false negatives, where there really is an effect but you don't detect it as statistically significant. If false negatives are very costly, you may not want to correct for multiple comparisons at all. For example, let's say you've gone to a lot of trouble and expense to knock out your favorite gene, mannose-6-phosphate isomerase (Mpi), in a strain of mice that spontaneously develop lots of tumors. Hands trembling with excitement, you get the first Mpi-/- mice and start measuring things: blood pressure, growth rate, maze-learning speed, bone density, coat glossiness, everything you can think of to measure on a mouse. You measure 50 things on Mpi-/- mice and normal mice, run the approriate statistical tests, and the smallest P value is 0.013 for a difference in tumor size. If you use a Bonferroni correction, that P=0.013 won't be close to significant; it might not be significant with the Benjamini-Hochberg procedure, either. Should you conclude that there's no significant difference between the Mpi-/- and Mpi+/+ mice, write a boring little paper titled "Lack of anything interesting in Mpi-/- mice," and look for another project? No, your paper should be "Possible effect of Mpi on cancer." You should be suitably cautious, of course, and emphasize in the paper that there's a good chance that your result is a false positive; but the cost of a false positive—if further experiments show that Mpi really has no effect on tumors—is just a few more experiments. The cost of a false negative, on the other hand, could be that you've missed out on a hugely important discovery.
 
 
-## rename()
+# Generalized Linear Models
 
-Renaming a variable in a data frame in R is surprisingly hard to do! The rename() function is designed to make this process easier.
-The first column of our data frame is the Id number that was given to each bat in the field.
-The syntax inside the rename() function is to have the new name on the left-hand side of the = sign and the old name on the right-hand side.
-
-```{r}
-BatData <- rename(BatData, Id = Field.number)
-head(select(BatData, Id:Class))
-```
-
-That's nicer!
-
-## mutate()
-
-The mutate() function exists to compute transformations of variables in a data frame. 
-Often, you want to create new variables that are derived from existing variables and mutate() provides a clean interface for doing that.
-
-For example, we can use Forearm length and Mass to calculate a body condition index (BCI) that will help us measure if a bat has a lower than usual
-Mass for its size. 
+The msleep dataset has 11 variables:
+name	= species common name
+genus	= genus name
+vore	= feeding type (carnivore/herbivore/omnivore/insectivore)
+order	= name of the order
+conservation	= the IUCN conservation status of the species (lc/nt/en/domesticated vu/cd)
+sleep_total	= total sleep time (hours)
+sleep_rem	= REM sleep time (hours)
+sleep_cycle	= length of sleep cycle (hours)
+awake	= time spent awake (hours)
+brainwt	= brain weight (kg)
+bodywt	= body weight (kg)
 
 ```{r}
-BatData <- mutate(BatData, BCI = Mass / FA.length)
-summary(BatData$BCI)
+if (!require("ggplot2")) install.packages("ggplot2"); library(ggplot2)
+if (!require("cowplot")) install.packages("cowplot"); library(cowplot)
+data(msleep)
+str(msleep)
+model <- glm(formula= sleep_rem ~ brainwt, data=msleep)
+summary(model)
 ```
-
-Use the other two lengths that were measured (total body length and hind foot length) to calculate alternative BCIs. 
 
 ```{r}
-
+ggplot(msleep) +
+  aes(x = log10(bodywt), y = sleep_total) +
+  geom_point(aes(color = factor(vore))) +
+  geom_smooth(method=lm , color="black", se=TRUE) +
+  theme_cowplot() +
+  labs(color="Feeding Style") +
+  xlab("Log body weight (kg)") + 
+  ylab("Total sleep (hr/day)")
 ```
 
-There is also the related transmute() function, which does the same thing as mutate() but then drops all non-transformed variables.
+```{r Statistics on linear regression}
+sleepfit = lm(sleep_total ~ log10(bodywt), data=msleep)
+summary(sleepfit)
+```
 
-## group_by()
+```{r simple GLM}
+sleepglm = glm(sleep_total ~ log10(bodywt), data=msleep)
+summary(sleepglm)
+```
 
-The group_by() function is used to generate summary statistics from the data frame within strata defined by a variable.
-For this dataset, the column *class* can be used to segregate the bats by sex, age, and reproductive status.
-In conjunction with the group_by() function we often use the summarize() function.
+```{r full GLM}
+sleepfullglm = glm(sleep_total ~ log10(bodywt) + log10(brainwt) + vore + order + conservation, data=msleep)
+summary(sleepfullglm)
+```
 
 ```{r}
-BatClasses <- group_by(BatData, Class)
-summarize(BatClasses, Mass=mean(Mass, na.rm = TRUE), BCI=mean(BCI, na.rm = TRUE))
+if (!require("MASS")) install.packages("MASS"); library(MASS)
+dropterm()
 ```
 
-## Pipelines
-
-The output of one verb can be used by another verb in a **pipeline**. The pipeline is indicated by the pipe operator: `%>%`.
-Pipelines can be used even if only a single verb is needed. 
-For example, the code `filter(BatData, Mass < 55)` can be rewritten as: `BatData %>% filter(Mass < 55)` 
-
-The pipeline operater %>% is very handy for stringing together multiple dplyr functions in a sequence of operations. 
-Notice above that every time we wanted to apply more than one function, the sequence gets buried in a sequence of nested function calls that is difficult to read: 
-`third(second(first(x)))`
-This nesting is not a natural way to think about a sequence of operations. 
-The %>% operator allows you to string operations in a left-to-right fashion:
-`first(x) %>% second %>% third`
-or even:
-`x %>% first %>% second %>% third`
-
-The example from the previous code chunk can be expressed more clearly using a pipeline:
-
-```{r}
-BatData %>% 
-  group_by(Class) %>%
-  summarize(Mass=mean(Mass, na.rm = TRUE), BCI=mean(BCI, na.rm = TRUE))
-```
-
-This way we don’t have to create a set of temporary variables along the way or create a Massive nested sequence of function calls.
-Notice in the above code that I pass the BatData data frame to the first call to group_by(), but then afterwards I do not have to pass the first argument to summarize(). 
-Once you travel down the pipeline with %>%, the first argument is taken to be the output of the previous element in the pipeline.
-
-Use a pipeline to compare Mass and BCI of each of the Classes of bat in each Season. (Hint: group_by can accept more than one Name)
-
-```{r}
-
-```
 
 ## Summary
 
