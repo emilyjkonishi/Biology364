@@ -24,14 +24,16 @@ if (!require("tidyverse")) install.packages("tidyverse"); library(tidyverse)
 1. Statistical tests using pairwise comparisons
 2. Generalized linear models
 
-The following exercise is adapted from http://www.biostathandbook.com/multiplecomparisons.html
-McDonald, J.H. 2014. Handbook of Biological Statistics (3rd ed.). Sparky House Publishing, Baltimore, Maryland. 
-and the R code from http://rcompanion.org/rcompanion/f_01.html
+The following exercise is adapted from the outstanding book Handbook of Biological Statistics (3rd ed.), by McDonald, J.H. 2014. 
+http://www.biostathandbook.com/multiplecomparisons.html
+
+The R code is adapted from http://rcompanion.org/rcompanion/f_01.html
 
 ## Background
 
-García-Arenzana et al. (2014) tested associations of 25 dietary variables with mammographic density, an important risk factor for breast cancer, in Spanish women. 
-García-Arenzana, N., E.M. Navarrete-Muñoz, V. Lope, P. Moreo, S. Laso-Pablos, N. Ascunce, F. Casanova-Gómez, C. Sánchez-Contador, C. Santamariña, N. Aragonés, B.P. Gómez, J. Vioque, and M. Pollán. 2014. Calorie intake, olive oil consumption and mammographic density among Spanish women. International journal of cancer 134: 1916-1925.
+García-Arenzana et al. (2014) tested associations of 25 dietary variables with mammographic density, an important risk factor for breast cancer, in 3548 Spanish women. 
+
+García-Arenzana, N., E.M. Navarrete-Muñoz, V. Lope, P. Moreo, S. Laso-Pablos, N. Ascunce, F. Casanova-Gómez, C. Sánchez-Contador, C. Santamariña, N. Aragonés, B.P. Gómez, J. Vioque, and M. Pollán. 2014. Calorie intake, olive oil consumption and mammographic density among Spanish women. International journal of cancer 134: 1916-1925. https://onlinelibrary.wiley.com/doi/full/10.1002/ijc.28513
 
 ```{r}
 Data = read.table(textConnection("
@@ -80,7 +82,7 @@ However, because García-Arenzana et al. (2014) tested 25 dietary variables, you
 Applying the Bonferroni correction, you'd divide P=0.05 by the number of tests (25) to get the Bonferroni critical value, so a test would have to have P<0.002 to be significant. 
 Under that criterion, only the test for total calories is significant.
 
-To apply the Bonferroni correction to this table, you can use the function p.adjust().
+To apply the Bonferroni correction to this table, you can use the function p.adjust() and method = "bonferroni".
 Use dplyr to mutate the data frame, adding a column for Bonferroni-adjusted p values.
 Now which dietary variables are significant?
 
@@ -93,6 +95,12 @@ Now which dietary variables are significant?
 The Bonferroni correction is appropriate when a single false positive in a set of tests would be a problem. It is mainly useful when there are a fairly small number of multiple comparisons and you're looking for one or two that might be significant. However, if you have a large number of multiple comparisons and you're looking for many that might be significant, the Bonferroni correction may lead to a very high rate of false negatives. For example, let's say you're comparing the expression level of 20,000 genes between liver cancer tissue and normal liver tissue. Based on previous studies, you are hoping to find dozens or hundreds of genes with different expression levels. If you use the Bonferroni correction, a P value would have to be less than 0.05/20000=0.0000025 to be significant. Only genes with huge differences in expression will have a P value that low, and could miss out on a lot of important differences just because you wanted to be sure that your results did not include a single false positive.
 
 Another important issue with the Bonferroni correction is deciding what a "family" of statistical tests is. García-Arenzana et al. (2014) tested 25 dietary variables, so are these tests one "family," making the critical P value 0.05/25? But they also measured 13 non-dietary variables such as age, education, and socioeconomic status; should they be included in the family of tests, making the critical P value 0.05/38? And what if in 2015, García-Arenzana et al. write another paper in which they compare 30 dietary variables between breast cancer and non-breast cancer patients; should they include those in their family of tests, and go back and reanalyze the data in their 2014 paper using a critical P value of 0.05/55? There is no firm rule on this; you'll have to use your judgment, based on just how bad a false positive would be. Obviously, you should make this decision before you look at the results, otherwise it would be too easy to subconsciously rationalize a family size that gives you the results you want.
+
+Use p.adjust to test the effect of 55 comparisons by setting n=55. (Note you should never do this normally!)
+
+```{r}
+
+```
 
 ## False discovery rate: Benjamini–Hochberg procedure
 
@@ -113,13 +121,13 @@ How do the adjusted p-values for the BH procedure compare to the Bonferroni proc
 
 ```
 
-You should carefully choose your false discovery rate before collecting your data. Usually, when you're doing a large number of statistical tests, your experiment is just the first, exploratory step, and you're going to follow up with more experiments on the interesting individual results. If the cost of additional experiments is low and the cost of a false negative (missing a potentially important discovery) is high, you should probably use a fairly high false discovery rate, like 0.10 or 0.20, so that you don't miss anything important. Sometimes people use a false discovery rate of 0.05, probably because of confusion about the difference between false discovery rate and probability of a false positive when the null is true; a false discovery rate of 0.05 is probably too low for many experiments.
+You should carefully choose your false discovery rate BEFORE analyzing your data. Usually, when you're doing a large number of statistical tests, your experiment is just the first, exploratory step, and you're going to follow up with more experiments on the interesting individual results. If the cost of additional experiments is low and the cost of a false negative (missing a potentially important discovery) is high, you should probably use a fairly high false discovery rate, like 0.10 or 0.20, so that you don't miss anything important. Sometimes people use a false discovery rate of 0.05, probably because of confusion about the difference between false discovery rate and probability of a false positive when the null is true; a false discovery rate of 0.05 is probably too low for many experiments.
 
 The Benjamini-Hochberg procedure is less sensitive than the Bonferroni procedure to your decision about what is a "family" of tests. If you increase the number of tests, and the distribution of P values is the same in the newly added tests as in the original tests, the Benjamini-Hochberg procedure will yield the same proportion of significant results. For example, if García-Arenzana et al. (2014) had looked at 50 variables instead of 25 and the new 25 tests had the same set of P values as the original 25, they would have 10 significant results under Benjamini-Hochberg with a false discovery rate of 0.25. This doesn't mean you can completely ignore the question of what constitutes a family; if you mix two sets of tests, one with some low P values and a second set without low P values, you will reduce the number of significant results compared to just analyzing the first set by itself.
 
 ## Limitations of Benjamini-Hochberg
 
-The Bonferroni correction and Benjamini-Hochberg procedure assume that the individual tests are independent of each other, as when you are comparing sample A vs. sample B, C vs. D, E vs. F, etc. If you are comparing sample A vs. sample B, A vs. C, A vs. D, etc., the comparisons are not independent; if A is higher than B, there's a good chance that A will be higher than C as well. An example of an experimental design with multiple, non-independent comparisons is when you compare multiple variables between groups, and the variables are correlated with each other within groups. An example would be knocking out your favorite gene in mice and comparing everything you can think of on knockout vs. control mice: length, weight, strength, running speed, food consumption, feces production, etc. All of these variables are likely to be correlated within groups; mice that are longer will probably also weigh more, would be stronger, run faster, eat more food, and poop more. To analyze this kind of experiment, you can use a generalized linear model.
+The Bonferroni correction and Benjamini-Hochberg procedure assume that the individual tests are independent of each other, as when you are comparing sample A vs. sample B, C vs. D, E vs. F, etc. If you are comparing sample A vs. sample B, A vs. C, A vs. D, etc., the comparisons are not independent; if A is higher than B, there's a good chance that A will be higher than C as well. An example of an experimental design with multiple, non-independent comparisons is when you compare multiple variables between groups, and the variables are correlated with each other within groups. An example would be knocking out your favorite gene in mice and comparing everything you can think of on knockout vs. control mice: length, weight, strength, running speed, food consumption, feces production, etc. All of these variables are likely to be correlated within groups; mice that are longer will probably also weigh more, would be stronger, run faster, eat more food, and poop more. To analyze this kind of experiment, you can use a generalized linear model (see below).
 
 ## When not to correct for multiple comparisons
 
@@ -128,8 +136,9 @@ The goal of multiple comparisons corrections is to reduce the number of false po
 
 # Generalized Linear Models
 
-<<<<<<< HEAD
-The msleep dataset has 11 variables:
+We are next going to revisit the msleep dataset that we introduced in Lab 01. 
+
+The msleep dataset is part of the ggplot2 package. It has 11 variables:
 name	= species common name
 genus	= genus name
 vore	= feeding type (carnivore/herbivore/omnivore/insectivore)
@@ -147,9 +156,9 @@ if (!require("ggplot2")) install.packages("ggplot2"); library(ggplot2)
 if (!require("cowplot")) install.packages("cowplot"); library(cowplot)
 data(msleep)
 str(msleep)
-model <- glm(formula= sleep_rem ~ brainwt, data=msleep)
-summary(model)
 ```
+
+Below is one of the graphs from Lab 1, where we found that total sleep is correlated with log body weight.
 
 ```{r}
 ggplot(msleep) +
@@ -162,32 +171,136 @@ ggplot(msleep) +
   ylab("Total sleep (hr/day)")
 ```
 
+The linear model provided strong evidence of the significance of this association.
+
 ```{r Statistics on linear regression}
-sleepfit = lm(sleep_total ~ log10(bodywt), data=msleep)
+sleepfit = lm(sleep_total ~ log(bodywt), data=msleep)
 summary(sleepfit)
 ```
+
+
+Using a generalized linear model without an explicit "method" linking function is the same as using a linear model.
+The default method "glm.fit" uses iteratively reweighted least squares (IWLS).
 
 ```{r simple GLM}
 sleepglm = glm(sleep_total ~ log10(bodywt), data=msleep)
 summary(sleepglm)
 ```
 
+In this graph, we have used natural log transformations for both body weight and sleep cycle, to be consistent with the published analysis.
+We have also switched vore status for order (the reason for this will be clear later).
+
+```{r}
+ggplot(msleep) +
+  aes(x = log(bodywt), y = log(sleep_cycle)) +
+  geom_point(aes(color = factor(order))) +
+  geom_smooth(method=lm , color="black", se=TRUE) +
+  theme_cowplot() +
+  labs(color="Order") +
+  xlab("Natural Log body weight (kg)") + 
+  ylab("Natural Log sleep cycle (Sleep/Awake)")
+```
+
+Refer to the abstract of the original paper:
+https://www.pnas.org/content/104/3/1051.abstract
+
+The authors conclude that they "provide strong evidence that time scales for sleep are set by the brain's, not the whole-body, metabolic rate."
+
+Plot and compare the summary these two alternative models, using natural log transformations for both the brain/body weight and for sleep cycle.
+
+```{r}
+
+```
+
+How do we determine which model is preferred?
+Last week we discussed methods for model selection that focused on adjusted R squared or on p-values.
+A better alternative is to use either the Akaike information criterion or the Bayesian information criterion.
+https://en.wikipedia.org/wiki/Akaike_information_criterion
+https://en.wikipedia.org/wiki/Bayesian_information_criterion
+
+The two methods primarily differ in the penalty for adding additional factors to the model. 
+BIC provides a stronger penalty and will help favor simpler models.
+In this case, they would yield the same conclusion, as both models have the same number of parameters.
+Which model has the lower AIC?
+
+## Complex Generalized Linear Models
+
+Using the GLM we can also add categorical variable to see if they increase the power of the model to predict sleep cycle.
+
 ```{r full GLM}
-sleepfullglm = glm(sleep_total ~ log10(bodywt) + log10(brainwt) + vore + order + conservation, data=msleep)
+sleepfullglm = glm(log(sleep_cycle) ~ log10(bodywt) + log10(brainwt) + vore + order + conservation, data=msleep)
 summary(sleepfullglm)
 ```
 
+This full model has a lower AIC, but all of the parameters fail to reach our significance threshold!
+
+We obviously need to do drop some of the model parameters to improve the fit. 
+Looking at the p values, you could simply guess which to eliminate. 
+Alternatively, you could eliminate each one at a time to systematically test them. 
+
+
 ```{r}
 if (!require("MASS")) install.packages("MASS"); library(MASS)
-dropterm()
+dropterm(sleepfullglm)
 ```
-=======
 
->>>>>>> 83d6e82f2e63d3dac2061d94418d41c846d28c4b
+The full model has an AIC of 4.2732 (as seen in the previous code chunk and in the <none> row of the dropterm output).
+Dropping several of the terms decreases the AIC, which is what we want.
+You can see that the lowest AIC is found with dropping "conservation". 
+(This makes sense as there is really not a reasonable expectation that conservation status should influence sleep cycles.)
+Construct a new model without the conservation term and test it again for dropping a term.
 
+```{r}
+
+```
+
+Continue dropping terms until the dropping any of the terms no longer decreases the AIC.
+
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+What was the final model? 
+Does this support the conclusion in the abstract?
+
+## Interactions within models
+
+It is important to consider whether the different terms within a model *interact* with each other. 
+For example, the order chiroptera in our dataset might be special, compared to the other mammals. 
+Perhaps the sleep cycle of bats depends on their brain size in a different way than other mammals because they fly? 
+To test for such interactions in a model, you simply indicate interactions between terms by using * instead of + between the terms:
+
+instead of:
+
+log(sleep_cycle) ~ log10(brainwt) + order
+
+we use: 
+
+log(sleep_cycle) ~ log10(brainwt) * order
+
+or you can spell out each individual term and the interaction separately: 
+
+log(sleep_cycle) ~ log10(brainwt) + order + log10(brainwt):order
+
+Test a new version of your best model with an interaction between the terms and use dropterm to determine if it improves the model.
+
+```{r}
+
+```
+
+Note that dropterm does not try to individually drop the interacting terms - because the model would not make sense to keep the interaction but drop the main term. The model instead drops the interaction and tests that against the model without dropping the interaction.
+
+Did adding an interaction improve this model?
 
 ## Summary
 
-The dplyr package provides a concise set of operations for managing data frames. 
-With these functions we can do a number of complex operations in just a few lines of code. 
-In particular, we can often conduct the beginnings of an exploratory analysis with the powerful combination of group_by() and summarize().
+The example provided here used a linear linking function between each term and the variable of interest. 
+GLMs can use other functions:
+https://en.wikipedia.org/wiki/Generalized_linear_model#Link_function
+The selection of this function will depend on the whether the response variables have error distribution models other than a normal distribution.
+Other link functions are also necessary if the outcome variable is categorical or logical.
