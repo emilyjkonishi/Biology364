@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  29 DEC 2018 11:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  11 FEB 2019 08:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -649,6 +649,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 196--196
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 196--196
+\OT1/cmr/m/n/10.95 EDA4,5,6,7
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 198--198
 []|\OT1/cmr/m/n/10.95 HART5,11
  []
@@ -666,6 +671,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 200--200
 
 Underfull \hbox (badness 10000) in paragraph at lines 208--209
 []|\OT1/cmr/bx/n/10.95 Transcriptomics Pipeline
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--214
+[]|\OT1/cmr/m/n/10.95 reproducible-
  []
 
 
@@ -721,7 +731,7 @@ r/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
 local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/l
 ocal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
 cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Biology364.2019.syllabus.pdf (4 pages, 122229 bytes).
+Output written on Biology364.2019.syllabus.pdf (4 pages, 122041 bytes).
 PDF statistics:
  144 PDF objects out of 1000 (max. 8388607)
  128 compressed objects within 2 object streams
