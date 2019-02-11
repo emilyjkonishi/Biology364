@@ -128,6 +128,7 @@ The goal of multiple comparisons corrections is to reduce the number of false po
 
 # Generalized Linear Models
 
+<<<<<<< HEAD
 The msleep dataset has 11 variables:
 name	= species common name
 genus	= genus name
@@ -180,6 +181,9 @@ summary(sleepfullglm)
 if (!require("MASS")) install.packages("MASS"); library(MASS)
 dropterm()
 ```
+=======
+
+>>>>>>> 83d6e82f2e63d3dac2061d94418d41c846d28c4b
 
 
 ## Summary
