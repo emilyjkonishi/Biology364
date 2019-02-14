@@ -19,3 +19,6 @@ https://blog.datawrapper.de/colors/
 
 Open Science Framework: 
 https://osf.io/
+
+Preregistration at the Center for Open Science: 
+https://cos.io/prereg/
