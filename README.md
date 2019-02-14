@@ -2,6 +2,9 @@
 ## Biology 364/664 Spring 2019
 
 ### Helpful Links
+XKCD:
+https://xkcd.com/
+
 Setting up R Studio, Git, and Github:
 https://happygitwithr.com/index.html
 
@@ -14,3 +17,5 @@ https://stats.idre.ucla.edu/other/mult-pkg/whatstat/
 Choosing colors for data visualization:
 https://blog.datawrapper.de/colors/
 
+Replication failures in ecology and evolution: 
+https://www.the-scientist.com/features/replication-failures-highlight-biases-in-ecology-and-evolution-science-64475
