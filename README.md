@@ -17,5 +17,5 @@ https://stats.idre.ucla.edu/other/mult-pkg/whatstat/
 Choosing colors for data visualization:
 https://blog.datawrapper.de/colors/
 
-Replication failures in ecology and evolution: 
-https://www.the-scientist.com/features/replication-failures-highlight-biases-in-ecology-and-evolution-science-64475
+Open Science Framework: 
+https://osf.io/
