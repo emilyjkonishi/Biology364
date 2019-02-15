@@ -1,6 +1,6 @@
 Lab 05 Warmup
 ================
-Prof. Ken Field
+Prof. Ken Field, Bucknell University
 2/10/2019
 
 ## Loading Data
@@ -382,3 +382,22 @@ ggplot(filter(acne2, Color == "control" | Color == "green"), aes(x=Color, y=Scor
 ![](Lab05warmup_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 <https://xkcd.com/882/>
+
+## Behind the numbers
+
+Both acne datasets were generated using a random normal distribution.
+
+``` r
+acne <- data.frame(round(rnorm(200,10,5)))
+names(acne) = c("Score")
+acne$Group <- c(rep("control", each=100), rep("jellybeans", each=100))
+
+jellybeans = c("control","purple","brown","pink","blue","teal",
+               "salmon","red","turquoise","magenta","yellow",
+               "grey","tan","cyan","mauve","beige",
+               "green","lilac","black","peach","orange")
+
+acne2 <- data.frame(round(rnorm(210,10,5)))
+names(acne2) = c("Score")
+acne2$Color <- c(rep(jellybeans, each=10))
+```
