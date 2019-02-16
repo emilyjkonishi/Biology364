@@ -1,0 +1,62 @@
+---
+title: "Group Project 2"
+subtitle: "Biology 368/664 Bucknell University"
+output: html_notebook
+author: Prof. Ken Field
+date: 19 Feb 2019
+---
+
+## Objectives
+
+1. Critically read a scientific paper and assess the evidence provided
+2. Identify questionable research practices and describe appropriate methods to prevent them
+3. Complete a preregistration plan describing a confirmatory study following the principles of 
+
+## Groups
+
+We will work in pairs for this project, with each pair being different from the Project 1 groups.
+
+```{r Load Libraries, include=FALSE}
+if (!require("tidyverse")) install.packages("tidyverse"); library(tidyverse)
+```
+
+```{r echo=FALSE}
+Biol364_664roster <- read.csv("../../Biol364_664roster.csv", stringsAsFactors=FALSE)
+Project1 <- Biol364_664roster
+Project2 <- Biol364_664roster
+Project2$Group <- c("C",
+                              "A",
+                              "D",
+                              "B",
+                              "F",
+                              "C",
+                              "A",
+                              "D",
+                              "E",
+                              "B",
+                              "F",
+                              "E")
+Project2 %>%
+  arrange(Group) %>% 
+  tbl_df %>% 
+  print(n=12)
+```
+
+## Grading
+
+Each student will be expected to complete the following tasks to earn 85% of the points available for this assignment (21/25).
+
+- Identify and obtain suitable dataset
+- Create Github repository and use version control to collaborate on project
+- Spend 4-6 hours preparing, coding, and testing tutorial
+  + Data exploration
+  + Data visualization
+  + Hypothesis testing
+- Present tutorial in class
+- Provide public archive suitable for sharing to students/faculty
+
+Each group should use an *Acknowledgements* section to document the participation of each member and the collaboration within and between groups.
+
+Additional credit will be awarded for providing assistance to other groups and for the development of a tutorial that goes beyond the minimal expectations listed above.
+
+
