@@ -3,13 +3,13 @@
 
 ### Textbooks
 
-**OIS**: Open Intro Statistics 3rd Edition, https://leanpub.com/openintro-statistics
+**OIS**: Open Intro Statistics 3rd Edition, https://leanpub.com/openintro-statistics/read_full
 
 **R4DS**: R for Data Science, by Garrett Grolemund and Hadley Wickham, http://r4ds.had.co.nz/
 
-**PRP**: R Programming for Data Science, by Roger D. Peng, https://leanpub.com/rprogramming
+**PRP**: R Programming for Data Science, by Roger D. Peng, https://leanpub.com/rprogramming/read_full
 
-**EDA**: Exploratory Data Analysis, by Roger D. Peng, https://leanpub.com/exdata
+**EDA**: Exploratory Data Analysis, by Roger D. Peng, https://leanpub.com/exdata/read_full
 
 **Hart**: A Primer in Biological Data Analysis and Visualization Using R, by Gregg Hartvigsen, ISBN: 9780231166997
 
