@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  11 FEB 2019 08:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  17 FEB 2019 15:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -634,41 +634,6 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
  [1
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 194--194
-[]|\OT1/cmr/m/n/10.95 HART1,2,3,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 196--196
-[]|\OT1/cmr/m/n/10.95 HART4
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 196--196
-\OT1/cmr/m/n/10.95 PRP6,7,8,9,10
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 196--196
-\OT1/cmr/m/n/10.95 EDA4,5,6,7
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 198--198
-[]|\OT1/cmr/m/n/10.95 HART5,11
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 198--198
-\OT1/cmr/m/n/10.95 EDA15,16
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 200--200
-[]|\OT1/cmr/m/n/10.95 HART6,7,8
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 208--209
 []|\OT1/cmr/bx/n/10.95 Transcriptomics Pipeline
  []
@@ -679,7 +644,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 214--214
  []
 
 
-Overfull \hbox (2.7735pt too wide) in paragraph at lines 188--230
+Overfull \hbox (17.47923pt too wide) in paragraph at lines 188--230
  [][] 
  []
 
@@ -731,10 +696,10 @@ r/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
 local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/l
 ocal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
 cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Biology364.2019.syllabus.pdf (4 pages, 122041 bytes).
+Output written on Biology364.2019.syllabus.pdf (4 pages, 123550 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 128 compressed objects within 2 object streams
+ 145 PDF objects out of 1000 (max. 8388607)
+ 129 compressed objects within 2 object streams
  29 named destinations out of 1000 (max. 500000)
  121 words of extra memory for PDF output out of 10000 (max. 10000000)
 
