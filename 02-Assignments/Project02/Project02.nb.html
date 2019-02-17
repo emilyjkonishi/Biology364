@@ -1771,6 +1771,7 @@ $(document).ready(function () {
 <h2>Objectives</h2>
 <ol style="list-style-type: decimal">
 <li>Critically read a scientific paper and assess the evidence provided</li>
+<li>Assess a published paper for issues with reproducibility and transparency</li>
 <li>Identify questionable research practices and describe appropriate methods to prevent them</li>
 <li>Complete a preregistration plan describing a confirmatory study following the principles of</li>
 </ol>
@@ -1782,13 +1783,115 @@ $(document).ready(function () {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6NCwibnJvdyI6MTJ9LCJyZGYiOiJINHNJQUFBQUFBQUFBMjFVMjNMYU1CQVZOemRRYU5MSkQvZ0g0aEVrVGFadlNRaGxDa01mMG1rbnI4SldzTEF1akNTSDh0YVA3bk9vaEMwd3hwNlJ2WE4yeis2ZXRkZlBUeStEemtzSEFGQUhqVllOMUJ2R2JOYk5yUWFhb0cyZmZ3Qm9YRnJVbkF0enVybmpmQmpqRGVZYyt6TWhKUFp6dVAwZGNmKzNXR0NhQXgrblNCUHNQeEpLY1E3MU1tZ1VyWkdNVkE1Mmh6R0svSitwVWd4eEZ6aEpxZVZpR1NQdTJKOFBoY01wNFJSdlhLVkpxalRoL2xRb2w5U2JDQmtkMHMyUTFvWTFSdW1CMVJzeFFqZUd4SW1LaVd0bWhoZEd4elBSR3N1eThEQ3ZUMWxSK0JsQi9LMmd1MjFFNHFKcUwyRVk5Z2V1MmRESVZVZHEyOHZYK1pIU00xdUpoWW5yeWxzbVJ0cXR5N0JVaXJDVkVud0FYUUJiTXpqb08yWFlLak9jb2pLUGNRbmhiVW5UWlVnWnZMbTVuNmRoWW9UUkFFZXBjeEg1Qm1HLzBoVktCcS92S2wyWjJHcldYTUgrMTBxWG1RQWMzRmF6T0ROOVY3TlFBdStxbXpjemdsK3EyOGhtVmVuQ3l3VDJxMnRsNHp0MkhjK3k5bkJpUEo0WXd4UGo2Y1FZblJqZkRzYnhscmFsV0FjY01henNlN2ZyL05mY3R0dnR2MUpneXdWZDdGWTZBNXMvRE9pKzdqSFJjVG9QZmlrcytRRTJXNElJRFI2aVNPTDlkclhHVXFTcmNvV1FJdVVxT0xBVElZMkNWMmtUQXZCZW9ud1FLMDBFTjZTNi9kTjRsckJ6WjFjeFVVMldnUE9VMnphanF6Qk9lWEoxWGVMMmNydGJzSnRaK2NZMlQrVzVNZUF3Rm01Tk1GK1EvU0syS0pydkYvdVRtZlZ1aXNGS0VxNmRRb09xUUF1TlhGd25GTlFoTzgzZy9UOUR0RmI4YndVQUFBPT0ifQ== -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Github.Username"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Email.Address"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Group"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"Cheyenne Moore","2":"cheyennelmoore","3":"clm044@bucknell.edu","4":"A"},{"1":"Ian Vogel","2":"ianvogel","3":"irv001@bucknell.edu","4":"A"},{"1":"Katie Bille","2":"KateBille","3":"crm037@bucknell.edu","4":"B"},{"1":"Katie Edwards","2":"kme012","3":"kme012@bucknell.edu","4":"B"},{"1":"Chad Sussman","2":"chadsussman","3":"cbs019@bucknell.edu","4":"C"},{"1":"Julie Berhane","2":"jfberhane","3":"jfb026@bucknell.edu","4":"C"},{"1":"Cheyenne McKinley","2":"cheymcki","3":"cnm006@bucknell.edu","4":"D"},{"1":"Justin Koss","2":"jkoss6","3":"jak074@bucknell.edu","4":"D"},{"1":"Jordan","2":"jssimpson20","3":"jss052@bucknell.edu","4":"E"},{"1":"Matt McGauley","2":"mwm021","3":"mwm021@bucknell.edu","4":"E"},{"1":"Emily Konishi","2":"emilyjkonishi","3":"ejk016@bucknell.edu","4":"F"},{"1":"Megan Ritter","2":"mnr006","3":"mnr006@bucknell.edu","4":"F"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[12]},"pages":{}}}
-  </script>
+
+<!-- rnb-html-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImtuaXRfYXNpcyJdLCJzaXppbmdQb2xpY3kiOltdfX0= -->
+
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Github.Username</th>
+<th align="left">Email.Address</th>
+<th align="left">Group</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Cheyenne Moore</td>
+<td align="left">cheyennelmoore</td>
+<td align="left">clm044@bucknell.edu</td>
+<td align="left">A</td>
+</tr>
+<tr class="even">
+<td align="left">Ian Vogel</td>
+<td align="left">ianvogel</td>
+<td align="left">irv001@bucknell.edu</td>
+<td align="left">A</td>
+</tr>
+<tr class="odd">
+<td align="left">Katie Bille</td>
+<td align="left">KateBille</td>
+<td align="left">crm037@bucknell.edu</td>
+<td align="left">B</td>
+</tr>
+<tr class="even">
+<td align="left">Katie Edwards</td>
+<td align="left">kme012</td>
+<td align="left">kme012@bucknell.edu</td>
+<td align="left">B</td>
+</tr>
+<tr class="odd">
+<td align="left">Chad Sussman</td>
+<td align="left">chadsussman</td>
+<td align="left">cbs019@bucknell.edu</td>
+<td align="left">C</td>
+</tr>
+<tr class="even">
+<td align="left">Julie Berhane</td>
+<td align="left">jfberhane</td>
+<td align="left">jfb026@bucknell.edu</td>
+<td align="left">C</td>
+</tr>
+<tr class="odd">
+<td align="left">Cheyenne McKinley</td>
+<td align="left">cheymcki</td>
+<td align="left">cnm006@bucknell.edu</td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">Justin Koss</td>
+<td align="left">jkoss6</td>
+<td align="left">jak074@bucknell.edu</td>
+<td align="left">D</td>
+</tr>
+<tr class="odd">
+<td align="left">Jordan Simpson</td>
+<td align="left">jssimpson20</td>
+<td align="left">jss052@bucknell.edu</td>
+<td align="left">E</td>
+</tr>
+<tr class="even">
+<td align="left">Matt McGauley</td>
+<td align="left">mwm021</td>
+<td align="left">mwm021@bucknell.edu</td>
+<td align="left">E</td>
+</tr>
+<tr class="odd">
+<td align="left">Emily Konishi</td>
+<td align="left">emilyjkonishi</td>
+<td align="left">ejk016@bucknell.edu</td>
+<td align="left">F</td>
+</tr>
+<tr class="even">
+<td align="left">Megan Ritter</td>
+<td align="left">mnr006</td>
+<td align="left">mnr006@bucknell.edu</td>
+<td align="left">F</td>
+</tr>
+</tbody>
+</table>
+
+
+<!-- rnb-html-end -->
+
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 </div>
-<!-- rnb-frame-end -->
+<div id="choosing-papers" class="section level2">
+<h2>Choosing Papers</h2>
+<p>Each group will choose a paper in lab on Tuesday, Feb 19. You may want to browse the papers available and discuss them with you group partner prior to lab.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGlyKFwicGFwZXJzXCIsIHBhdHRlcm4gPSBcInBkZlwiLCBmdWxsLm5hbWVzID0gVFJVRSwgaWdub3JlLmNhc2UgPSBUUlVFKVxuYGBgIn0= -->
+<pre class="r"><code>dir(&quot;papers&quot;, pattern = &quot;pdf&quot;, full.names = TRUE, ignore.case = TRUE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwicGFwZXJzL0J1cmxleS0xOTgxLVNjaWVuY2UucGRmXCIgICAgICAgICAgICAgICAgICAgICBcInBhcGVycy9CdXJsZXktMTk4Ni1Fdm9sdXRpb24ucGRmXCIgICAgICAgICAgICAgICAgICBcblszXSBcInBhcGVycy9DYXJyb2xsLnBkZlwiICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJwYXBlcnMvRGllcmljay5wZGZcIiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG5bNV0gXCJwYXBlcnMvSW9hbm5pZGlzLnBkZlwiICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFwicGFwZXJzL0thbmVtb3RvX2V0X2FsLTIwMDAtQW5uYWxzX29mX05ldXJvbG9neS5wZGZcIlxuWzddIFwicGFwZXJzL01jTmF1Z2h0LnBkZlwiICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcInBhcGVycy9NZWxvdi5wZGZcIiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbls5XSBcInBhcGVycy9QZXRyYXNjaGVjay5wZGZcIiAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiJ9 -->
+<pre><code>[1] &quot;papers/Burley-1981-Science.pdf&quot;                     &quot;papers/Burley-1986-Evolution.pdf&quot;                  
+[3] &quot;papers/Carroll.pdf&quot;                                 &quot;papers/Dierick.pdf&quot;                                
+[5] &quot;papers/Ioannidis.pdf&quot;                               &quot;papers/Kanemoto_et_al-2000-Annals_of_Neurology.pdf&quot;
+[7] &quot;papers/McNaught.pdf&quot;                                &quot;papers/Melov.pdf&quot;                                  
+[9] &quot;papers/Petrascheck.pdf&quot;                            </code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -1796,23 +1899,38 @@ $(document).ready(function () {
 <h2>Grading</h2>
 <p>Each student will be expected to complete the following tasks to earn 85% of the points available for this assignment (21/25).</p>
 <ul>
-<li>Identify and obtain suitable dataset</li>
-<li>Create Github repository and use version control to collaborate on project</li>
-<li>Spend 4-6 hours preparing, coding, and testing tutorial
+<li>Read and discuss your paper with your group partner
 <ul>
-<li>Data exploration</li>
-<li>Data visualization</li>
-<li>Hypothesis testing</li>
+<li>Focus on the methods and results</li>
+<li>For each conclusion evaluate the strength of the supporting evidence</li>
 </ul></li>
-<li>Present tutorial in class</li>
-<li>Provide public archive suitable for sharing to students/faculty</li>
+<li>Complete the nr-reporting-summary.pdf checklist (open in Adobe Acrobat)
+<ul>
+<li>For any deficient items on the checklist, describe the information needed</li>
+<li>Refer to nr-reporting-life-sciences-research.pdf for guidelines</li>
+</ul></li>
+<li>Determine if you could repeat the analysis that is most essential to conclusions of the paper
+<ul>
+<li>If data or methods are not available, look for follow-up studies that provide the required details</li>
+<li>If follow-up studies are not available, describe the missing information needed to perform the analysis</li>
+</ul></li>
+<li>For each Questionable Research Practice discussed in Fraser <em>et al</em>:
+<ul>
+<li>Find evidence to exclude this QRP, or</li>
+<li>Describe steps that should have been taken to prevent this QRP (see Forstmeier <em>et al</em>)</li>
+</ul></li>
+<li>Design a follow-up study to replicate the most crucial experiment
+<ul>
+<li>Complete the PreregChallengeTemplate.Rmd form for this replication experiment</li>
+</ul></li>
+<li>Present summary of reproducibility assessment in class</li>
 </ul>
-<p>Each group should use an <em>Acknowledgements</em> section to document the participation of each member and the collaboration within and between groups.</p>
-<p>Additional credit will be awarded for providing assistance to other groups and for the development of a tutorial that goes beyond the minimal expectations listed above.</p>
+<p>Each group should use an <strong>Acknowledgements</strong> section to document the participation of each member and the collaboration within and between groups.</p>
+<p>Additional credit will be awarded for providing assistance to other groups and for completion of the analysis that supports the most essential conclusion.</p>
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiR3JvdXAgUHJvamVjdCAyIgpzdWJ0aXRsZTogIkJpb2xvZ3kgMzY4LzY2NCBCdWNrbmVsbCBVbml2ZXJzaXR5IgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKYXV0aG9yOiBQcm9mLiBLZW4gRmllbGQKZGF0ZTogMTkgRmViIDIwMTkKLS0tCgojIyBPYmplY3RpdmVzCgoxLiBDcml0aWNhbGx5IHJlYWQgYSBzY2llbnRpZmljIHBhcGVyIGFuZCBhc3Nlc3MgdGhlIGV2aWRlbmNlIHByb3ZpZGVkCjIuIElkZW50aWZ5IHF1ZXN0aW9uYWJsZSByZXNlYXJjaCBwcmFjdGljZXMgYW5kIGRlc2NyaWJlIGFwcHJvcHJpYXRlIG1ldGhvZHMgdG8gcHJldmVudCB0aGVtCjMuIENvbXBsZXRlIGEgcHJlcmVnaXN0cmF0aW9uIHBsYW4gZGVzY3JpYmluZyBhIGNvbmZpcm1hdG9yeSBzdHVkeSBmb2xsb3dpbmcgdGhlIHByaW5jaXBsZXMgb2YgCgojIyBHcm91cHMKCldlIHdpbGwgd29yayBpbiBwYWlycyBmb3IgdGhpcyBwcm9qZWN0LCB3aXRoIGVhY2ggcGFpciBiZWluZyBkaWZmZXJlbnQgZnJvbSB0aGUgUHJvamVjdCAxIGdyb3Vwcy4KCmBgYHtyIExvYWQgTGlicmFyaWVzLCBpbmNsdWRlPUZBTFNFfQppZiAoIXJlcXVpcmUoInRpZHl2ZXJzZSIpKSBpbnN0YWxsLnBhY2thZ2VzKCJ0aWR5dmVyc2UiKTsgbGlicmFyeSh0aWR5dmVyc2UpCmBgYAoKYGBge3IgZWNobz1GQUxTRX0KQmlvbDM2NF82NjRyb3N0ZXIgPC0gcmVhZC5jc3YoIi4uLy4uL0Jpb2wzNjRfNjY0cm9zdGVyLmNzdiIsIHN0cmluZ3NBc0ZhY3RvcnM9RkFMU0UpClByb2plY3QxIDwtIEJpb2wzNjRfNjY0cm9zdGVyClByb2plY3QyIDwtIEJpb2wzNjRfNjY0cm9zdGVyClByb2plY3QyJEdyb3VwIDwtIGMoIkMiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiQSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJEIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIkIiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiRiIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJDIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIkEiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiRCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJFIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIkIiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiRiIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJFIikKUHJvamVjdDIgJT4lCiAgYXJyYW5nZShHcm91cCkgJT4lIAogIHRibF9kZiAlPiUgCiAgcHJpbnQobj0xMikKYGBgCgojIyBHcmFkaW5nCgpFYWNoIHN0dWRlbnQgd2lsbCBiZSBleHBlY3RlZCB0byBjb21wbGV0ZSB0aGUgZm9sbG93aW5nIHRhc2tzIHRvIGVhcm4gODUlIG9mIHRoZSBwb2ludHMgYXZhaWxhYmxlIGZvciB0aGlzIGFzc2lnbm1lbnQgKDIxLzI1KS4KCi0gSWRlbnRpZnkgYW5kIG9idGFpbiBzdWl0YWJsZSBkYXRhc2V0Ci0gQ3JlYXRlIEdpdGh1YiByZXBvc2l0b3J5IGFuZCB1c2UgdmVyc2lvbiBjb250cm9sIHRvIGNvbGxhYm9yYXRlIG9uIHByb2plY3QKLSBTcGVuZCA0LTYgaG91cnMgcHJlcGFyaW5nLCBjb2RpbmcsIGFuZCB0ZXN0aW5nIHR1dG9yaWFsCiAgKyBEYXRhIGV4cGxvcmF0aW9uCiAgKyBEYXRhIHZpc3VhbGl6YXRpb24KICArIEh5cG90aGVzaXMgdGVzdGluZwotIFByZXNlbnQgdHV0b3JpYWwgaW4gY2xhc3MKLSBQcm92aWRlIHB1YmxpYyBhcmNoaXZlIHN1aXRhYmxlIGZvciBzaGFyaW5nIHRvIHN0dWRlbnRzL2ZhY3VsdHkKCkVhY2ggZ3JvdXAgc2hvdWxkIHVzZSBhbiAqQWNrbm93bGVkZ2VtZW50cyogc2VjdGlvbiB0byBkb2N1bWVudCB0aGUgcGFydGljaXBhdGlvbiBvZiBlYWNoIG1lbWJlciBhbmQgdGhlIGNvbGxhYm9yYXRpb24gd2l0aGluIGFuZCBiZXR3ZWVuIGdyb3Vwcy4KCkFkZGl0aW9uYWwgY3JlZGl0IHdpbGwgYmUgYXdhcmRlZCBmb3IgcHJvdmlkaW5nIGFzc2lzdGFuY2UgdG8gb3RoZXIgZ3JvdXBzIGFuZCBmb3IgdGhlIGRldmVsb3BtZW50IG9mIGEgdHV0b3JpYWwgdGhhdCBnb2VzIGJleW9uZCB0aGUgbWluaW1hbCBleHBlY3RhdGlvbnMgbGlzdGVkIGFib3ZlLgoKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiR3JvdXAgUHJvamVjdCAyIgpzdWJ0aXRsZTogIkJpb2xvZ3kgMzY4LzY2NCBCdWNrbmVsbCBVbml2ZXJzaXR5IgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKYXV0aG9yOiBQcm9mLiBLZW4gRmllbGQKZGF0ZTogMTkgRmViIDIwMTkKLS0tCgojIyBPYmplY3RpdmVzCgoxLiBDcml0aWNhbGx5IHJlYWQgYSBzY2llbnRpZmljIHBhcGVyIGFuZCBhc3Nlc3MgdGhlIGV2aWRlbmNlIHByb3ZpZGVkCjIuIEFzc2VzcyBhIHB1Ymxpc2hlZCBwYXBlciBmb3IgaXNzdWVzIHdpdGggcmVwcm9kdWNpYmlsaXR5IGFuZCB0cmFuc3BhcmVuY3kKMy4gSWRlbnRpZnkgcXVlc3Rpb25hYmxlIHJlc2VhcmNoIHByYWN0aWNlcyBhbmQgZGVzY3JpYmUgYXBwcm9wcmlhdGUgbWV0aG9kcyB0byBwcmV2ZW50IHRoZW0KNC4gQ29tcGxldGUgYSBwcmVyZWdpc3RyYXRpb24gcGxhbiBkZXNjcmliaW5nIGEgY29uZmlybWF0b3J5IHN0dWR5IGZvbGxvd2luZyB0aGUgcHJpbmNpcGxlcyBvZiAKCiMjIEdyb3VwcwoKV2Ugd2lsbCB3b3JrIGluIHBhaXJzIGZvciB0aGlzIHByb2plY3QsIHdpdGggZWFjaCBwYWlyIGJlaW5nIGRpZmZlcmVudCBmcm9tIHRoZSBQcm9qZWN0IDEgZ3JvdXBzLgoKYGBge3IgTG9hZCBMaWJyYXJpZXMsIGluY2x1ZGU9RkFMU0V9CmlmICghcmVxdWlyZSgidGlkeXZlcnNlIikpIGluc3RhbGwucGFja2FnZXMoInRpZHl2ZXJzZSIpOyBsaWJyYXJ5KHRpZHl2ZXJzZSkKaWYgKCFyZXF1aXJlKCJrbml0ciIpKSBpbnN0YWxsLnBhY2thZ2VzKCJrbml0ciIpOyBsaWJyYXJ5KGtuaXRyKQpgYGAKCmBgYHtyIGVjaG89RkFMU0UsIHJlc3VsdHM9J2FzaXMnfQpQcm9qZWN0MiA8LSByZWFkLmNzdigiLi4vLi4vQmlvbDM2NF82NjRyb3N0ZXIuY3N2Iiwgc3RyaW5nc0FzRmFjdG9ycz1GQUxTRSkKUHJvamVjdDIkR3JvdXAgPC0gYygiQyIsCiAgICAgICAgICAgICAgICAgICAgIkEiLAogICAgICAgICAgICAgICAgICAgICJEIiwKICAgICAgICAgICAgICAgICAgICAiQiIsCiAgICAgICAgICAgICAgICAgICAgIkYiLAogICAgICAgICAgICAgICAgICAgICJDIiwKICAgICAgICAgICAgICAgICAgICAiQSIsCiAgICAgICAgICAgICAgICAgICAgIkQiLAogICAgICAgICAgICAgICAgICAgICJFIiwKICAgICAgICAgICAgICAgICAgICAiQiIsCiAgICAgICAgICAgICAgICAgICAgIkYiLAogICAgICAgICAgICAgICAgICAgICJFIikKdGFibGUoUHJvamVjdDIkR3JvdXApCmthYmxlKGFycmFuZ2UoUHJvamVjdDIsIEdyb3VwKSkKYGBgCgojIyBDaG9vc2luZyBQYXBlcnMKCkVhY2ggZ3JvdXAgd2lsbCBjaG9vc2UgYSBwYXBlciBpbiBsYWIgb24gVHVlc2RheSwgRmViIDE5LiBZb3UgbWF5IHdhbnQgdG8gYnJvd3NlIHRoZSBwYXBlcnMgYXZhaWxhYmxlIGFuZCBkaXNjdXNzIHRoZW0gd2l0aCB5b3UgZ3JvdXAgcGFydG5lciBwcmlvciB0byBsYWIuCgpgYGB7cn0KZGlyKCJwYXBlcnMiLCBwYXR0ZXJuID0gInBkZiIsIGZ1bGwubmFtZXMgPSBUUlVFLCBpZ25vcmUuY2FzZSA9IFRSVUUpCmBgYAoKIyMgR3JhZGluZwoKRWFjaCBzdHVkZW50IHdpbGwgYmUgZXhwZWN0ZWQgdG8gY29tcGxldGUgdGhlIGZvbGxvd2luZyB0YXNrcyB0byBlYXJuIDg1JSBvZiB0aGUgcG9pbnRzIGF2YWlsYWJsZSBmb3IgdGhpcyBhc3NpZ25tZW50ICgyMS8yNSkuCgotIFJlYWQgYW5kIGRpc2N1c3MgeW91ciBwYXBlciB3aXRoIHlvdXIgZ3JvdXAgcGFydG5lcgogICsgRm9jdXMgb24gdGhlIG1ldGhvZHMgYW5kIHJlc3VsdHMKICArIEZvciBlYWNoIGNvbmNsdXNpb24gZXZhbHVhdGUgdGhlIHN0cmVuZ3RoIG9mIHRoZSBzdXBwb3J0aW5nIGV2aWRlbmNlCi0gQ29tcGxldGUgdGhlIG5yLXJlcG9ydGluZy1zdW1tYXJ5LnBkZiBjaGVja2xpc3QgKG9wZW4gaW4gQWRvYmUgQWNyb2JhdCkKICArIEZvciBhbnkgZGVmaWNpZW50IGl0ZW1zIG9uIHRoZSBjaGVja2xpc3QsIGRlc2NyaWJlIHRoZSBpbmZvcm1hdGlvbiBuZWVkZWQKICArIFJlZmVyIHRvIG5yLXJlcG9ydGluZy1saWZlLXNjaWVuY2VzLXJlc2VhcmNoLnBkZiBmb3IgZ3VpZGVsaW5lcwotIERldGVybWluZSBpZiB5b3UgY291bGQgcmVwZWF0IHRoZSBhbmFseXNpcyB0aGF0IGlzIG1vc3QgZXNzZW50aWFsIHRvIGNvbmNsdXNpb25zIG9mIHRoZSBwYXBlcgogICsgSWYgZGF0YSBvciBtZXRob2RzIGFyZSBub3QgYXZhaWxhYmxlLCBsb29rIGZvciBmb2xsb3ctdXAgc3R1ZGllcyB0aGF0IHByb3ZpZGUgdGhlIHJlcXVpcmVkIGRldGFpbHMKICArIElmIGZvbGxvdy11cCBzdHVkaWVzIGFyZSBub3QgYXZhaWxhYmxlLCBkZXNjcmliZSB0aGUgbWlzc2luZyBpbmZvcm1hdGlvbiBuZWVkZWQgdG8gcGVyZm9ybSB0aGUgYW5hbHlzaXMKLSBGb3IgZWFjaCBRdWVzdGlvbmFibGUgUmVzZWFyY2ggUHJhY3RpY2UgZGlzY3Vzc2VkIGluIEZyYXNlciAqZXQgYWwqOgogICsgRmluZCBldmlkZW5jZSB0byBleGNsdWRlIHRoaXMgUVJQLCBvcgogICsgRGVzY3JpYmUgc3RlcHMgdGhhdCBzaG91bGQgaGF2ZSBiZWVuIHRha2VuIHRvIHByZXZlbnQgdGhpcyBRUlAgKHNlZSBGb3JzdG1laWVyICpldCBhbCopCi0gRGVzaWduIGEgZm9sbG93LXVwIHN0dWR5IHRvIHJlcGxpY2F0ZSB0aGUgbW9zdCBjcnVjaWFsIGV4cGVyaW1lbnQKICArIENvbXBsZXRlIHRoZSBQcmVyZWdDaGFsbGVuZ2VUZW1wbGF0ZS5SbWQgZm9ybSBmb3IgdGhpcyByZXBsaWNhdGlvbiBleHBlcmltZW50Ci0gUHJlc2VudCBzdW1tYXJ5IG9mIHJlcHJvZHVjaWJpbGl0eSBhc3Nlc3NtZW50IGluIGNsYXNzCgpFYWNoIGdyb3VwIHNob3VsZCB1c2UgYW4gKipBY2tub3dsZWRnZW1lbnRzKiogc2VjdGlvbiB0byBkb2N1bWVudCB0aGUgcGFydGljaXBhdGlvbiBvZiBlYWNoIG1lbWJlciBhbmQgdGhlIGNvbGxhYm9yYXRpb24gd2l0aGluIGFuZCBiZXR3ZWVuIGdyb3Vwcy4KCkFkZGl0aW9uYWwgY3JlZGl0IHdpbGwgYmUgYXdhcmRlZCBmb3IgcHJvdmlkaW5nIGFzc2lzdGFuY2UgdG8gb3RoZXIgZ3JvdXBzIGFuZCBmb3IgY29tcGxldGlvbiBvZiB0aGUgYW5hbHlzaXMgdGhhdCBzdXBwb3J0cyB0aGUgbW9zdCBlc3NlbnRpYWwgY29uY2x1c2lvbi4KCgo=</div>
 
 
 
