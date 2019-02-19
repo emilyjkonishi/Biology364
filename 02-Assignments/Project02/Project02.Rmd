@@ -48,6 +48,14 @@ Each group will choose a paper in lab on Tuesday, Feb 19. You may want to browse
 dir("papers", pattern = "pdf", full.names = TRUE, ignore.case = TRUE)
 ```
 
+Random group order
+
+```{r}
+Groups <- c("A","B","C","D","E","F")
+sample(Groups)
+```
+
+
 ## Grading
 
 Each student will be expected to complete the following tasks to earn 85% of the points available for this assignment (21/25).
