@@ -13,6 +13,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r Load Libraries, include=FALSE}
 if (!require("tidyverse")) install.packages("tidyverse"); library(tidyverse)
+if (!require("dendextend")) install.packages("dendextend"); library(dendextend)
+if (!require("pheatmap")) install.packages("pheatmap"); library(pheatmap)
+if (!require("gplots")) install.packages("gplots"); library(gplots)
+if (!require("devtools")) install.packages("devtools"); library(devtools)
 ```
 
 ## Objectives for Lab 6
@@ -241,30 +245,121 @@ In the heatmap we also see how the Setosa species has low petal values (in light
 https://cran.r-project.org/web/packages/dendextend/vignettes/Cluster_Analysis.html
 
 ```{r}
-install.packages("dendextend")
-library(dendextend)
 iris2 <- iris[,-5]
 species_labels <- iris[,5]
-labels_colors(fullClustering) <-
-   rainbow(3)[sort_levels_values(
-      as.numeric(iris[,5])[order.dendrogram(fullClustering)]
-   )]
 dend <- as.dendrogram(fullClustering)
+# Scale the entire matrix so that the heatmap colors are comparable between each variable
 scaled_iris <- iris2 %>% as.matrix %>% scale
-library(pheatmap)
-library(gplots)
-pheatmap(as.matrix(scaled_iris), 
-          main = "Heatmap for the Iris data set",
-          srtCol = 20,
-          dendrogram = "row",
-          Rowv = dend,
-          Colv = "NA", # this to make sure the columns are not ordered
-          trace="none",          
-          margins =c(5,0.1),      
-          key.xlab = "Cm",
-          denscol = "grey",
-          density.info = "density",
-          RowSideColors = rev(labels_colors(dend)) # to add nice colored strips        
+# Set annotation colors to true species
+ann_colors = list(Species = as.factor(iris$Species))
+iris.matrix <- as.matrix(scaled_iris)
+rownames(iris.matrix) <- c(1:150) # to annotate, matrix and ann_row must have same rownames
+ann_row = data.frame(Species = as.factor(iris$Species))
+rownames(ann_row) = rownames(iris.matrix)
+pheatmap(iris.matrix, 
+         cluster_cols = FALSE,
+         cutree_rows = 3,
+         annotation_row = ann_row, 
+         show_rownames = F
          )
+```
+
+## Principal Component Analysis
+
+Adapted from: https://tgmstat.wordpress.com/2013/11/28/computing-and-visualizing-pca-in-r/#ref1
+
+We will be using PCA to reduce the dimensions of the iris dataset (4 continuous variables). 
+There are several R packages that can be used for PCA, but we will use function `prcomp` from the base `stats` package.
+
+PCA must be done on a matrix and it is best if it is scaled and centered (so that the different variables have the same scale and a mean of 0). 
+Log transforming the matrix is also recommended if it improves the normality.
+
+```{r}
+shapiro.test(iris$Sepal.Length)
+shapiro.test(log(iris$Sepal.Length))
+shapiro.test(iris$Sepal.Width)
+shapiro.test(log(iris$Sepal.Width))
+shapiro.test(iris$Petal.Length)
+shapiro.test(log(iris$Petal.Length))
+shapiro.test(iris$Petal.Width)
+shapiro.test(log(iris$Petal.Width))
+```
+
+Well, it helps for Sepals, but not for Petals.
+
+```{r}
+iris.log.matrix <- iris %>% 
+  select(-Species) %>%
+  transmute(log.Sepal.Length = log(Sepal.Length),
+            log.Sepal.Width = log(Sepal.Width),
+            Petal.Length = Petal.Length,
+            Petal.Width = Petal.Width)
+ir.pca <- prcomp(iris.log.matrix,
+                 center = TRUE,
+                 scale. = TRUE) 
+print(ir.pca)
+summary(ir.pca)
+str(ir.pca)
+```
+
+The print method returns the standard deviation of each of the four PCs (the square root of their eigenvalues), and their rotation (or loadings), which are the coefficients of the linear combinations of the continuous variables.
+The eigenvalues provide information of the variability in the data. The scores provide information about the structure of the observations. The loadings (or correlations) allow you to get a sense of the relationships between variables, as well as their associations with the extracted PCs.
+
+For more about the mathematics behind these values: https://www.datacamp.com/community/tutorials/pca-analysis-r
+
+The summary tells us how much of the variance that each PC captured. 
+This tells us that 73% of the variance was captured in just one PC and 96% in two!
+
+Now to plot the results.
+
+Note that the best PCA visualization is using the package ggbiplot, available on github:
+`library(devtools); install_github("vqv/ggbiplot"); library(ggbiplot)`
+
+```{r}
+scores = as.data.frame(ir.pca$x) # extract the scores of the PCA
+ggplot(data = scores, aes(x = PC1, y = PC2, label = as.factor(species_labels))) +
+  geom_hline(yintercept = 0, colour = "gray65") +
+  geom_vline(xintercept = 0, colour = "gray65") +
+  geom_text(colour = "dodgerblue", alpha = 0.8, size = 4) 
+biplot(ir.pca)
+```
+
+The biplot helps to show how the variables contributed to the principal components (and how they are correlated with each other).
+Here is a nice visualization that shows only those correlations.
+
+```{r}
+install_github("vqv/ggbiplot")
+library(ggbiplot)
+ggbiplot(ir.pca, obs.scale = 1, var.scale = 1, groups = species_labels, ellipse = TRUE, circle = TRUE)
+```
+
+## Correlation heatmaps
+
+As you can see from the PCA plots, some of these variables are highly correlated with each other. 
+We can look at this directly using a correlation matrix. 
+This will again require a package from github.
+
+```{r}
+install_github("kassambara/ggcorrplot")
+library(ggcorrplot)
+corr <- round(cor(iris.log.matrix), 1)
+print(corr)
+# Compute a matrix of correlation p-values
+p.mat <- cor_pmat(iris.log.matrix)
+print(p.mat)
+# Visualize the correlation matrix
+ggcorrplot(corr, hc.order = TRUE, type = "lower",
+     outline.col = "white", lab = TRUE)
+```
+
+For more examples of ggcorrplot: http://www.sthda.com/english/wiki/ggcorrplot-visualization-of-a-correlation-matrix-using-ggplot2
+
+# Visualization of Dengue Dataset
+
+Using one or more of the above visualizations, answer the question: 
+Which variables in the dengue_features_train data frame are likely to provide the most information about Dengue incidence?
+
+```{r}
+
 ```
 
