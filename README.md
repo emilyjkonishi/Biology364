@@ -16,8 +16,6 @@
 **HBS**: Handbook of Biological Statistics, by John H. McDonald , http://www.biostathandbook.com/
 
 ### Helpful Links
-XKCD:
-https://xkcd.com/
 
 Setting up R Studio, Git, and Github:
 https://happygitwithr.com/index.html
@@ -40,3 +38,11 @@ https://cos.io/prereg/
 Simply Statistics 
 A statistics blog by Rafa Irizarry, Roger Peng, and Jeff Leek: 
 https://simplystatistics.org/
+
+## Not Helpful (but Fun) Links
+
+XKCD:
+https://xkcd.com/
+
+Pedromics: 
+https://www.facebook.com/pedromics
