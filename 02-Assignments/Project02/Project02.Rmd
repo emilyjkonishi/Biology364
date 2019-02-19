@@ -54,6 +54,13 @@ Random group order
 Groups <- c("A","B","C","D","E","F")
 sample(Groups)
 ```
+Group Paper
+A Petrascheck.pdf
+C McNaught.pdf
+E Dierick.pdf
+D Carroll.pdf
+B Burley-1986-Evolution.pdf
+F Melov.pdf
 
 
 ## Grading
