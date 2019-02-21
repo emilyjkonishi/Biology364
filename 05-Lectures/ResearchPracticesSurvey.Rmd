@@ -1,0 +1,45 @@
+---
+title: "Traditional Research Practices"
+author: "Ken Field"
+date: "February 15, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Read in survey results
+
+Students in Biology 364/664 Analysis and Visualization of Biological Data and 
+faculty in the Biology department at Bucknell separately took a survey about "Traditional Research Practices."
+
+The survey was identical to the one used for Fraser, et al., Questionable research practices in ecology and evolution,
+PLOS One, https://doi.org/10.1371/journal.pone.0200303
+
+
+```{r Read Results and convert to factors}
+if (!require("tidyverse")) install.packages("tidyverse"); library(tidyverse)
+Faculty <- read_csv("../04-Data/Traditional Research Practices Survey (Responses) - Form Responses 1.csv", 
+    col_types = cols(Timestamp = col_skip()))
+Students <- read_csv("../04-Data/Traditional Research Practices Survey 2 (Responses) - Form Responses 1.csv", 
+    col_types = cols(Timestamp = col_skip()))
+str(Faculty)
+str(Students)
+Faculty <- mutate_if(Faculty, is.character, factor)
+Students <- mutate_if(Students, is.character, factor)
+str(Faculty)
+str(Students)
+```
+
+## Plotting results
+
+
+```{r Bargraphs}
+ggplot(mpg, aes(class)) + 
+  geom_bar()
+ggplot(Faculty, aes(`Reporting a set of statistical models as the complete tested set when other candidate models were also tested.`)) + 
+    geom_bar(aes(fill = `Reporting a set of statistical models as the complete tested set when other candidate models were also tested.`)) + coord_flip()
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
