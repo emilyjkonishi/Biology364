@@ -23,6 +23,8 @@ if (!require("devtools")) install.packages("devtools"); library(devtools)
 3. Using Galaxy on BisonNet
 4. Quality control of fastq files
 
+**This .rmd file will be turned in before lab next week as Homework 05**
+
 ## Background
 
 We will be using the dataset the following paper: 
@@ -74,7 +76,7 @@ Review the material at https://rnaseq.uoregon.edu/, in the paper, and in the SRA
 
 4. What selection scheme (if any) was performed on the RNA?
 
-5. What was the depth of sequencing for each sample (min, max, and median)?
+5. What was the depth of sequencing for each sample (min, max, and mean)?
 
 6. Was a stranded library prep protocol used? If so, what is the strandedness of the reads?
 
@@ -216,6 +218,16 @@ They can be used in some analyses, but we will not be needing them, so it is bes
 
 Now run FastQC and MultiQC on the trimmed data. Has it improved? Is it "good" yet?
 
+1. How many reads were removed from each file during the trimming step?
+
+2. What are the read lengths of each file after trimming (min, max, mean)?
+
+3. After trimming, how do the quality of the single-end reads compare to the paired-end reads (within each treatment group)?
+
+4. After trimming, how do the quality of the RNAi treated reads compare to the control reads (within each sequencing layout type)?
+
+5. Do you anticipate any problems using this data to compare differential transcript expression between the two treatment groups?
+
 ## Helpful RNA-Seq Links
 
 RNA-seqlopedia: https://rnaseq.uoregon.edu/
@@ -225,6 +237,5 @@ RNA-Seq Blog: http://www.rna-seqblog.com/
 QCFAIL Blog: https://sequencing.qcfail.com/
 (Unfortunately it looks like they are no longer posting, but they have some great posts about problems with certain Illumina sequencers.)
 
-QCFAIL post about SRA file corruption: https://sequencing.qcfail.com/articles/data-can-be-corrupted-upon-extraction-from-sra-files/
-
-
+QCFAIL post about SRA file corruption: https://sequencing.qcfail.com/articles/data-can-be-corrupted-upon-extraction-from-sra-files/ 
+(This is why it is so important to look at the raw fastq files and check the lengths of the reads before trimming.)
