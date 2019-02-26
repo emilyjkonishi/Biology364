@@ -68,7 +68,7 @@ write_csv(SRAsummary, path = "SRAsummary.csv")
 
 Review the material at https://rnaseq.uoregon.edu/, in the paper, and in the SRA to answer the following questions:
 
-1. What are the conditions that we are going to compare? 
+1. What are the biological conditions that we are going to compare? 
 
 2. How many biological replicates are we studying for each condition?
 
@@ -76,9 +76,9 @@ Review the material at https://rnaseq.uoregon.edu/, in the paper, and in the SRA
 
 4. What selection scheme (if any) was performed on the RNA?
 
-5. What was the depth of sequencing for each sample (min, max, and mean)?
+5. What was the depth of sequencing for each condition (min, max, and mean)?
 
-6. Was a stranded library prep protocol used? If so, what is the strandedness of the reads?
+6. What library prep protocol used? If a stranded library prep was used, what is the strandedness of the reads?
 
 7. Were the sequences single-end or paired end?
 
@@ -179,9 +179,10 @@ View the results by clicking on the eye icon for the Webpage output.
 Run FastQC on each of the fastq files.
 
 When all of the jobs are complete (this may take a little while), run the MultiQC tool to aggregate all of the FastQC results into a single report. 
+In MultiQC, first change the input type from Bamtools to FastQC.
 To select multiple files as input, use command-click (Mac) or ctrl-click (PC).
 
-After MultiQC is run compare the samples to determine if there are any large differences in quality problems between them. 
+After MultiQC is run, compare the samples to determine if there are any large differences in quality problems between them. 
 You may need to download the MultiQC webpage, unzip it, and open the html file in a browser. 
 Download a file from Galaxy by clicking on it in the History area and then clicking the disk icon.
 
