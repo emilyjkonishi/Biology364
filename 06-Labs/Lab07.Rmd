@@ -19,8 +19,9 @@ if (!require("devtools")) install.packages("devtools"); library(devtools)
 ## Objectives for Lab 6
 
 1. Introduction to RNA-Seq
-2. Using Galaxy on BisonNet
-3. Quality control of fastq files
+2. Become familiar with NGS file formats
+3. Using Galaxy on BisonNet
+4. Quality control of fastq files
 
 ## Background
 
@@ -80,6 +81,71 @@ Review the material at https://rnaseq.uoregon.edu/, in the paper, and in the SRA
 7. Were the sequences single-end or paired end?
 
 8. What is the length of the reads?
+
+## Next Generation Sequencing Files
+
+The first type of file that we will examine is a fastq file. 
+The "q" is for quality scores. It is a sequence file (usually DNA) that includes a quality score for every base.
+Fastq files are flat text files, but they are often found gzipped to save space, with the extension .fastq.gz or .fq.gz
+
+To look at fastq files in R, we will use the ShortRead package: 
+https://kasperdanielhansen.github.io/genbioconductor/html/ShortRead.html
+
+```{r}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("ShortRead", version = "3.8")
+library(ShortRead)
+```
+The ShortRead package was one of the first Bioconductor packages to deal with low-level analysis of high-throughput sequencing data. 
+Some of its functionality has now been superseded by other packages, but there is still relevant functionality left.
+
+Reading FASTQ files
+The FASTQ file format is the standard way of representing raw (unaligned) next generation sequencing reads, particular for the Illumina platform. The format basically consists of 4 lines per read, with the lines containing
+
+1. Read name (sometimes includes flowcell ID or other information).
+2. Read nucleotides
+3. Either empty or a repeat of line 1
+4. Encoded read quality scores
+
+Paired-end reads are (usually) stored in two separate files, where the reads are ordered the same (this is obviously fragile; what if reads are re-ordered in one file and not the other).
+
+These files are read by `readFastq()` which produces an object of class `ShortReadQ`.
+
+```{r}
+list.files()
+read_1 <- readFastq("SRR031714_1.head400.fastq")
+read_2 <- readFastq("SRR031714_2.head400.fastq")
+```
+
+The ShortReadQ class has an id and two sets of strings: one for the read nucleotides and one for the base qualities. 
+We can check these strings for the first ten reads and also that the ids match between read_1 and read_2.
+
+```{r}
+id(read_1)[1:10]
+sread(read_1)[1:10]
+quality(read_1)[1:10]
+# Check that ids match
+id(read_2)[1:10]
+# The end of each id is different for read 1 and read 2 (as expected).
+# To remove this we will use gsub
+?gsub
+sum(gsub("/1", "", id(read_1)) == gsub("/2", "", id(read_2)))
+sum(gsub("/1", "", id(read_1)) != gsub("/2", "", id(read_2)))
+```
+
+Note how the quality scores are listed as characters. You can convert them into standard 0-40 integer quality scores by
+
+```{r}
+as(quality(read_1), "matrix")[1:10,1:37]
+```
+
+In this conversion, each letter is matched to an integer between 0 and 40. 
+This matching is known as the “encoding” of the quality scores and there has been different ways to do this encoding. 
+Unfortunately, it is not stored in the FASTQ file which encoding is used, so you have to know or guess the encoding. 
+The ShortRead package does this for you.
+
+These numbers are related to the probability that the reported base is different from the template fragment (ie. a sequence error).
 
 ## Galaxy!
 
