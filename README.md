@@ -39,6 +39,14 @@ Simply Statistics
 A statistics blog by Rafa Irizarry, Roger Peng, and Jeff Leek: 
 https://simplystatistics.org/
 
+### Videos
+
+Illumina Sequencing: 
+https://youtu.be/fCd6B5HRaZ8
+
+Introduction to RNA-Seq for Researchers: 
+https://youtu.be/7BLS_YY9HeM
+
 ## Not Helpful (but Fun) Links
 
 XKCD:
