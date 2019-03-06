@@ -35,9 +35,13 @@ https://osf.io/
 Preregistration at the Center for Open Science: 
 https://cos.io/prereg/
 
-Simply Statistics 
+Simply Statistics: 
 A statistics blog by Rafa Irizarry, Roger Peng, and Jeff Leek: 
 https://simplystatistics.org/
+
+Review of Gene Expression: 
+https://www.khanacademy.org/science/biology/gene-regulation/gene-regulation-in-eukaryotes/a/overview-of-eukaryotic-gene-regulation
+(includes a review of alternative splicing and rna interference)
 
 ### Videos
 
