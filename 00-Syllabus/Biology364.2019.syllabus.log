@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  19 FEB 2019 09:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  11 MAR 2019 10:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -639,6 +639,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 208--209
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
+[]|\OT1/cmr/bx/n/10.95 Transcriptomics Pipeline
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 214--214
 []|\OT1/cmr/m/n/10.95 reproducible-
  []
@@ -662,6 +667,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4
+
+]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 290.
 
 
@@ -670,7 +684,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4]
+[5]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 290.
  (./Biology364.2019.syllabus.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 290.
@@ -681,9 +695,9 @@ d.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 290.
  ) 
 Here is how much of TeX's memory you used:
- 10541 strings out of 492649
- 159951 string characters out of 6129622
- 277528 words of memory out of 5000000
+ 10542 strings out of 492649
+ 159957 string characters out of 6129622
+ 277556 words of memory out of 5000000
  14255 multiletter control sequences out of 15000+600000
  11879 words of font info for 42 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
@@ -696,10 +710,10 @@ r/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
 local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/l
 ocal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
 cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Biology364.2019.syllabus.pdf (4 pages, 123427 bytes).
+Output written on Biology364.2019.syllabus.pdf (5 pages, 123820 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
- 129 compressed objects within 2 object streams
- 29 named destinations out of 1000 (max. 500000)
+ 149 PDF objects out of 1000 (max. 8388607)
+ 132 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
  121 words of extra memory for PDF output out of 10000 (max. 10000000)
 
