@@ -147,6 +147,7 @@ Check out the tidyr function `fill()` for the tidy way to take care of NAs.
 ## (2) What is the average number of cases of Dengue for each week of the year for each city?
 
 Provide a publication-quality graphic to present this comparison. 
+The graph should span a single year, with the average incidence for each week of the year. 
 You are encouraged to explore options, but only your final graph in this section will be used to evaluate this objective.
 Consider the most effective way to illustrate any trends or important comparisons within the data.
 
