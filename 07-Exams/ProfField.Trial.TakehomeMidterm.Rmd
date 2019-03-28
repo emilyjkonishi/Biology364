@@ -1,0 +1,471 @@
+---
+title: "Takehome Midterm"
+author: "Prof. Field"
+date: "3/17/2019"
+output:
+  github_document:
+    toc: true
+    toc_depth: 2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+For the takehome midterm you will have 48 hours to complete the objectives listed below. The deadline for submission is 28 March 2019 at 11am EST.
+
+Date/Time started: 17 Mar 2019 10:24am to 12:17, then 12:40 to 2:25
+Date/Time completed:
+
+## Loading Libraries
+
+Load all of your libraries in this code block. Indicate why each library is necessary.
+
+```{r Load Libraries, include=FALSE}
+if (!require("cowplot")) install.packages("cowplot"); library(cowplot)
+# cowplot is needed for the cowplot theme for ggplot2
+if (!require("ggcorrplot")) install.packages("ggcorrplot"); library(ggcorrplot)
+# ggcorrplot is needed for the correlation plot
+if (!require("MASS")) install.packages("MASS"); library(MASS)
+# MASS is needed for the negative binomial glm function
+if (!require("tidyverse")) install.packages("tidyverse"); library(tidyverse)
+# tidyverse is needed for ggplot2, readr, and dplyr
+```
+
+## Objectives for Midterm Exam
+
+* [ ] Import, clean, merge data tables
+* [ ] Present graphical summary of Dengue incidence data
+* [ ] Data exploration of potential explanatory variables
+* [ ] Test Benchmark model of Dengue incidence
+* [ ] Improve model of Dengue incidence
+
+## Background
+
+This dataset should be familiar from Lab 6. We will be using the Dengue dataset from a Driven Data competition: 
+https://www.drivendata.org/competitions/44/dengai-predicting-disease-spread/
+
+The data for this competition comes from multiple sources aimed at supporting the Predict the Next Pandemic Initiative (https://www.whitehouse.gov/blog/2015/06/05/back-future-using-historical-dengue-data-predict-next-epidemic). 
+Dengue surveillance data is provided by the U.S. Centers for Disease Control and prevention, as well as the Department of Defense's Naval Medical Research Unit 6 and the Armed Forces Health Surveillance Center, in collaboration with the Peruvian government and U.S. universities. 
+Environmental and climate data is provided by the National Oceanic and Atmospheric Administration (NOAA), an agency of the U.S. Department of Commerce.
+
+The data is provided in two separate files:
+
+1. dengue_features_train: weekly weather and vegetation data for two cities
+2. dengue_labels_train: weekly number of dengue cases in each city
+
+There are two cities, San Juan, Puerto Rico and Iquitos, Peru, with test data for each city spanning 5 and 3 years respectively. The data for each city have been concatenated along with a city column indicating the source: *sj* for San Juan and *iq* for Iquitos. 
+
+```{r Read Data}
+dengue_features_train <- read_csv("https://s3.amazonaws.com/drivendata/data/44/public/dengue_features_train.csv")
+str(dengue_features_train)
+summary(dengue_features_train)
+dengue_labels_train <- read_csv("https://s3.amazonaws.com/drivendata/data/44/public/dengue_labels_train.csv")
+str(dengue_labels_train)
+summary(dengue_labels_train)
+```
+
+## Feature Descriptions
+
+You are provided the following set of information on a (year, weekofyear) timescale:
+
+(Where appropriate, units are provided as a _unit suffix on the feature name.)
+
+City and date indicators
+
+- city – City abbreviations: sj for San Juan and iq for Iquitos
+- week_start_date – Date given in yyyy-mm-dd format
+
+NOAA's GHCN daily climate data weather station measurements
+
+- station_max_temp_c – Maximum temperature
+- station_min_temp_c – Minimum temperature
+- station_avg_temp_c – Average temperature
+- station_precip_mm – Total precipitation
+- station_diur_temp_rng_c – Diurnal temperature range
+
+PERSIANN satellite precipitation measurements (0.25x0.25 degree scale)
+
+- precipitation_amt_mm – Total precipitation
+
+NOAA's NCEP Climate Forecast System Reanalysis measurements (0.5x0.5 degree scale)
+
+- reanalysis_sat_precip_amt_mm – Total precipitation
+- reanalysis_dew_point_temp_k – Mean dew point temperature
+- reanalysis_air_temp_k – Mean air temperature
+- reanalysis_relative_humidity_percent – Mean relative humidity
+- reanalysis_specific_humidity_g_per_kg – Mean specific humidity
+- reanalysis_precip_amt_kg_per_m2 – Total precipitation
+- reanalysis_max_air_temp_k – Maximum air temperature
+- reanalysis_min_air_temp_k – Minimum air temperature
+- reanalysis_avg_temp_k – Average air temperature
+- reanalysis_tdtr_k – Diurnal temperature range
+
+Satellite vegetation - Normalized difference vegetation index (NDVI) - NOAA's CDR Normalized Difference Vegetation Index (0.5x0.5 degree scale) measurements
+
+- ndvi_se – Pixel southeast of city centroid
+- ndvi_sw – Pixel southwest of city centroid
+- ndvi_ne – Pixel northeast of city centroid
+- ndvi_nw – Pixel northwest of city centroid
+
+# Takehome Exam Begins here
+
+As a reminder, you may consult your previous homework and group projects, textbook and other readings, and online resources.
+Online resources may be used to research ways to solve each problem, but you may not pose questions in online forums about the specific assignment.
+You may consult with Prof. Field or with other classmates about technical problems (e.g. where to find a file), but not about how to answer any of the questions.
+
+## Data Wrangling
+
+Use this section to manipulate the two data frames.
+1. Follow the Exploratory Data Analysis Checklist (below) to verify the imported data
+    a. Ensure that each variable is the appropriate data class and has values that makes sense
+    b. For external verification, at a minimum, check that the annual Dengue incidence numbers for each city are realistic
+2. Merge the two data frames, verifying that no information was lost during the merge
+3. Check the data for NAs both before and after the merge (note that eliminating all rows or columns with NAs will have consequences)
+
+### Check the packaging
+
+```{r}
+dim(dengue_features_train)
+dim(dengue_labels_train)
+colnames(dengue_features_train)
+colnames(dengue_labels_train)
+sum(dengue_features_train$weekofyear==dengue_labels_train$weekofyear)
+sum(dengue_features_train$weekofyear!=dengue_labels_train$weekofyear)
+```
+
+### Run str()
+
+```{r}
+str(dengue_features_train)
+str(dengue_labels_train)
+```
+
+
+### Look at the top and the bottom of your data
+
+```{r}
+head(dengue_features_train)
+head(dengue_features_train)
+head(dengue_labels_train)
+tail(dengue_labels_train)
+```
+
+### Check your “n”s
+
+```{r}
+colSums(is.na(dengue_features_train))
+colSums(is.na(dengue_labels_train))
+```
+
+
+### Validate with at least one external data source
+
+```{r}
+dengue_labels_train %>%
+  group_by(city,year) %>%
+  summarise(Weekly_mean=mean(total_cases), Weekly_max=max(total_cases), Yearly_total=sum(total_cases))
+```
+
+From: http://www.denguevirusnet.com/epidemiology.html
+"The most recent island-wide epidemic occurred in 2007, when more than 10,000 cases were diagnosed." 
+In 2007, there were 1969 cases in San Jose- so that makes sense.
+"In Peru, nearly 400 cases have been reported until March 2013 of whoch two of them were fatal."
+We don't have data for 2013, but the numbers are lower than for Puerto Rico, so that is consistent.
+
+### Merging the data
+
+```{r}
+# Make sure that there is a unique index for each table to use for joining
+dengue_features_train %>%
+  mutate(city_year_week = paste(city, year, weekofyear, sep = "_")) -> dengue_features_train_indexed
+dengue_labels_train %>%
+  mutate(city_year_week = paste(city, year, weekofyear, sep = "_")) %>% 
+  select(-city,-year,-weekofyear) -> dengue_labels_train_indexed
+merged_dengue <- merge(dengue_labels_train_indexed, dengue_features_train_indexed, by="city_year_week")
+head(merged_dengue)
+tail(merged_dengue)
+```
+
+
+### Dealing with the NAs
+```{r}
+# fill NAs by the latest value
+colSums(is.na(merged_dengue))
+merged_dengue.filled <- merged_dengue %>% 
+  fill(-city_year_week,-total_cases,-city,-year,-weekofyear,-week_start_date)
+colSums(is.na(merged_dengue.filled))
+```
+
+
+## What is the average number of cases of Dengue for each week of the year for each city?
+
+Provide a publication-quality graphic to present this comparison. 
+You are encouraged to explore options, but only your final graph in this section will be used to evaluate this objective.
+Consider the most effective way to illustrate any trends or important comparisons within the data.
+Is weekly the most effective bin for incidence? If not, present a better summary.
+
+```{r}
+weekly_average <- merged_dengue.filled %>%
+  group_by(city,weekofyear) %>%
+  summarize(Mean=mean(total_cases), StdDev=sd(total_cases))
+
+weekly_average
+
+# Tested with error bars at first - but this was a bad idea
+weekly_average %>%
+  ggplot(aes(x=weekofyear, y=Mean, group=city)) + 
+  geom_line(aes(color=city)) +
+  geom_errorbar(aes(ymin=Mean-StdDev, ymax=Mean+StdDev)) +
+  ggtitle("Weekly Dengue Incidence") +
+  theme_cowplot()
+
+weekly_average %>%
+  ggplot(aes(x=weekofyear, y=Mean, group=city)) + 
+  geom_line(aes(color=city)) +
+  ggtitle("Weekly Dengue Incidence") +
+  xlab("Week of the Year") +
+  ylab("Average Dengue Cases") +
+  scale_color_discrete(name="City", labels=c("Iquitos","San Juan")) +
+  scale_x_continuous(breaks=0:52*4) +
+  theme_cowplot()
+```
+
+
+## Data exploration of potential explanatory variables
+
+Consider whether transforming any of the variables might increase the statistical power available.
+Explore the correlation of the potential explanatory variables with each other and with dengue incidence.
+Present a few publication-quality graphics to illustrate your most important findings.
+
+```{r}
+colnames(merged_dengue.filled)
+merged_dengue.filled %>%
+  dplyr::select(-city_year_week,-city,-year,-weekofyear,-week_start_date) %>%
+  summarise_all(.funs= funs(Shapiro=shapiro.test(.)$p.value)) %>%
+  t()
+## None of them are normal 
+merged_dengue.filled %>%
+  dplyr::select(-city_year_week,-city,-year,-weekofyear,-week_start_date) %>%
+  +0.01 %>%
+  log10() %>%
+  summarise_all(.funs= funs(Shapiro=shapiro.test(.)$p.value)) %>%
+  t()
+
+## log transformation didn't really help with anything
+```
+
+```{r}
+
+merged_dengue.filled %>% 
+  dplyr::select(-city_year_week,-city,-year,-weekofyear,-week_start_date) %>%
+  cor(use = 'pairwise.complete.obs') -> correlation_matrix
+
+ggcorrplot(correlation_matrix, type="lower", hc.order=TRUE, tl.cex=6)
+
+## After some trial and error, I decided to use sqrt of total cases to allow for better visualization (log also worked fine)
+
+ggplot(merged_dengue, aes(x=reanalysis_min_air_temp_k, y=(sqrt(total_cases)))) +
+  geom_point() +
+  geom_smooth(method='lm')
+
+ggplot(merged_dengue, aes(x=reanalysis_dew_point_temp_k, y=sqrt(total_cases))) +
+  geom_point() +
+  geom_smooth(method='lm')
+
+ggplot(merged_dengue, aes(x=reanalysis_tdtr_k, y=sqrt(total_cases))) +
+  geom_point() +
+  geom_smooth(method='lm')
+
+```
+
+
+## Dengue incidence model
+
+Use a generalized linear model to determine the best model for the weekly incidence of Dengue.
+At a first pass consider the "Benchmark" model described here: https://shaulab.github.io/DrivenData/DengAI/Benchmark.html
+This model is calculated separately for San Jose and Iquitos and only uses the following variables:
+ - reanalysis_specific_humidity_g_per_kg
+ - reanalysis_dew_point_temp_k 
+ - station_avg_temp_c
+ - station_min_temp_c
+The code for the Benchmark model uses a machine learning approach to optimize the model.
+You should use the model selection approach that we have used in BIOL 364, instead.
+
+```{r}
+dengue.glm.1 <- glm.nb(total_cases ~ city + reanalysis_specific_humidity_g_per_kg + reanalysis_dew_point_temp_k + station_avg_temp_c + station_min_temp_c, 
+                       data=merged_dengue.filled)
+
+summary(dengue.glm.1)
+stepAIC(dengue.glm.1)
+```
+
+Graph the model
+
+```{r}
+merged_dengue.filled$predicted.1 <- predict.glm(dengue.glm.1, merged_dengue.filled, type="response")
+merged_dengue.filled %>% 
+  filter(city=="sj") %>%
+  mutate(index = as.numeric(row.names(.))) %>%
+  ggplot(aes(x = index)) + ggtitle("Benchmark Model for San Jose") +
+  geom_line(aes(y = total_cases, colour = "total_cases")) + 
+  geom_line(aes(y = predicted.1, colour = "fitted"))
+
+merged_dengue.filled %>% 
+  filter(city=="iq") %>%
+  mutate(index = as.numeric(row.names(.))) %>%
+  ggplot(aes(x = index)) + ggtitle("Benchmark Model for Iquitos") +
+  geom_line(aes(y = total_cases, colour = "total_cases")) + 
+  geom_line(aes(y = predicted.1, colour = "fitted"))
+```
+
+ 
+## Extend the Benchmark model
+
+Consider and test ways to improve the Benchmark model. 
+
+```{r}
+dengue.glm.full <- glm.nb(total_cases ~ city + ndvi_ne + ndvi_nw + ndvi_se + ndvi_sw +
+                         precipitation_amt_mm + reanalysis_air_temp_k +
+                         reanalysis_avg_temp_k + reanalysis_dew_point_temp_k + reanalysis_max_air_temp_k + reanalysis_min_air_temp_k +
+                         reanalysis_precip_amt_kg_per_m2 + reanalysis_relative_humidity_percent + 
+                         reanalysis_sat_precip_amt_mm + reanalysis_specific_humidity_g_per_kg + 
+                         reanalysis_tdtr_k + station_avg_temp_c + station_diur_temp_rng_c + station_max_temp_c +
+                         station_min_temp_c + station_precip_mm, 
+                       data=merged_dengue.filled)
+summary(dengue.glm.full)
+dengue.glm.stepwise <- stepAIC(dengue.glm.full)
+summary(dengue.glm.stepwise)
+```
+
+
+
+```{r}
+merged_dengue.filled$predicted.full <- predict.glm(dengue.glm.stepwise, merged_dengue.filled, type="response")
+merged_dengue.filled %>% 
+  filter(city=="sj") %>%
+  mutate(index = as.numeric(row.names(.))) %>%
+  ggplot(aes(x = index)) + ggtitle("Full Model for San Jose") +
+  geom_line(aes(y = total_cases, color = "total_cases")) + 
+  geom_line(aes(y = predicted.full, color = "fitted"))
+
+merged_dengue.filled %>% 
+  filter(city=="iq") %>%
+  mutate(index = as.numeric(row.names(.))) %>%
+  ggplot(aes(x = index)) + ggtitle("Full Model for Iquitos") +
+  geom_line(aes(y = total_cases, color = "total_cases")) + 
+  geom_line(aes(y = predicted.full, color = "fitted"))
+```
+
+
+### This was my attempt to improve the model with a lag period, but it didn't work very well
+
+Now to repeat but with a 1, 2, 3, or 4 week delay in dengue
+
+```{r}
+# First I need to split the data by city
+merged_dengue.filled.sj <- filter(merged_dengue.filled, city=="sj")
+merged_dengue.filled.iq <- filter(merged_dengue.filled, city=="iq")
+
+merged_dengue.filled.sj$delay1wk <- lag(merged_dengue.filled.sj$total_cases, 1)
+merged_dengue.filled.sj$delay2wk <- lag(merged_dengue.filled.sj$total_cases, 2)
+merged_dengue.filled.sj$delay3wk <- lag(merged_dengue.filled.sj$total_cases, 3)
+merged_dengue.filled.sj$delay4wk <- lag(merged_dengue.filled.sj$total_cases, 4)
+
+merged_dengue.filled.iq$delay1wk <- lag(merged_dengue.filled.iq$total_cases, 1)
+merged_dengue.filled.iq$delay2wk <- lag(merged_dengue.filled.iq$total_cases, 2)
+merged_dengue.filled.iq$delay3wk <- lag(merged_dengue.filled.iq$total_cases, 3)
+merged_dengue.filled.iq$delay4wk <- lag(merged_dengue.filled.iq$total_cases, 4)
+
+merged_dengue.filled.delay <- rbind(merged_dengue.filled.sj, merged_dengue.filled.iq)
+```
+
+Now to test the delay models.
+
+```{r}
+dengue.glm.full.1wk <- glm.nb(delay1wk ~ city + ndvi_ne + ndvi_nw + ndvi_se + ndvi_sw +
+                         precipitation_amt_mm + reanalysis_air_temp_k +
+                         reanalysis_avg_temp_k + reanalysis_dew_point_temp_k + reanalysis_max_air_temp_k + reanalysis_min_air_temp_k +
+                         reanalysis_precip_amt_kg_per_m2 + reanalysis_relative_humidity_percent + 
+                         reanalysis_sat_precip_amt_mm + reanalysis_specific_humidity_g_per_kg + 
+                         reanalysis_tdtr_k + station_avg_temp_c + station_diur_temp_rng_c + station_max_temp_c +
+                         station_min_temp_c + station_precip_mm, 
+                       data=merged_dengue.filled.delay)
+summary(dengue.glm.full.1wk)
+stepAIC(dengue.glm.full.1wk)
+```
+
+```{r}
+dengue.glm.full.2wk <- glm.nb(delay2wk ~ city + ndvi_ne + ndvi_nw + ndvi_se + ndvi_sw +
+                         precipitation_amt_mm + reanalysis_air_temp_k +
+                         reanalysis_avg_temp_k + reanalysis_dew_point_temp_k + reanalysis_max_air_temp_k + reanalysis_min_air_temp_k +
+                         reanalysis_precip_amt_kg_per_m2 + reanalysis_relative_humidity_percent + 
+                         reanalysis_sat_precip_amt_mm + reanalysis_specific_humidity_g_per_kg + 
+                         reanalysis_tdtr_k + station_avg_temp_c + station_diur_temp_rng_c + station_max_temp_c +
+                         station_min_temp_c + station_precip_mm, 
+                       data=merged_dengue.filled.delay)
+summary(dengue.glm.full.2wk)
+stepAIC(dengue.glm.full.2wk)
+```
+
+```{r}
+dengue.glm.full.3wk <- glm.nb(delay3wk ~ city + ndvi_ne + ndvi_nw + ndvi_se + ndvi_sw +
+                         precipitation_amt_mm + reanalysis_air_temp_k +
+                         reanalysis_avg_temp_k + reanalysis_dew_point_temp_k + reanalysis_max_air_temp_k + reanalysis_min_air_temp_k +
+                         reanalysis_precip_amt_kg_per_m2 + reanalysis_relative_humidity_percent + 
+                         reanalysis_sat_precip_amt_mm + reanalysis_specific_humidity_g_per_kg + 
+                         reanalysis_tdtr_k + station_avg_temp_c + station_diur_temp_rng_c + station_max_temp_c +
+                         station_min_temp_c + station_precip_mm, 
+                       data=merged_dengue.filled.delay)
+summary(dengue.glm.full.3wk)
+stepAIC(dengue.glm.full.3wk)
+```
+
+```{r}
+dengue.glm.full.4wk <- glm.nb(delay4wk ~ city + ndvi_ne + ndvi_nw + ndvi_se + ndvi_sw +
+                         precipitation_amt_mm + reanalysis_air_temp_k +
+                         reanalysis_avg_temp_k + reanalysis_dew_point_temp_k + reanalysis_max_air_temp_k + reanalysis_min_air_temp_k +
+                         reanalysis_precip_amt_kg_per_m2 + reanalysis_relative_humidity_percent + 
+                         reanalysis_sat_precip_amt_mm + reanalysis_specific_humidity_g_per_kg + 
+                         reanalysis_tdtr_k + station_avg_temp_c + station_diur_temp_rng_c + station_max_temp_c +
+                         station_min_temp_c + station_precip_mm, 
+                       data=merged_dengue.filled.delay)
+summary(dengue.glm.full.4wk)
+stepAIC(dengue.glm.full.4wk)
+```
+
+## Submitting results of model to Driven Data
+
+```{r}
+# submitting the predictions
+dengue_features_test <- read_csv("https://s3.amazonaws.com/drivendata/data/44/public/dengue_features_test.csv")
+
+# checking that the format matches
+head(dengue_features_test)
+
+# dealing with the NAs
+colSums(is.na(dengue_features_test))
+dengue_features_test.filled <- dengue_features_test %>% 
+  fill(-city,-year,-weekofyear,-week_start_date)
+colSums(is.na(dengue_features_test.filled))
+
+dengue_features_test.filled$predicted <- predict.glm(dengue.glm.stepwise, dengue_features_test.filled, type="response")
+
+submissions = read.csv("https://s3.amazonaws.com/drivendata/data/44/public/submission_format.csv")
+inner_join(submissions, rbind(dengue_features_test.filled)) %>%
+  dplyr::select(city, year, weekofyear, total_cases = predicted) ->
+predictions
+
+predictions$total_cases %>% round() -> predictions$total_cases
+write.csv(predictions, 'predictions1.csv', row.names = FALSE)
+```
+
+
+# Acknowledgements
+
+Correlation plot adapted from:
+How to use predict():
+How to format to submit to Driven Data:
+https://shaulab.github.io/DrivenData/DengAI/Benchmark.html
