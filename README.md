@@ -57,6 +57,9 @@ https://youtu.be/fCd6B5HRaZ8
 Introduction to RNA-Seq for Researchers: 
 https://youtu.be/7BLS_YY9HeM
 
+Edward Tufte, The Future of Data Analysis: 
+https://youtu.be/rHUDJ8RyseQ?t=151
+
 ## Not Helpful (but Fun) Links
 
 XKCD:
