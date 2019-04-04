@@ -49,6 +49,8 @@ Review of Gene Expression:
 https://www.khanacademy.org/science/biology/gene-regulation/gene-regulation-in-eukaryotes/a/overview-of-eukaryotic-gene-regulation
 (includes a review of alternative splicing and rna interference)
 
+Google Flu: http://science.sciencemag.org/content/343/6176/1203
+
 ### Videos
 
 Illumina Sequencing: 
