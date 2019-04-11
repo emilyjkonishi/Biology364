@@ -51,6 +51,10 @@ https://www.khanacademy.org/science/biology/gene-regulation/gene-regulation-in-e
 
 Google Flu: http://science.sciencemag.org/content/343/6176/1203
 
+Integrated Genome Viewer. 
+Download: http://software.broadinstitute.org/software/igv/download 
+Online App: https://igv.org/app/
+
 ### Videos
 
 Illumina Sequencing: 
