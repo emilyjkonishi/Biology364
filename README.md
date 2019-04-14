@@ -55,6 +55,12 @@ Integrated Genome Viewer.
 Download: http://software.broadinstitute.org/software/igv/download 
 Online App: https://igv.org/app/
 
+g:Profiler:
+https://biit.cs.ut.ee/gprofiler/gost
+
+Cytoscape: 
+https://cytoscape.org/
+
 ### Videos
 
 Illumina Sequencing: 
