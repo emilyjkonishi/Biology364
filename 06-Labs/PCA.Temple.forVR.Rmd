@@ -17,7 +17,7 @@ library(cowplot)
 ## Loading and cleaning Data
 
 ```{r}
-warmPd_posvswarmPd_neg_complete <- read_delim("genes.edgeR.noPd.batch.dropped.40k/tables/warmPd-posvswarmPd-neg.complete.txt", 
+warmPd_posvswarmPd_neg_complete <- read_delim("../04-Data/warmPd-posvswarmPd-neg.complete.txt", 
     "\t", escape_double = FALSE, trim_ws = TRUE)
 genetable <- warmPd_posvswarmPd_neg_complete %>% 
   select(starts_with("norm.")) %>%
@@ -117,6 +117,50 @@ write_csv(VRtable2, path="PCA.Torpor.forVR.csv")
 
 ```{r}
 write_csv(iris, path="iris.csv")
+```
+
+## Plotting and extracting rotations for PC22
+
+```{r}
+screeplot(pc, npcs = 22, type = "lines")
+std_dev <- pc$sdev
+pr_var <- std_dev^2
+pr_var
+prop_varex <- pr_var/sum(pr_var)
+prop_varex
+plot(prop_varex, xlab = "Principal Component",
+             ylab = "Proportion of Variance Explained",
+             type = "b")
+PC22 <- sort(pc$rotation[,22])
+head(PC22)
+tail(PC22)
+ggplot(data = scores, aes(x = PC1, y = PC22, label = as.factor(pcanames))) +
+  geom_hline(yintercept = 0, colour = "gray65") +
+  geom_vline(xintercept = 0, colour = "gray65") +
+  geom_text(aes(color = pcagroup), alpha = 0.8, size = 4) +
+  theme_cowplot()
+```
+
+## Generating PC1 rotations for g:Profiler analysis
+
+```{r}
+PC1 <- pc$rotation[,1]
+head(-sort(PC1))
+plot(-sort(PC1))
+plot(-sort(PC1)[1:1000])
+plot(-sort(PC1)[1:130])
+PC1.rotations <- -sort(PC1)[1:130]
+write.csv(PC1.rotations, file="../04-Data/Torpor.PCA.PC1.rotations.csv")
+```
+
+## Generating Infected vs Uninfected (warm) list for g:Profiler analysis
+
+```{r}
+warmPd_posvswarmPd_neg_complete %>%
+  filter(padj <= 0.05 & FC >= 2) %>%
+  arrange(-FC) %>%
+  select(Id) -> upregulated
+write_csv(upregulated, path="../04-Data/warmPd_posvswarmPd_neg_upregulated.csv")
 ```
 
 
