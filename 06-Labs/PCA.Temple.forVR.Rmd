@@ -1,0 +1,122 @@
+---
+title: "PCA.Temple.forVR"
+author: "Ken Field"
+date: "4/7/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readr)
+library(stringr)
+library(RColorBrewer)
+library(cowplot)
+```
+
+## Loading and cleaning Data
+
+```{r}
+warmPd_posvswarmPd_neg_complete <- read_delim("genes.edgeR.noPd.batch.dropped.40k/tables/warmPd-posvswarmPd-neg.complete.txt", 
+    "\t", escape_double = FALSE, trim_ws = TRUE)
+genetable <- warmPd_posvswarmPd_neg_complete %>% 
+  select(starts_with("norm.")) %>%
+  filter(complete.cases(.))
+
+head(genetable)
+colnames(genetable) <- gsub("norm.","", colnames(genetable))
+
+genematrix1 <- warmPd_posvswarmPd_neg_complete %>% 
+  select(c(Id,starts_with("norm."))) %>%
+  filter(complete.cases(.))
+
+genematrix <- as.matrix(genematrix1[,2:23])
+rownames(genematrix) <- genematrix1$Id
+head(genematrix)
+
+colnames(genematrix) <- gsub("norm.","", colnames(genematrix))
+```
+
+## PCA
+
+```{r}
+pc <- prcomp(t(log2(genematrix+0.01)), center = TRUE, scale. = TRUE)
+
+names(pc)
+pcagroup <- as.factor(str_sub(colnames(genematrix), start=-9))
+pcagroup
+pcanames <- as.character(str_sub(colnames(genematrix), 4, -10))
+pcanames
+plot(pc$x[, 1], pc$x[, 2], col = pcagroup, main = "PCA", xlab = "PC1", ylab = "PC2")
+summary(pc)
+str(pc)
+```
+
+## Visualization
+
+```{r}
+scores = as.data.frame(pc$x) # extract the scores of the PCA
+scores
+
+myColors <- c(rep("lightblue",6),rep("darkblue",6),rep("pink",6),rep("darkred",4))
+myColors
+pcanames
+colScale <- scale_colour_manual(pcagroup,values = myColors)
+ggplot(data = scores, aes(x = PC1, y = PC2, label = as.factor(pcanames))) +
+  geom_hline(yintercept = 0, colour = "gray65") +
+  geom_vline(xintercept = 0, colour = "gray65") +
+  geom_text(color = myColors, alpha = 0.8, size = 4) +
+  theme_cowplot()
+ggplot(data = scores, aes(x = PC3, y = PC4, label = as.factor(pcanames))) +
+  geom_hline(yintercept = 0, colour = "gray65") +
+  geom_vline(xintercept = 0, colour = "gray65") +
+  geom_text(color = myColors, alpha = 0.8, size = 4) +
+  theme_cowplot()
+ggplot(data = scores, aes(x = PC5, y = PC6, label = as.factor(pcanames))) +
+  geom_hline(yintercept = 0, colour = "gray65") +
+  geom_vline(xintercept = 0, colour = "gray65") +
+  geom_text(color = myColors, alpha = 0.8, size = 4) +
+  theme_cowplot()
+```
+
+## ggbiplot
+
+```{r}
+library(devtools)
+install_github("vqv/ggbiplot")
+library(ggbiplot)
+ggbiplot(pc, scale=0, varname.size = 0, groups = pcagroup, labels = pcanames, ellipse = TRUE, circle = TRUE)
+```
+
+
+
+## Exporting data for VR
+
+```{r}
+head(scores)
+VRtable <- as.data.frame(scores)
+VRtable$group <- pcagroup
+VRtable$individual <- pcanames
+VRtable$Id <- rownames(VRtable)
+head(VRtable)
+write_csv(VRtable, path="PCA.Torpor.forVR.csv")
+```
+
+## Making new table 
+
+```{r}
+VRtable2 <- VRtable
+VRtable2$Temp <- as.factor(str_sub(VRtable2$group, 0, 4))
+VRtable2$UV <- as.factor(str_sub(VRtable2$group, 7, 9))
+head(VRtable2)
+VRtable2 <- VRtable2[,c(25,26,27,1:24)]
+write_csv(VRtable2, path="PCA.Torpor.forVR.csv")
+```
+
+## Making iris table
+
+```{r}
+write_csv(iris, path="iris.csv")
+```
+
+
