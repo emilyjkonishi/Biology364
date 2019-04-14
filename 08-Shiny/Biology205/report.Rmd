@@ -1,0 +1,36 @@
+# R code to generate the linear regression model
+
+Here is my regression model:
+
+```{r model, collapse=TRUE}
+bradford <- values[["MyDataFrame"]]
+options(digits = 4)
+fit <- lm(Absorbance ~ Concentration, data = bradford)
+modelCoefficients <- coef(fit)
+summary(fit)
+```
+
+The fitting result is $Absorbance =  `r modelCoefficients[2]`Concentration + `r modelCoefficients[1]`$
+
+The adjusted R squared is
+```{r R squared, collapse=TRUE}
+summary(fit)$adj.r.squared
+```
+
+This linear regression model tested the hypothesis that there is a linear relationship between *Aborbance* and *Concentration*. 
+The probability that this relationship is more likely than the null hypothesis (that *Aborbance* does NOT depend on *Concentration*):
+
+```{r p value, collapse=TRUE}
+summary(fit)$coefficients[,4][2] 
+```
+
+
+Below is a scatter plot with the regression line.
+
+```{r plot, fig.height=5}
+bradford <- values[["MyDataFrame"]]
+plot(Absorbance ~ Concentration, data = bradford, pch = 19,
+     xlab = "Protein concentration (mg/mL)", 
+     ylab = "Absorbance (at 595 nm)")
+abline(lm(Absorbance ~ Concentration, data = bradford), lwd = 2)
+```
