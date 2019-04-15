@@ -1,0 +1,73 @@
+---
+title: "Lab 13"
+author: "Biology Student"
+date: "15 Apr 2019"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Loading Libraries
+
+```{r Load Libraries, include=FALSE}
+if (!require("tidyverse")) install.packages("tidyverse"); library(tidyverse)
+if (!require("devtools")) install.packages("devtools"); library(devtools)
+```
+
+## Objectives for Lab 13
+
+1. Introduction to Gene Ontology
+2. Generate a gene set
+3. Conduct Gene Set Enrichment Analysis using g:Profiler
+4. Visualize a gene network using Cytoscape
+
+## Background
+
+Read the overview of Gene Ontology: 
+http://geneontology.org/docs/ontology-documentation/
+
+Determine whether you are interested in examining just one, or all three of the gene ontology domains.
+
+## Gene Sets
+
+The results from a differential expression analysis is a list of genes (or transcripts) that meet a given set of criteria (such as FDR cutoff and minimum fold-change). 
+We are often interested in whether there is a pattern among the functions of these genes - whether entire pathways have been up- or down- regulated. 
+
+From the Pasilla analysis, we identified a number of genes that were differentially expressed after RNAi treatment. 
+From the WNS bat study, we identified a number of genes that were differentially expressed in tissue infected with the WNS fungus compared to uninfected tissue.
+
+```{r DE Results}
+warmPd_posvswarmPd_neg_complete <- read_delim("../04-Data/warmPd-posvswarmPd-neg.complete.txt", "\t", escape_double = FALSE, trim_ws = TRUE)
+warmPd_posvswarmPd_neg_complete %>%
+  filter(padj <= 0.05 & FC >= 2) %>%
+  arrange(-FC) %>%
+  select(Id) -> upregulated
+write_csv(upregulated, path="../04-Data/warmPd_posvswarmPd_neg_upregulated.csv")
+```
+
+## g:Profiler
+
+https://biit.cs.ut.ee/gprofiler/gost
+
+g:GOSt performs functional enrichment analysis, also known as over-representation analysis (ORA) or gene set enrichment analysis, on input gene list. It maps genes to known functional information sources and detects statistically significantly enriched terms.
+
+1. Launch g:GOSt and use the csv file to paste in the list of genes of interest.
+2. Change the Organism to *Myotis lucifugus*
+3. Select "Ordered query"
+4. Click Run query
+
+
+
+## Helpful RNA-Seq Links
+
+RNA-seqlopedia: https://rnaseq.uoregon.edu/
+
+RNA-Seq Blog: http://www.rna-seqblog.com/
+
+QCFAIL Blog: https://sequencing.qcfail.com/
+(Unfortunately it looks like they are no longer posting, but they have some great posts about problems with certain Illumina sequencers.)
+
+QCFAIL post about SRA file corruption: https://sequencing.qcfail.com/articles/data-can-be-corrupted-upon-extraction-from-sra-files/ 
+(This is why it is so important to look at the raw fastq files and check the lengths of the reads before trimming.)
