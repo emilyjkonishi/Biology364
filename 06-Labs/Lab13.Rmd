@@ -47,7 +47,6 @@ warmPd_posvswarmPd_neg_complete %>%
 write_csv(upregulated, path="../04-Data/warmPd_posvswarmPd_neg_upregulated.csv")
 ```
 
-<<<<<<< HEAD
 ## g:Profiler
 
 https://biit.cs.ut.ee/gprofiler/gost
@@ -57,16 +56,35 @@ g:GOSt performs functional enrichment analysis, also known as over-representatio
 1. Launch g:GOSt and use the csv file to paste in the list of genes of interest.
 2. Change the Organism to *Myotis lucifugus*
 3. Select "Ordered query"
-4. Click Run query
+4. Click "Data sources" and select the appropriate gene ontology domains. This is also where you can download a gmt file to be used for network analysis in the next section.
+5. Click Run query
 
-## Helpful RNA-Seq Links
+The output will indicate categories that meet the adjusted p value cutoff selected under "Advanced settings". 
+Mouse over each category to view its name. 
+Clicking "Detailed results" will list each enriched category and the genes associated with it. 
 
-RNA-seqlopedia: https://rnaseq.uoregon.edu/
+If the number of categories is large (>50) you may wish to narrow the list by decreasing the "Term size" in the "Detailed results" section. Lower the upper threshold until fewer than 50 results are displayed.
 
-RNA-Seq Blog: http://www.rna-seqblog.com/
+Download the results as both a csv and a gem file. 
 
-QCFAIL Blog: https://sequencing.qcfail.com/
-(Unfortunately it looks like they are no longer posting, but they have some great posts about problems with certain Illumina sequencers.)
+## Network visualization
 
-QCFAIL post about SRA file corruption: https://sequencing.qcfail.com/articles/data-can-be-corrupted-upon-extraction-from-sra-files/ 
-(This is why it is so important to look at the raw fastq files and check the lengths of the reads before trimming.)
+https://cytoscape.org
+
+Based on https://enrichmentmap.readthedocs.io/en/docs-2.2/Tutorial_GProfiler.html
+
+Download Cytoscape to your computer and follow the installation instructions. You may have to upgrade or install Java. After it is installed, launch Cytoscape.
+
+1. In the Apps menu, select App Manager and then install EnrichmentMap
+2. In the menu bar, locate the App tab and then select > EnrichmentMap > Create Enrichment Map
+3. Make sure the Analysis Type is set to "generic" (ex:gProfiler)
+4. Please select the following files by clicking on the respective (…) button and selecting the file in the Dialog:
+- GMT / The gmt file you downloaded
+- Dataset 1 / Enrichments: The gem file you downloaded
+- Tune Parameters
+- P-value cut-off: 1
+- Q-value cut-off: 1
+- Overlap Coefficient cut-off: 0.5
+5. Click on the Build radio button at the bottom of the panel to create the Enrichment Map
+6. In the menu bar, Go to View, and activate Show Graphics Details
+7. In the control panel, go to Style, click on Label and select EM1_GS_DESCR in the Column dropdown. This will label nodes with names rather than GO IDs.
