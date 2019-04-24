@@ -86,3 +86,6 @@ It's too late for this stuff in 2019!
 
 Common statistical tests are linear models (or: how to teach stats) 
 https://lindeloev.github.io/tests-as-linear/
+
+Reproducible Research Using RMarkdown and Git through RStudio
+https://rpubs.com/marschmi/105639
