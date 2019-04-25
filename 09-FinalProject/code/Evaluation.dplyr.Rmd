@@ -1,0 +1,30 @@
+---
+title: "Evaluation.dplyr"
+author: "Ken Field"
+date: "April 25, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+if (!require("tidyverse")) install.packages("tidyverse"); library(tidyverse)
+if (!require("readr")) install.packages("readr"); library(readr)
+```
+
+## Reading in spreadsheet
+
+```{r import}
+Responses <- read_csv("~/Downloads/Final Project Presentation Evaluation (Responses) - Form Responses 1.csv", 
+    col_types = cols(Timestamp = col_skip()))
+```
+
+## Separating by presenter
+
+```{r separating}
+Responses %>% 
+  group_by(`Presenter's Last Name`) %>% 
+  group_split() %>%
+  walk(~.x %>%  write_csv(path = paste0("Responses_",unique(.x$`Presenter's Last Name`),".csv")))
+```
+
+Boom.
